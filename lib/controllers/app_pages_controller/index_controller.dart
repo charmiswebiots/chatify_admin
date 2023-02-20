@@ -1,0 +1,31 @@
+import 'package:chatify_admin/config.dart';
+import '../../common/config.dart';
+
+class IndexController extends GetxController {
+
+  ValueNotifier<bool> isOpen = ValueNotifier(true);
+  GlobalKey<ScaffoldState>? scaffoldDrawerKey;
+  GlobalKey<ScaffoldState>? scaffoldKey;
+  int selectedIndex = 0;
+  String pageName = fonts.addBanner.tr;
+  bool isHover = false;
+  int isSelectedHover = 0;
+
+  final ScrollController scrollController = ScrollController();
+
+  //list of bottommost page
+  List<Widget> widgetOptions = <Widget>[
+    Container(),
+    Container(),
+    Container(),
+    Container()
+  ];
+
+  @override
+  void onReady() {
+    // TODO: implement onReady
+    appCtrl.getStorageData();
+    super.onReady();
+  }
+
+}

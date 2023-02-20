@@ -1,7 +1,6 @@
 
-import 'dart:ui';
-
-
+import '../config.dart';
+import 'config.dart';
 
 class AppArray{
   //language list
@@ -11,4 +10,21 @@ class AppArray{
     {'name': 'hindi', 'locale': const Locale('hi', 'IN')},
     {'name': 'korean', 'locale': const Locale('ko', 'KR')}
   ];
+
+  //action list
+  var actionList = [
+    {'title': "english"},
+    {'title': "hindi"},
+    {'title': "korean"},
+    {'title': "arabic"},
+  ];
+
+  //bottom list
+  var drawerList = [
+    {'icon': svgAssets.banner, 'title': "banners"},
+    {'icon': svgAssets.page, 'title': "staticPage"},
+    {'icon': svgAssets.bell, 'title': "notification"},
+    {'icon': svgAssets.logout, 'title': "logout"},
+  ];
+
 }

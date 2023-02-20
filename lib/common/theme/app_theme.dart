@@ -88,7 +88,7 @@ class AppTheme {
         return AppTheme(
           isDark: false,
           txt: const Color(0xFF001928),
-          primary: const Color(0xFFFF4C3B),
+          primary: const Color(0xFF3467B8),
           primaryLight: const Color(0xFFFFF4F4),
           secondary: const Color(0xFF6EBAE7),
           accentTxt: const Color(0xFF001928),
@@ -124,8 +124,8 @@ class AppTheme {
       case ThemeType.dark:
         return AppTheme(
           isDark: true,
-          txt: Colors.white,
-          primary: const Color(0xFFFF4C3B),
+          txt: Colors.black,
+          primary: const Color(0xFF3467B8),
           primaryLight: const Color(0xFF202020),
           secondary: const Color(0xFF6EBAE7),
           accentTxt: const Color(0xFF001928),

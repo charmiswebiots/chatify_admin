@@ -1,11 +1,8 @@
 import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../../common/config.dart';
 import '../../../config.dart';
 import 'dart:html' as html;
-
-import '../../../responsive.dart';
 
 class DrawerList extends StatelessWidget {
   final bool? value;

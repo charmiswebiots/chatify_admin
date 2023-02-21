@@ -1,6 +1,5 @@
 
 import '../config.dart';
-import 'config.dart';
 
 class AppArray{
   //language list
@@ -21,9 +20,9 @@ class AppArray{
 
   //bottom list
   var drawerList = [
-    {'icon': svgAssets.banner, 'title': "banners"},
-    {'icon': svgAssets.page, 'title': "staticPage"},
-    {'icon': svgAssets.bell, 'title': "notification"},
+    {'icon': svgAssets.dashboard, 'title': "dashboard"},
+    {'icon': svgAssets.usageControl, 'title': "usageControl"},
+    {'icon': svgAssets.appControl, 'title': "appSetting"},
     {'icon': svgAssets.logout, 'title': "logout"},
   ];
 

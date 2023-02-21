@@ -1,8 +1,5 @@
 import 'dart:developer';
-
-import '../../../common/config.dart';
 import '../../../config.dart';
-
 
 class LeadingRow extends StatelessWidget {
   final GlobalKey<ScaffoldState>? scaffoldDrawerKey;
@@ -23,7 +20,7 @@ class LeadingRow extends StatelessWidget {
                     },
                     child: Container(
                         width: Sizes.s240,
-                        padding: const EdgeInsets.symmetric(horizontal: 61),
+                        padding: const EdgeInsets.symmetric(horizontal: 100),
                         height: double.infinity,
                         color: appCtrl.appTheme.txt,
                         child: Image.asset(imageAssets.chatifyLogo)));
@@ -36,7 +33,7 @@ class LeadingRow extends StatelessWidget {
                   child: Responsive.isDesktop(context)
                       ? Container(
                           width: Sizes.s70,
-                          color: appCtrl.appTheme.blackColor1,
+                          color: appCtrl.appTheme.txt,
                           padding: const EdgeInsets.all(Insets.i15),
                           height: double.infinity,
                           child: Image.asset(imageAssets.chatifyLogo,
@@ -47,7 +44,7 @@ class LeadingRow extends StatelessWidget {
             height: double.infinity,
             hoverColor: Colors.transparent,
             onPressed: () async {
-              log("message : $scaffoldDrawerKey");
+              log("messageMaterial : $scaffoldDrawerKey");
               if (Responsive.isMobile(context) ||
                   Responsive.isTablet(context)) {
                 if (scaffoldKey!.currentState!.isDrawerOpen) {

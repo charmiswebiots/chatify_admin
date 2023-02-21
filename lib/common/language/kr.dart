@@ -13,6 +13,13 @@ final dynamic kr = {
   "emailError": "이메일 아이디를 입력해주세요",
   "emailValidError": "유효한 이메일 ID를 입력하십시오",
   "passwordError": "비밀번호를 입력 해주세요",
+  "usageControl": "사용량 제어",
+  "appSetting": "앱 설정",
+  "totalUser": "총 사용자",
+  "totalCalls": "총 통화",
+  "totalVideoCalls": "영상 통화",
+  "totalAudioCalls": "총 오디오 통화",
+
   "staticPage": "정적 페이지",
   "notification": "알림",
   "dashboard": "계기반",

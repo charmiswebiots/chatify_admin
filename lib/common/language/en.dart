@@ -13,6 +13,13 @@ final dynamic en = {
   "emailError": "Please Enter Email ID",
   "emailValidError": "Please Enter Valid Email ID",
   "passwordError": "Please Enter Password",
+  "usageControl": "Usage Control",
+  "appSetting": "App Setting",
+  "totalUser": "Total User",
+  "totalCalls": "Total Calls",
+  "totalVideoCall": "Video Calls",
+  "totalAudioCall": "Audio Calls",
+
   "staticPage": "Static Page",
   "notification": "Notifications",
   "dashboard": "Dashboard",

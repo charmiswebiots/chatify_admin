@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 class Fonts{
-  final multiKartAdmin = "multiKartAdmin";
+
   final selectLanguage = "selectLanguage";
   final lightMode = "lightMode";
   final darkMode = "darkMode";
@@ -15,7 +15,7 @@ class Fonts{
   final enterYourEmail = "enterYourEmail";
   final welcomeBack = "welcomeBack";
   final helloAgain = "helloAgain";
-  final addBanner = "addBanner";
+  final dashboard = "dashboard";
   final showLanguage = "showLanguage";
   final rowPerPage = "rowPerPage";
   final title = "title";

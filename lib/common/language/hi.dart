@@ -13,6 +13,13 @@ final dynamic hi = {
   "emailError": "कृपया ईमेल आईडी दर्ज करें",
   "emailValidError": "कृपया मान्य ईमेल आईडी दर्ज करें",
   "passwordError": "कृपया पासवर्ड दर्ज करें",
+  "usageControl": "उपयोग नियंत्रण",
+  "appSetting": "एप्लिकेशन सेटिंग",
+  "totalUser": "कुल उपयोगकर्ता",
+  "totalCalls": "कुल कॉल",
+  "totalVideoCalls": "वीडियो कॉल",
+  "totalAudioCalls": "कुल ऑडियो कॉल",
+
   "staticPage": "स्टेटिक पेज",
   "notification": "सूचनाएं",
   "dashboard": "डैशबोर्ड",

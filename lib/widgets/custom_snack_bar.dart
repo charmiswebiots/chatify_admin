@@ -1,4 +1,3 @@
-import '../common/config.dart';
 import '../config.dart';
 
 class CustomSnackBar extends StatelessWidget {

@@ -13,6 +13,13 @@ final dynamic ar = {
   "emailError": "الرجاء إدخال معرف البريد الإلكتروني",
   "emailValidError": "الرجاء إدخال البريد الإلكتروني الصحيح",
   "passwordError": "الرجاء إدخال كلمة المرور",
+  "usageControl": "التحكم في الاستخدام",
+  "appSetting": "إعدادات التطبيقات",
+  "totalUser": "إجمالي المستخدم",
+  "totalCalls": "إجمالي المكالمات",
+  "totalVideoCalls": "مكالمات فيديو",
+  "totalAudioCalls": "إجمالي المكالمات الصوتية",
+
   "staticPage": "صفحة ثابتة",
   "notification": "إشعارات",
   "dashboard": "لوحة القيادة",

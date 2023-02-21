@@ -45,7 +45,7 @@ class AppCss {
   static TextStyle get nunitoBold14 => nunito.bold.size(FontSizes.f14);
   static TextStyle get nunitoBold12 => nunito.bold.size(FontSizes.f12);
   static TextStyle get nunitoBold10 => nunito.bold.size(FontSizes.f10);
-  static TextStyle get nunitoSemiBold124=> nunito.semiBold.size(FontSizes.f24);
+  static TextStyle get nunitoSemiBold24=> nunito.semiBold.size(FontSizes.f24);
   static TextStyle get nunitoSemiBold20=> nunito.semiBold.size(FontSizes.f20);
   static TextStyle get nunitoSemiBold18=> nunito.semiBold.size(FontSizes.f18);
   static TextStyle get nunitoSemiBold16=> nunito.semiBold.size(FontSizes.f16);

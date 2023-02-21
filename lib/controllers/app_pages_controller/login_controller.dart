@@ -2,11 +2,9 @@ import 'dart:developer';
 
 import 'package:chatify_admin/common/config.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'dart:html' as html;
 import '../../config.dart';
 import '../../screens/index/index.dart';
-import '../../widgets/helper_function.dart';
 
 class LoginController extends GetxController {
 

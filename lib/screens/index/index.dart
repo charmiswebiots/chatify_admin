@@ -1,7 +1,5 @@
 
 import '../../config.dart';
-import '../../controllers/app_pages_controller/index_controller.dart';
-import '../../responsive.dart';
 import '../auth_login_screen/layouts/dark_language_layout.dart';
 import 'layouts/drawer.dart';
 import 'layouts/drawer_list.dart';
@@ -37,7 +35,7 @@ class _IndexLayoutState extends State<IndexLayout> {
                 backgroundColor: appCtrl.appTheme.whiteColor,
                 leadingWidth: Responsive.isDesktop(context) ? 392 : 100,
                 title: !Responsive.isDesktop(context)
-                    ? Text(indexCtrl.pageName.tr).backgroundColor(Colors.cyan)
+                    ? Text(indexCtrl.pageName.tr,style: AppCss.nunitoSemiBold16.textColor(appCtrl.appTheme.blackColor),)
                     : Container(),
                 leading:  LeadingRow(scaffoldKey: widget.scaffoldKey,scaffoldDrawerKey: widget.scaffoldDrawerKey),
                 actions: const [DarkLanguageLayout()]),

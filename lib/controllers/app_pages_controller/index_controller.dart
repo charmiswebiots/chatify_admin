@@ -1,5 +1,5 @@
 import 'package:chatify_admin/config.dart';
-import '../../common/config.dart';
+
 
 class IndexController extends GetxController {
 
@@ -7,7 +7,7 @@ class IndexController extends GetxController {
   GlobalKey<ScaffoldState>? scaffoldDrawerKey;
   GlobalKey<ScaffoldState>? scaffoldKey;
   int selectedIndex = 0;
-  String pageName = fonts.addBanner.tr;
+  String pageName = fonts.dashboard.tr;
   bool isHover = false;
   int isSelectedHover = 0;
 
@@ -15,8 +15,8 @@ class IndexController extends GetxController {
 
   //list of bottommost page
   List<Widget> widgetOptions = <Widget>[
-    Container(),
-    Container(),
+    Dashboard(),
+    UsageControlScreen(),
     Container(),
     Container()
   ];

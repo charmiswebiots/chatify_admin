@@ -1,6 +1,4 @@
 import 'dart:developer';
-
-import 'package:chatify_admin/common/config.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:html' as html;
 import '../../config.dart';

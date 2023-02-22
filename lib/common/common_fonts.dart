@@ -46,4 +46,23 @@ class Fonts{
   final modification = "modification";
   final noBanner = "noBanner";
   String accessDenied(val) => "accessDenied".trParams({'title':val});
+
+  final allowCreatingBroadcast = "allowCreatingBroadcast";
+  final allowCreatingGroup = "allowCreatingGroup";
+  final allowCreatingStatus = "allowCreatingStatus";
+  final callsAllowed = "callsAllowed";
+  final existenceUser = "existenceUser";
+  final mediaSendAllowed = "mediaSendAllowed";
+  final showLogoutButton = "showLogoutButton";
+  final textMessageAllowed = "textMessageAllowed";
+  final broadcastMemberLimit = "broadcastMemberLimit";
+  final groupMemberMemberLimit = "groupMemberMemberLimit";
+  final maxContactSelectForward = "maxContactSelectForward";
+  final maxFileSize = "maxFileSize";
+  final maxFileMultiShare = "maxFileMultiShare";
+  final statusDeleteTime = "statusDeleteTime";
+  final pleaseEnterValue = "pleaseEnterValue";
+  final enterNumberOnly = "enterNumberOnly";
+
+
 }

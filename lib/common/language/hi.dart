@@ -28,7 +28,7 @@ final dynamic hi = {
   "showLogoutButton": "लॉगआउट बटन दिखाएं",
   "textMessageAllowed": "पाठ संदेश की अनुमति है",
   "broadcastMemberLimit": "प्रसारण सदस्य सीमा",
-  "groupMemberMemberLimit": "समूह सदस्य सदस्य सीमा",
+  "groupMemberLimit": "समूह सदस्य सीमा",
   "maxContactSelectForward": "अधिकतम संपर्क आगे चुनें",
   "maxFileSize": "अधिकतम फ़ाइल आकार",
   "maxFileMultiShare": "मैक्स फाइल मल्टी शेयर",

@@ -1,4 +1,3 @@
-import '../../../common/config.dart';
 import '../../../config.dart';
 
 
@@ -47,7 +46,7 @@ class SelectedIndexBodyLayout extends StatelessWidget {
                                     return CustomSnackBar(isAlert: appCtrl.isAlert);
                                   }
                               )
-                            ],
+                            ]
                           ).marginOnly(top: Insets.i20),
                         const VSpace(Sizes.s20),
                         indexCtrl.widgetOptions

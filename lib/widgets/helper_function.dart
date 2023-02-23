@@ -65,7 +65,11 @@ showAlert({title, context}) async {
         return Flash(
             controller: controller,
             margin: EdgeInsets.only(
-                left: MediaQuery.of(context).size.width / 1.2, top: Insets.i50),
+                left:
+                    Responsive.isMobile(context) || Responsive.isTablet(context)
+                        ? MediaQuery.of(context).size.width / 1.8
+                        : MediaQuery.of(context).size.width / 1.2,
+                top: Insets.i50),
             backgroundColor: appCtrl.appTheme.blackColor,
             brightness: Brightness.light,
             boxShadows: const [BoxShadow(blurRadius: 4)],
@@ -85,13 +89,18 @@ showAlert({title, context}) async {
 }
 
 //test user not allow dialog
-accessDenied(String content){
+accessDenied(String content) {
   Get.dialog(
     AlertDialog(
       title: const Text("Alert!"),
       content: Text(content.tr),
       actions: <Widget>[
-        CommonButton(title: "Close",width: Sizes.s80,style: AppCss.nunitoMedium16.textColor(appCtrl.appTheme.white),onTap: ()=> Get.back(),)
+        CommonButton(
+          title: "Close",
+          width: Sizes.s80,
+          style: AppCss.nunitoMedium16.textColor(appCtrl.appTheme.white),
+          onTap: () => Get.back(),
+        )
       ],
     ),
     barrierDismissible: false,

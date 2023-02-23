@@ -1,8 +1,9 @@
 import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'dart:html' as html;
+import 'package:universal_html/html.dart' as html;
 import '../../config.dart';
 import '../../screens/index/index.dart';
+import '../../widgets/helper_function.dart';
 
 class LoginController extends GetxController {
 
@@ -28,12 +29,10 @@ class LoginController extends GetxController {
                       update();
                       Get.offAll(() => IndexLayout(scaffoldDrawerKey: scaffoldDrawerKey,scaffoldKey: scaffoldKey,));
                     } else {
-                      log("Invalid Password");
-                      //showAlert(context: context, title: "Invalid Password");
+                     showAlert(context: context, title: "Invalid Password");
                     }
                   } else {
-                    log("Invalid Email");
-                   // showAlert(context: context, title: 'Invalid Email or Password');
+                  showAlert(context: context, title: 'Invalid Email or Password');
                   }
                } else {
                  log("Invalid Credential");

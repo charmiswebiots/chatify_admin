@@ -28,11 +28,12 @@ final dynamic en = {
   "showLogoutButton": "Show Logout Button",
   "textMessageAllowed": "Text Message Allowed",
   "broadcastMemberLimit": "Broadcast Member Limit",
-  "groupMemberMemberLimit": "Group Member Member Limit",
+  "groupMemberLimit": "Group Member Limit",
   "maxContactSelectForward": "Max Contact Select Forward",
   "maxFileSize": "Max File Size",
   "maxFileMultiShare": "Max File Multi Share",
   "statusDeleteTime": "Status Delete Time",
+
 
   "staticPage": "Static Page",
   "notification": "Notifications",

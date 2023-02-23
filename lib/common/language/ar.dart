@@ -28,7 +28,7 @@ final dynamic ar = {
   "showLogoutButton": "إظهار زر تسجيل الخروج",
   "textMessageAllowed": "رسالة نصية مسموح بها",
   "broadcastMemberLimit": "حد عضو البث",
-  "groupMemberMemberLimit": "حد عضو المجموعة",
+  "groupMemberLimit": "حد أعضاء المجموعة",
   "maxContactSelectForward": "تحديد ماكس جهة اتصال إعادة توجيه",
   "maxFileSize": "الحد الأقصى لحجم الملف",
   "maxFileMultiShare": "ماكس ملف متعدد المشاركة",

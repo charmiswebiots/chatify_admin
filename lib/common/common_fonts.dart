@@ -56,13 +56,18 @@ class Fonts{
   final showLogoutButton = "showLogoutButton";
   final textMessageAllowed = "textMessageAllowed";
   final broadcastMemberLimit = "broadcastMemberLimit";
-  final groupMemberMemberLimit = "groupMemberMemberLimit";
+  final groupMemberLimit = "groupMemberLimit";
   final maxContactSelectForward = "maxContactSelectForward";
   final maxFileSize = "maxFileSize";
   final maxFileMultiShare = "maxFileMultiShare";
   final statusDeleteTime = "statusDeleteTime";
-  final pleaseEnterValue = "pleaseEnterValue";
-  final enterNumberOnly = "enterNumberOnly";
-
+  final pleaseEnterValue = "EnterValue";
+  final enterNumberOnly = "NumbersOnly";
+  final note = "NOTE : For status delete time please provide data in hrs/sec/min.(e.g. 24 hrs, 30 min, 30 sec)";
+  final allowUserBlock = "Allow User Block";
+  final approvalMessage = "Approval Message";
+  final approvalNeeded = "Approval Needed";
+  final isMaintenanceMode = "Is Maintenance Mode";
+  final maintenanceMessage = "Maintenance Message";
 
 }

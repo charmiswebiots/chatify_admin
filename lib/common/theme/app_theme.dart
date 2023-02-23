@@ -43,6 +43,7 @@ class AppTheme {
   Color ratingColor;
   Color homeCategoryColor;
   Color greyLight25;
+  Color switchThumb;
 
   /// Default constructor
   AppTheme({
@@ -79,6 +80,7 @@ class AppTheme {
     required this.ratingColor,
     required this.homeCategoryColor,
     required this.greyLight25,
+    required this.switchThumb,
   });
 
   /// fromType factory constructor
@@ -119,6 +121,7 @@ class AppTheme {
           homeCategoryColor: const Color(0xFFEAEDF2),
           textColor: Colors.white,
           greyLight25: const Color(0xFFEDEFF4),
+            switchThumb: Colors.white10
         );
 
       case ThemeType.dark:
@@ -156,6 +159,7 @@ class AppTheme {
           textColor: const Color(0xFF636363),
           homeCategoryColor: const Color(0xFFEAEDF2),
           greyLight25: Colors.black,
+          switchThumb: Colors.grey.shade500
         );
     }
   }

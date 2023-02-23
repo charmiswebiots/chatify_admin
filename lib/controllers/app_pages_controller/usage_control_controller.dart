@@ -35,11 +35,11 @@ class UsageControlController extends GetxController {
      updateData() async {
 
       if(formKey.currentState!.validate()) {
-        usageCtrl["broad_cast_members_limit"] = broadCastMemberLimit.text ;
-        usageCtrl["group_member_limit"] = groupMemberLimit.text ;
-        usageCtrl["max_contact_select_forward"] = maxContactSelectForward.text;
-        usageCtrl["max_file_size"] = maxFileSize.text;
-        usageCtrl["max_files_multi_share"] = maxFileMultiShare.text;
+        usageCtrl["broad_cast_members_limit"] = int.parse(broadCastMemberLimit.text);
+        usageCtrl["group_member_limit"] = int.parse(groupMemberLimit.text);
+        usageCtrl["max_contact_select_forward"] = int.parse(maxContactSelectForward.text);
+        usageCtrl["max_file_size"] = int.parse(maxFileSize.text);
+        usageCtrl["max_files_multi_share"] = int.parse(maxFileMultiShare.text);
         usageCtrl["status_delete_time"] = statusDeleteTime.text;
 
         print("usage: $usageCtrl");

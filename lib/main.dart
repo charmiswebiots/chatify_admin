@@ -1,13 +1,11 @@
 import 'dart:developer';
-
 import 'package:chatify_admin/routes/index.dart';
 import 'package:chatify_admin/screens/index/index.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'common/config.dart';
 import 'common/language/index.dart';
 import 'config.dart';
-import 'dart:html' as html;
+import 'package:universal_html/html.dart' as html;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,7 +42,7 @@ class MyApp extends StatelessWidget {
         return StreamBuilder<User?>(
             stream: FirebaseAuth.instance.authStateChanges(),
             builder: (BuildContext context, AsyncSnapshot<User?> snapshot) {
-               print(snapshot.hasData);
+               print("snap:${snapshot.hasData}");
               return !snapshot.hasData ? MediaQuery(
                 data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
                 child: widget!,
@@ -58,7 +56,7 @@ class MyApp extends StatelessWidget {
       fallbackLocale: const Locale('en', 'US'),
       // tran
       title: "Chatify Admin",
-      home: /*appCtrl.isLogin == "true" ?*/ const IndexLayout() /*: LoginScreen()*/,
+      home: appCtrl.isLogin == "true" ? const IndexLayout() : LoginScreen(),
       getPages: appRoute.getPages,
       theme: AppTheme.fromType(ThemeType.light).themeData,
       darkTheme: AppTheme.fromType(ThemeType.dark).themeData,

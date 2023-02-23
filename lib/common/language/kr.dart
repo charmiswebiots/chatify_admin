@@ -28,7 +28,7 @@ final dynamic kr = {
   "showLogoutButton": "로그아웃 버튼 표시",
   "textMessageAllowed": "문자 메시지 허용",
   "broadcastMemberLimit": "방송 회원 제한",
-  "groupMemberMemberLimit": "그룹 회원 회원 제한",
+  "groupMemberLimit": "그룹 회원 제한",
   "maxContactSelectForward": "최대 컨택트 셀렉트 포워드",
   "maxFileSize": "최대 파일 크기",
   "maxFileMultiShare": "최대 파일 다중 공유",

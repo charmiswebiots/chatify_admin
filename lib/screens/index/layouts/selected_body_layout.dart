@@ -18,7 +18,6 @@ class SelectedIndexBodyLayout extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 24.0),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-
                       children: [
                         if (Responsive.isDesktop(context))
                           Row(

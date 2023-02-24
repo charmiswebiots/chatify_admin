@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
       fallbackLocale: const Locale('en', 'US'),
       // tran
       title: "Chatify Admin",
-      home: appCtrl.isLogin == "true" ? const IndexLayout() : LoginScreen(),
+      home: /*appCtrl.isLogin == "true" ?*/ const IndexLayout() /*: LoginScreen()*/,
       getPages: appRoute.getPages,
       theme: AppTheme.fromType(ThemeType.light).themeData,
       darkTheme: AppTheme.fromType(ThemeType.dark).themeData,

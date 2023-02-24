@@ -23,6 +23,7 @@ class AppArray{
     {'icon': svgAssets.dashboard, 'title': "dashboard"},
     {'icon': svgAssets.usageControl, 'title': "usageControl"},
     {'icon': svgAssets.appControl, 'title': "appSetting"},
+    {'icon': svgAssets.status, 'title': "adminStatus"},
     {'icon': svgAssets.logout, 'title': "logout"},
   ];
 

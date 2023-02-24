@@ -39,6 +39,7 @@ export 'package:chatify_admin/screens/user_app_settings_screen/layouts/user_app_
 
 export 'package:chatify_admin/screens/dashboard/dashboard.dart';
 export 'package:chatify_admin/screens/user_app_settings_screen/user_app_settings_screen.dart';
+export 'package:chatify_admin/screens/admin_status_screen/admin_status_screen.dart';
 export '../../../widgets/custom_snack_bar.dart';
 
 var appCtrl = Get.isRegistered<AppController>()

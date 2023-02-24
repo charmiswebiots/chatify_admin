@@ -99,30 +99,28 @@ class UsageControlDesktop extends StatelessWidget {
                           "text_messag_allowed"] = val;
                           usageCtrl.update();
                         }),
-                    DesktopTextFieldCommon(
-                        validator: (number) => Validation()
-                            .broadCastValidation(number),
-                        title: fonts.broadcastMemberLimit,
-                        controller:
-                        usageCtrl.broadCastMemberLimit)
+                     Container(width: 180)
                   ]).paddingOnly(bottom: Insets.i20),
               Row(
                   mainAxisAlignment:
                   MainAxisAlignment.spaceBetween,
                   children: [
                     DesktopTextFieldCommon(
+                        width: 200,
                         validator: (number) => Validation()
                             .groupValidation(number),
                         title: fonts.groupMemberLimit,
                         controller:
                         usageCtrl.groupMemberLimit),
                     DesktopTextFieldCommon(
+                        width: 200,
                         validator: (number) => Validation()
                             .maxContactValidation(number),
                         title: fonts.maxContactSelectForward,
                         controller: usageCtrl
                             .maxContactSelectForward),
                     DesktopTextFieldCommon(
+                        width: 200,
                         validator: (number) => Validation()
                             .maxFileValidation(number),
                         title: fonts.maxFileSize,
@@ -133,19 +131,27 @@ class UsageControlDesktop extends StatelessWidget {
                   MainAxisAlignment.spaceBetween,
                   children: [
                     DesktopTextFieldCommon(
+                        width: 200,
                         validator: (number) => Validation()
                             .maxFileMultiValidation(number),
                         title: fonts.maxFileMultiShare,
                         controller:
                         usageCtrl.maxFileMultiShare),
                     DesktopTextFieldCommon(
+                        width: 200,
                         isNote: true,
                         validator: (number) => Validation()
                             .statusValidation(number),
                         title: fonts.statusDeleteTime,
                         controller:
                         usageCtrl.statusDeleteTime),
-                    Container(width: 180)
+                    DesktopTextFieldCommon(
+                        width: 200,
+                        validator: (number) => Validation()
+                            .broadCastValidation(number),
+                        title: fonts.broadcastMemberLimit,
+                        controller:
+                        usageCtrl.broadCastMemberLimit)
                   ]).paddingOnly(bottom: Insets.i20)
             ]).paddingAll(Insets.i15);
       }

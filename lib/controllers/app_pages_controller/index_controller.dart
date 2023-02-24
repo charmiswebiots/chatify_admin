@@ -1,5 +1,6 @@
 import 'package:chatify_admin/config.dart';
 
+
 class IndexController extends GetxController {
 
   ValueNotifier<bool> isOpen = ValueNotifier(true);
@@ -14,6 +15,7 @@ class IndexController extends GetxController {
 
   //list of bottommost page
   List<Widget> widgetOptions = <Widget>[
+     AdminStatusScreen(),
     UserAppSettingsScreen(),
     UsageControlScreen(),
     Dashboard(),

@@ -1,8 +1,6 @@
 import 'dart:developer';
-
-import 'package:desktop_drop/desktop_drop.dart';
 import 'package:image_picker/image_picker.dart';
-
+import 'package:video_player/video_player.dart';
 import '../../config.dart';
 import '../../widgets/common_dotted_border.dart';
 import '../../widgets/drag_drop_layout.dart';
@@ -27,7 +25,12 @@ class AdminStatusScreen extends StatelessWidget {
               const VSpace(Sizes.s20),
               SizedBox(
                 height: 400,
-                child: Stack(alignment: Alignment.centerLeft, children: [
+                child:  adminStatusCtrl.video != null?    adminStatusCtrl.videoCtrl!.value.isInitialized
+                    ? AspectRatio(
+                  aspectRatio: adminStatusCtrl.videoCtrl!.value.aspectRatio,
+                  child: VideoPlayer(adminStatusCtrl.videoCtrl!),
+                )
+                    : Container() : Text("data")/*Stack(alignment: Alignment.centerLeft, children: [
                   DragDropLayout(
                       onCreated: (ctrl) => adminStatusCtrl.controller1 = ctrl,
                       onDrop: (ev) async {
@@ -58,8 +61,8 @@ class AdminStatusScreen extends StatelessWidget {
                       .inkWell(
                       onTap: () => adminStatusCtrl.getImage(
                           source: ImageSource.gallery, context: context))
-                ]),
-              )
+                ])*/,
+              ).backgroundColor(appCtrl.appTheme.error).inkWell(onTap: ()=> adminStatusCtrl.onSelectImage())
               /* SizedBox(
                   height: 200,
                   width: double.infinity,

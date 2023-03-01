@@ -1,4 +1,5 @@
 import '../../../config.dart';
+import '../../../widgets/button_common.dart';
 
 class ButtonLayout extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -19,13 +20,7 @@ class ButtonLayout extends StatelessWidget {
                               .textHeight(1.2)))
                   .paddingOnly(left: Insets.i15)
               : Container(),
-          ElevatedButton(
-                  onPressed: onPressed,
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: appCtrl.appTheme.primary),
-                  child: Text(fonts.update.tr,
-                      style:
-                          AppCss.nunitoMedium16.textColor(appCtrl.appTheme.white)))
+          UpdateButton(title: fonts.update,onPressed: onPressed)
               .paddingOnly(bottom: Insets.i20, right: Insets.i20, top: Insets.i10)
         ]);
       }

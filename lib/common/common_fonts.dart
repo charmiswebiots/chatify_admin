@@ -69,5 +69,12 @@ class Fonts{
   final approvalNeeded = "Approval Needed";
   final isMaintenanceMode = "Is Maintenance Mode";
   final maintenanceMessage = "Maintenance Message";
+  final phoneNumber = "Phone Number";
+  final enterNumber = "Enter Number";
+  final enterName = "Enter Name";
+  final enterEmail = "Enter Email";
+  final enterValidNumber = "Enter Valid Number";
+  final enterValidEmail = "Enter Valid Email";
+  final addUser = "Add User";
 
 }

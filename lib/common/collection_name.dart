@@ -4,4 +4,5 @@ class CollectionName{
   String calls = "calls";
   String usageControls = "usageControls";
   String userAppSettings = "userAppSettings";
+  String adminStatus = "adminStatus";
 }

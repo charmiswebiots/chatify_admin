@@ -51,6 +51,7 @@ dependencies:
   dotted_border: ^2.0.0+3
   image_picker: ^0.8.6+1
   video_player: ^2.5.2
+  chewie: ^1.4.0
 
 dev_dependencies:
   flutter_test:

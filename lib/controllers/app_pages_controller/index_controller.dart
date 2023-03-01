@@ -1,4 +1,5 @@
 import 'package:chatify_admin/config.dart';
+import 'package:chatify_admin/screens/add_user_screen/add_user_screen.dart';
 
 
 class IndexController extends GetxController {
@@ -15,7 +16,8 @@ class IndexController extends GetxController {
 
   //list of bottommost page
   List<Widget> widgetOptions = <Widget>[
-     AdminStatusScreen(),
+    AddUserScreen(),
+    AdminStatusScreen(),
     UserAppSettingsScreen(),
     UsageControlScreen(),
     Dashboard(),

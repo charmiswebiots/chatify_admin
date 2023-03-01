@@ -4,4 +4,5 @@ class ImageAssets{
   final String usageControl = 'assets/images/usageControl.png';
   final String appSetting = 'assets/images/appSetting.png';
   final String logout = 'assets/images/logout.png';
+  final String addUser = 'assets/images/addUser.png';
 }

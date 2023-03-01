@@ -14,5 +14,6 @@ class SvgAssets{
   final String groups = 'assets/svg/groups.svg';
   final String videoCall = 'assets/svg/videoCall.svg';
   final String status = 'assets/svg/status.svg';
+  final String addUser = 'assets/svg/addUser.svg';
 
 }

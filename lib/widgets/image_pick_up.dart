@@ -7,7 +7,9 @@ class ImagePickUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CommonDottedBorder(
-        child: Row(children: [
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
           const Icon(Icons.image),
           const HSpace(Sizes.s10),
           Text(fonts.addImage.tr)

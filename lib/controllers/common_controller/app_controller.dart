@@ -1,5 +1,8 @@
 import 'dart:developer';
+import 'package:flutter/services.dart';
+
 import '../../config.dart';
+import 'dart:io';
 
 class AppController extends GetxController {
   AppTheme _appTheme = AppTheme.fromType(ThemeType.light);
@@ -28,6 +31,27 @@ class AppController extends GetxController {
     _appTheme = theme;
     Get.forceAppUpdate();
   }
+
+  /*Future<void> initPlatformState() async {
+
+    DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+    try {
+      if (Platform.isAndroid) {
+        AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
+        deviceName = androidInfo.model;
+        device = "android";
+      } else if (Platform.isIOS) {
+        IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
+        deviceName = iosInfo.utsname.machine.toString();
+        device = "ios";
+      }
+    } on PlatformException {
+      deviceData = <String, dynamic>{
+        'Error:': 'Failed to get platform version.'
+      };
+    }
+    update();
+  }*/
 
   //get storage data
   getStorageData(){

@@ -76,5 +76,6 @@ class Fonts{
   final enterValidNumber = "Enter Valid Number";
   final enterValidEmail = "Enter Valid Email";
   final addUser = "Add User";
+  final allowUserSignup = "Allow User Signup";
 
 }

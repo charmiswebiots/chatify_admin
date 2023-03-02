@@ -5,4 +5,5 @@ class CollectionName{
   String usageControls = "usageControls";
   String userAppSettings = "userAppSettings";
   String adminStatus = "adminStatus";
+  String collectionCallHistory = "collectionCallHistory";
 }

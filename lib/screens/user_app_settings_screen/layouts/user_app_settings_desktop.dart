@@ -32,7 +32,7 @@ class UserAppSettingsDesktop extends StatelessWidget {
         ]).paddingOnly(bottom: Insets.i20),
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           DesktopTextFieldCommon(
-              width:MediaQuery.of(context).size.width < 1500 ? 350 : 420,
+              width: MediaQuery.of(context).size.width < 1500 ? 350 : 420,
               validator: (number) => Validation().statusValidation(number),
               title: fonts.approvalMessage,
               controller: userSettingCtrl.approvalMessage),

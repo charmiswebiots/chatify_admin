@@ -42,11 +42,10 @@ class Dashboard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(18.0),
                     child: Stack(children: [
                       Container(
-                        height: 200,
+                          height: 200,
                           decoration: BoxDecoration(
-                            color: appCtrl.appTheme.accentTxt,
-                            borderRadius: BorderRadius.circular(18.0)
-                          ),
+                              color: appCtrl.appTheme.accentTxt,
+                              borderRadius: BorderRadius.circular(18.0)),
                           padding: const EdgeInsets.all(40.0),
                           child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,25 +56,31 @@ class Dashboard extends StatelessWidget {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text(dashboardCtrl.listItem[index]["title"].toString().tr,
+                                    Text(
+                                        dashboardCtrl.listItem[index]["title"]
+                                            .toString()
+                                            .tr,
                                         style: AppCss.nunitoSemiBold16
-                                            .textColor(appCtrl.appTheme.white).letterSpace(1.3)),
+                                            .textColor(appCtrl.appTheme.white)
+                                            .letterSpace(1.3)),
                                     SvgPicture.asset(
                                         dashboardCtrl.listItem[index]["icon"],
                                         color: appCtrl.appTheme.white),
                                   ],
                                 ),
-
                                 Text(
                                     index == 0
                                         ? dashboardCtrl.totalUser.toString()
                                         : index == 1
                                             ? dashboardCtrl.totalCalls
                                                 .toString()
-                                            : "0",
+                                            : index == 2
+                                                ? dashboardCtrl.videoCall
+                                                    .toString()
+                                                : dashboardCtrl.audioCall
+                                                    .toString(),
                                     style: AppCss.nunitoSemiBold24
                                         .textColor(appCtrl.appTheme.white)),
-
                               ])),
                       Positioned(
                           right: -75.0,
@@ -84,10 +89,9 @@ class Dashboard extends StatelessWidget {
                               height: 175,
                               width: 175,
                               decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: appCtrl.appTheme.whiteColor
-                                    .withOpacity(0.15)
-                              ))),
+                                  shape: BoxShape.circle,
+                                  color: appCtrl.appTheme.whiteColor
+                                      .withOpacity(0.15)))),
                       Positioned(
                           bottom: -87.5,
                           right: -37.5,

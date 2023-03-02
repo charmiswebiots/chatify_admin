@@ -93,13 +93,21 @@ class UsageControlDesktop extends StatelessWidget {
                     DesktopSwitchCommon(
                         title: fonts.textMessageAllowed,
                         value: usageCtrl
-                            .usageCtrl["text_messag_allowed"],
+                            .usageCtrl["text_message_allowed"],
                         onChanged: (val) {
                           usageCtrl.usageCtrl[
-                          "text_messag_allowed"] = val;
+                          "text_message_allowed"] = val;
                           usageCtrl.update();
                         }),
-                     Container(width: 180)
+                    DesktopSwitchCommon(
+                        title: fonts.allowUserSignup,
+                        value: usageCtrl
+                            .usageCtrl["allow_user_signup"],
+                        onChanged: (val) {
+                          usageCtrl.usageCtrl[
+                          "allow_user_signup"] = val;
+                          usageCtrl.update();
+                        }),
                   ]).paddingOnly(bottom: Insets.i20),
               Row(
                   mainAxisAlignment:

@@ -59,9 +59,16 @@ class UsageControlMobile extends StatelessWidget {
             }),
         MobileSwitchCommon(
             title: fonts.textMessageAllowed,
-            value: usageCtrl.usageCtrl["text_messag_allowed"],
+            value: usageCtrl.usageCtrl["text_message_allowed"],
             onChanged: (val) {
-              usageCtrl.usageCtrl["text_messag_allowed"] = val;
+              usageCtrl.usageCtrl["text_message_allowed"] = val;
+              usageCtrl.update();
+            }),
+        MobileSwitchCommon(
+            title: fonts.allowUserSignup,
+            value: usageCtrl.usageCtrl["allow_user_signup"],
+            onChanged: (val) {
+              usageCtrl.usageCtrl["allow_user_signup"] = val;
               usageCtrl.update();
             }),
         MobileTextFieldCommon(

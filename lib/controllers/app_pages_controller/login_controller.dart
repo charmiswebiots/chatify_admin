@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:universal_html/html.dart' as html;
+import 'dart:html' as html;
 import '../../config.dart';
 import '../../screens/index/index.dart';
 import '../../widgets/helper_function.dart';

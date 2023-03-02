@@ -16,7 +16,7 @@ class AdminStatusScreen extends StatelessWidget {
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Sponsor", style: AppCss.nunitoSemiBold16.textColor(
+                    Text(fonts.sponsor.tr, style: AppCss.nunitoSemiBold16.textColor(
                         appCtrl.appTheme.blackColor)),
                     const VSpace(Sizes.s20),
                     Column(
@@ -74,7 +74,7 @@ class AdminStatusScreen extends StatelessWidget {
                                             context: context))
                               ])
                           ),
-                          UpdateButton(title: "Add Status",
+                          UpdateButton(title: fonts.addStatus,
                               onPressed: adminStatusCtrl.imageFile != null
                                   ? () => adminStatusCtrl.uploadImage()
                                   : () {})

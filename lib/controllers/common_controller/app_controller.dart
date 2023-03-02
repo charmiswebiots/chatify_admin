@@ -13,6 +13,7 @@ class AppController extends GetxController {
   bool isTheme = false;
   bool isAlert = false;
   bool isRTL = false;
+  bool isLogged = false;
   String isLogin = "false";
   String languageVal = "in";
   List drawerList = [];
@@ -32,29 +33,12 @@ class AppController extends GetxController {
     Get.forceAppUpdate();
   }
 
-  /*Future<void> initPlatformState() async {
-
-    DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
-    try {
-      if (Platform.isAndroid) {
-        AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
-        deviceName = androidInfo.model;
-        device = "android";
-      } else if (Platform.isIOS) {
-        IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
-        deviceName = iosInfo.utsname.machine.toString();
-        device = "ios";
-      }
-    } on PlatformException {
-      deviceData = <String, dynamic>{
-        'Error:': 'Failed to get platform version.'
-      };
-    }
-    update();
-  }*/
-
   //get storage data
   getStorageData(){
+
+    bool isAdmin = appCtrl.storage.read("isSignIn") ?? false;
+    appCtrl.isLogged = isAdmin;
+     log("isLogin;  $isAdmin");
 
     bool isTheme = appCtrl.storage.read(session.isDarkMode) ?? false;
     log("isTheme : $isTheme");

@@ -1,4 +1,3 @@
-import '../../../common/config.dart';
 import '../../../config.dart';
 import 'drawer_list.dart';
 
@@ -27,11 +26,12 @@ class IndexDrawer extends StatelessWidget {
                     indexCtrl.update();
                   },
                   child: Drawer(
-                      backgroundColor: appCtrl.appTheme.primary,
+                      backgroundColor: appCtrl.appTheme.txt,
                       elevation: 2,
                       child: ListView(children: [
-                        Image.asset(imageAssets.chatifyLogo, height: Sizes.s80)
-                            .backgroundColor(appCtrl.appTheme.primary),
+                        const VSpace(Sizes.s20),
+                        Image.asset(appCtrl.isTheme ? imageAssets.chatifyLogo2 : imageAssets.chatifyLogo1, height: Sizes.s40)
+                            .backgroundColor(appCtrl.appTheme.txt),
                         const VSpace(Sizes.s20),
                          DrawerList(value:value)
                       ])),

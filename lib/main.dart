@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:ui';
 import 'package:chatify_admin/routes/index.dart';
 import 'package:chatify_admin/screens/index/index.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -29,10 +30,17 @@ void main() async {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+
   const MyApp({Key? key}) : super(key: key);
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
 
+class _MyAppState extends State<MyApp> {
+  var scaffoldDrawerKey = GlobalKey<ScaffoldState>(debugLabel: "drawer");
+  var scaffoldKey = GlobalKey<ScaffoldState>(debugLabel: "key2");
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -57,17 +65,16 @@ class MyApp extends StatelessWidget {
       fallbackLocale: const Locale('en', 'US'),
       // tran
       title: "Chatify Admin",
-      home: /*appCtrl.isLogin == "true" ?*/ const IndexLayout() /*: LoginScreen()*/,
+      home: appCtrl.isLogged == true ? IndexLayout(scaffoldDrawerKey: scaffoldDrawerKey,scaffoldKey: scaffoldKey) : LoginScreen(),
       getPages: appRoute.getPages,
       theme: AppTheme.fromType(ThemeType.light).themeData,
       darkTheme: AppTheme.fromType(ThemeType.dark).themeData,
       themeMode: ThemeService().theme,
-     /* scrollBehavior: MyCustomScrollBehavior(),*/
+      scrollBehavior: MyCustomScrollBehavior(),
     );
   }
 }
 
-/*
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
   // Override behavior methods and getters like dragDevices
   @override
@@ -76,4 +83,3 @@ class MyCustomScrollBehavior extends MaterialScrollBehavior {
     PointerDeviceKind.mouse,
   };
 }
-*/

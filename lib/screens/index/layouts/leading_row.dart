@@ -20,10 +20,10 @@ class LeadingRow extends StatelessWidget {
                     },
                     child: Container(
                         width: Sizes.s240,
-                        padding: const EdgeInsets.symmetric(horizontal: 100),
+                        padding: const EdgeInsets.symmetric(vertical: Insets.i15),
                         height: double.infinity,
                         color: appCtrl.appTheme.txt,
-                        child: Image.asset(imageAssets.chatifyLogo)));
+                        child: Image.asset(appCtrl.isTheme ? imageAssets.chatifyLogo2 : imageAssets.chatifyLogo1)));
               }
               return InkWell(
                   onTap: () {
@@ -33,10 +33,10 @@ class LeadingRow extends StatelessWidget {
                   child: Responsive.isDesktop(context)
                       ? Container(
                           width: Sizes.s70,
+                          padding: const EdgeInsets.all(Insets.i10),
                           color: appCtrl.appTheme.txt,
-                          padding: const EdgeInsets.all(Insets.i15),
                           height: double.infinity,
-                          child: Image.asset(imageAssets.chatifyLogo,
+                          child: Image.asset(imageAssets.Logo,
                               fit: BoxFit.contain))
                       : Container());
             }),

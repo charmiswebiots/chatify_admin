@@ -52,11 +52,11 @@ class DashboardController extends GetxController{
       'icon': svgAssets.call
     },
     {
-      'title': 'totalVideoCall',
+      'title': 'videoCalls',
       'icon': svgAssets.videoCall
     },
     {
-      'title': 'totalAudioCall',
+      'title': 'audioCalls',
       'icon': svgAssets.call
     },
   ];

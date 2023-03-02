@@ -24,6 +24,8 @@ class LoginController extends GetxController {
                       html.window.localStorage[session.isLogin] == "true";
                       await appCtrl.storage.write(session.isLogin, true);
                       await appCtrl.storage.write(session.isLoginTest, false);
+                      appCtrl.isLogged = true;
+                      await appCtrl.storage.write("isSignIn", appCtrl.isLogged);
                       txtName.text = "";
                       txtPassword.text = "";
                       update();

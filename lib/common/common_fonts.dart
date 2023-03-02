@@ -63,19 +63,26 @@ class Fonts{
   final statusDeleteTime = "statusDeleteTime";
   final pleaseEnterValue = "EnterValue";
   final enterNumberOnly = "NumbersOnly";
-  final note = "NOTE : For status delete time please provide data in hrs/sec/min.(e.g. 24 hrs, 30 min, 30 sec)";
-  final allowUserBlock = "Allow User Block";
-  final approvalMessage = "Approval Message";
-  final approvalNeeded = "Approval Needed";
-  final isMaintenanceMode = "Is Maintenance Mode";
-  final maintenanceMessage = "Maintenance Message";
-  final phoneNumber = "Phone Number";
-  final enterNumber = "Enter Number";
-  final enterName = "Enter Name";
-  final enterEmail = "Enter Email";
-  final enterValidNumber = "Enter Valid Number";
-  final enterValidEmail = "Enter Valid Email";
-  final addUser = "Add User";
-  final allowUserSignup = "Allow User Signup";
+  final note = "note";
+  final allowUserBlock = "allowUserBlock";
+  final approvalMessage = "approvalMessage";
+  final approvalNeeded = "approvalNeeded";
+  final isMaintenanceMode = "isMaintenanceMode";
+  final maintenanceMessage = "maintenanceMessage";
+  final phoneNumber = "phoneNumber";
+  final enterNumber = "enterNumber";
+  final enterName = "enterName";
+  final enterEmail = "enterEmail";
+  final enterValidNumber = "enterValidNumber";
+  final enterValidEmail = "enterValidEmail";
+  final addUser = "addUser";
+  final allowUserSignup = "allowUserSignup";
+
+  final videoCalls = "videoCalls";
+  final audioCalls = "audioCalls";
+  final adminStatus = "adminStatus";
+  final sponsor = "sponsor";
+  final addStatus = "addStatus";
+
 
 }

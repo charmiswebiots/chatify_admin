@@ -16,11 +16,11 @@ class IndexController extends GetxController {
 
   //list of bottommost page
   List<Widget> widgetOptions = <Widget>[
-    AddUserScreen(),
-    AdminStatusScreen(),
-    UserAppSettingsScreen(),
-    UsageControlScreen(),
     Dashboard(),
+    UsageControlScreen(),
+    UserAppSettingsScreen(),
+    AdminStatusScreen(),
+    AddUserScreen(),
     Container()
   ];
 

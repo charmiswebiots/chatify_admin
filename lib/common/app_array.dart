@@ -18,7 +18,7 @@ class AppArray{
     {'title': "arabic"},
   ];
 
-  //bottom list
+  //Drawer list
   var drawerList = [
     {'icon': svgAssets.dashboard, 'title': "dashboard"},
     {'icon': svgAssets.usageControl, 'title': "usageControl"},

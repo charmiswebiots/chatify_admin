@@ -41,24 +41,21 @@ class DrawerList extends StatelessWidget {
                     if (!Responsive.isDesktop(context)) {
                       Get.back();
                     }
-                    if (indexCtrl.selectedIndex == 1) {
-                     /* final staticCtrl = Get.isRegistered<StaticController>()
-                          ? Get.find<StaticController>()
-                          : Get.put(StaticController());
-                      staticCtrl.getData();*/
-                    }
-                    if (indexCtrl.selectedIndex == 4) {
-                      /*FirebaseAuth.instance.signOut();
-                      indexCtrl.selectedIndex == 0;
+                    if (indexCtrl.selectedIndex == 5) {
+                      FirebaseAuth.instance.signOut();
+                      indexCtrl.selectedIndex = 0;
                       html.window.localStorage[session.isLogin] = "false";
+                      appCtrl.isLogged = false;
+                      appCtrl.storage.remove("isSignIn");
                       appCtrl.storage.remove(session.isDarkMode);
                       appCtrl.storage.remove(session.languageCode);
-                      Get.offAll(() => LoginScreen());*/
+                      log("index: ${indexCtrl.selectedIndex}");
+                      Get.offAll(() => LoginScreen());
                     }
                     indexCtrl.update();
                   }).decorated(
                   color: indexCtrl.isHover && indexCtrl.isSelectedHover == e.key
-                      ? appCtrl.appTheme.gray.withOpacity(.2)
+                      ? appCtrl.appTheme.gray.withOpacity(.5)
                       : appCtrl.appTheme.txt,
                   border: Border(
                       left: BorderSide(

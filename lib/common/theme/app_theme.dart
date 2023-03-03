@@ -90,8 +90,8 @@ class AppTheme {
         return AppTheme(
           isDark: false,
           txt: const Color(0xFF001928),
-          primary: const Color(0xFF3467B8),
-          primaryLight: const Color(0xFFFFF4F4),
+          primary: const Color(0xFF3164BD),
+          primaryLight: const Color(0xFF4B84E7),
           secondary: const Color(0xFF6EBAE7),
           accentTxt: const Color(0xFF001928),
           bg1: Colors.white,

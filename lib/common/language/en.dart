@@ -53,8 +53,12 @@ final dynamic en = {
   "videoCalls" : "Video Calls",
   "audioCalls" : "Audio Calls",
   "adminStatus" : "Admin Status",
-  "sponsor" : "Sponsor",
+  "sponsor" : "Sponsor Status",
   "addStatus" : "Add Status",
+
+  "pleaseEnterName" : "pleaseEnterName",
+  "pleaseEnterPassword" : "pleaseEnterPassword",
+  "pleaseEnterNumber" : "pleaseEnterNumber",
 
   "staticPage": "Static Page",
   "notification": "Notifications",

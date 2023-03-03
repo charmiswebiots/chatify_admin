@@ -155,6 +155,7 @@ class Sizes {
   static const double s200 = 200 * scale;
   static const double s210 = 210 * scale;
   static const double s220 = 220 * scale;
+  static const double s230 = 230 * scale;
   static const double s240 = 240 * scale;
   static const double s250 = 250 * scale;
   static const double s260 = 260 * scale;
@@ -162,7 +163,10 @@ class Sizes {
   static const double s300 = 300 * scale;
   static const double s330 = 330 * scale;
   static const double s350 = 350 * scale;
+  static const double s380 = 380 * scale;
+  static const double s392 = 392 * scale;
   static const double s400 = 400 * scale;
+  static const double s420 = 420 * scale;
   static const double s450 = 450 * scale;
   static const double s500 = 500 * scale;
   static const double s520 = 520 * scale;

@@ -26,12 +26,12 @@ class IndexDrawer extends StatelessWidget {
                     indexCtrl.update();
                   },
                   child: Drawer(
-                      backgroundColor: appCtrl.appTheme.txt,
+                      backgroundColor: appCtrl.appTheme.primary,
                       elevation: 2,
                       child: ListView(children: [
                         const VSpace(Sizes.s20),
-                        Image.asset(appCtrl.isTheme ? imageAssets.chatifyLogo2 : imageAssets.chatifyLogo1, height: Sizes.s40)
-                            .backgroundColor(appCtrl.appTheme.txt),
+                        Image.asset(imageAssets.chatifyLogo2, height: Sizes.s40)
+                            .backgroundColor(appCtrl.appTheme.primary),
                         const VSpace(Sizes.s20),
                          DrawerList(value:value)
                       ])),

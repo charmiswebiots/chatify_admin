@@ -1,7 +1,6 @@
 import 'dart:async';
-import 'package:flash/flash.dart';
+
 import '../config.dart';
-import 'common_button.dart';
 import 'icon_creation.dart';
 
 Future<ImageInfo> getImageInfo(Image img) async {

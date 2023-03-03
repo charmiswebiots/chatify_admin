@@ -1,10 +1,7 @@
 import 'dart:developer';
 import 'dart:io' as io;
 import 'package:chatify_admin/config.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
-import '../../widgets/helper_function.dart';
 
 class AddUserController extends GetxController {
 

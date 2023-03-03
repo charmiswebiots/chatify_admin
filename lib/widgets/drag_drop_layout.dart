@@ -1,5 +1,4 @@
 import 'dart:developer';
-import 'package:flutter_dropzone/flutter_dropzone.dart';
 import '../config.dart';
 
 class DragDropLayout extends StatelessWidget {

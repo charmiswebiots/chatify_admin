@@ -1,14 +1,8 @@
 import 'dart:developer';
 import 'dart:io' as io;
 import 'dart:io';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_dropzone/flutter_dropzone.dart';
-import 'package:video_player/video_player.dart';
 import '../../config.dart';
-import '../../screens/admin_status_screen/layouts/status_model.dart';
-import '../../widgets/helper_function.dart';
 
 class AdminStatusController extends GetxController {
   late DropzoneViewController? controller1;
@@ -175,7 +169,7 @@ class AdminStatusController extends GetxController {
         onAddStatus();
 
       }, onError: (err) {
-        update();
+        log("error: $err");
       });
     });
   }
@@ -186,6 +180,7 @@ class AdminStatusController extends GetxController {
     update();
     log("imageUrl : $imageUrl");
     await addStatus(imageUrl,"image");
+
     isLoading = false;
     update();
   }

@@ -22,8 +22,8 @@ class LeadingRow extends StatelessWidget {
                         width: Sizes.s240,
                         padding: const EdgeInsets.symmetric(vertical: Insets.i15),
                         height: double.infinity,
-                        color: appCtrl.appTheme.txt,
-                        child: Image.asset(appCtrl.isTheme ? imageAssets.chatifyLogo2 : imageAssets.chatifyLogo1)));
+                        color: appCtrl.appTheme.primary,
+                        child: Image.asset( imageAssets.chatifyLogo2)));
               }
               return InkWell(
                   onTap: () {
@@ -34,7 +34,7 @@ class LeadingRow extends StatelessWidget {
                       ? Container(
                           width: Sizes.s70,
                           padding: const EdgeInsets.all(Insets.i10),
-                          color: appCtrl.appTheme.txt,
+                          color: appCtrl.appTheme.primary,
                           height: double.infinity,
                           child: Image.asset(imageAssets.Logo,
                               fit: BoxFit.contain))

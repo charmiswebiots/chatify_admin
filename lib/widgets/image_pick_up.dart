@@ -1,5 +1,4 @@
 import '../config.dart';
-import 'common_dotted_border.dart';
 
 class ImagePickUp extends StatelessWidget {
   const ImagePickUp({Key? key}) : super(key: key);
@@ -10,9 +9,9 @@ class ImagePickUp extends StatelessWidget {
         child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-          const Icon(Icons.image),
+           Icon(Icons.image,color: appCtrl.appTheme.blackColor),
           const HSpace(Sizes.s10),
-          Text(fonts.addImage.tr)
+          Text(fonts.addImage.tr,style: AppCss.nunitoBold14.textColor(appCtrl.appTheme.blackColor))
         ]));
   }
 }

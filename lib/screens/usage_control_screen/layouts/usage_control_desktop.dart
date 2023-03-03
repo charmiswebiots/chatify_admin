@@ -114,21 +114,21 @@ class UsageControlDesktop extends StatelessWidget {
                   MainAxisAlignment.spaceBetween,
                   children: [
                     DesktopTextFieldCommon(
-                        width: 200,
+                        width: Sizes.s200,
                         validator: (number) => Validation()
                             .groupValidation(number),
                         title: fonts.groupMemberLimit,
                         controller:
                         usageCtrl.groupMemberLimit),
                     DesktopTextFieldCommon(
-                        width: 200,
+                        width: Sizes.s200,
                         validator: (number) => Validation()
                             .maxContactValidation(number),
                         title: fonts.maxContactSelectForward,
                         controller: usageCtrl
                             .maxContactSelectForward),
                     DesktopTextFieldCommon(
-                        width: 200,
+                        width: Sizes.s200,
                         validator: (number) => Validation()
                             .maxFileValidation(number),
                         title: fonts.maxFileSize,
@@ -139,14 +139,14 @@ class UsageControlDesktop extends StatelessWidget {
                   MainAxisAlignment.spaceBetween,
                   children: [
                     DesktopTextFieldCommon(
-                        width: 200,
+                        width: Sizes.s200,
                         validator: (number) => Validation()
                             .maxFileMultiValidation(number),
                         title: fonts.maxFileMultiShare,
                         controller:
                         usageCtrl.maxFileMultiShare),
                     DesktopTextFieldCommon(
-                        width: 200,
+                        width: Sizes.s200,
                         isNote: true,
                         validator: (number) => Validation()
                             .statusValidation(number),
@@ -154,7 +154,7 @@ class UsageControlDesktop extends StatelessWidget {
                         controller:
                         usageCtrl.statusDeleteTime),
                     DesktopTextFieldCommon(
-                        width: 200,
+                        width: Sizes.s200,
                         validator: (number) => Validation()
                             .broadCastValidation(number),
                         title: fonts.broadcastMemberLimit,

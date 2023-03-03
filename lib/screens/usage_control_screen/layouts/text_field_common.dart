@@ -19,15 +19,15 @@ class MobileTextFieldCommon extends StatelessWidget {
                 .textColor(appCtrl.appTheme.blackColor)),
         if (isNote == true)
           SizedBox(
-              width: 140,
-              child: Text(fonts.note,
+              width: Sizes.s140,
+              child: Text(fonts.note.tr,
                   style: AppCss.nunitoSemiBold12
                       .textColor(appCtrl.appTheme.error)
                       .textHeight(1.2)))
       ]),
       const HSpace(Sizes.s10),
       SizedBox(
-              width: 90,
+              width: Sizes.s90,
               child: TextFormField(
                   style: TextStyle(color: appCtrl.appTheme.blackColor),
                   validator: validator,

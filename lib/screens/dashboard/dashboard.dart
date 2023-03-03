@@ -1,6 +1,4 @@
-import 'package:flutter_svg/flutter_svg.dart';
 import '../../config.dart';
-import '../../controllers/app_pages_controller/dashboard_controller.dart';
 
 class Dashboard extends StatelessWidget {
   final dashboardCtrl = Get.put(DashboardController());
@@ -42,11 +40,11 @@ class Dashboard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(18.0),
                     child: Stack(children: [
                       Container(
-                          height: 200,
+                          height: Sizes.s200,
                           decoration: BoxDecoration(
-                              color: appCtrl.appTheme.accentTxt,
-                              borderRadius: BorderRadius.circular(18.0)),
-                          padding: const EdgeInsets.all(40.0),
+                              color: appCtrl.appTheme.primary,
+                              borderRadius: BorderRadius.circular(Insets.i18)),
+                          padding: const EdgeInsets.all(Insets.i40),
                           child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -86,8 +84,8 @@ class Dashboard extends StatelessWidget {
                           right: -75.0,
                           top: -25.0,
                           child: Container(
-                              height: 175,
-                              width: 175,
+                              height: Sizes.s175,
+                              width: Sizes.s175,
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: appCtrl.appTheme.whiteColor
@@ -96,8 +94,8 @@ class Dashboard extends StatelessWidget {
                           bottom: -87.5,
                           right: -37.5,
                           child: Container(
-                              height: 200,
-                              width: 200,
+                              height: Sizes.s200,
+                              width: Sizes.s200,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: appCtrl.appTheme.whiteColor

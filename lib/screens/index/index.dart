@@ -1,10 +1,5 @@
-
 import '../../config.dart';
-import '../auth_login_screen/layouts/dark_language_layout.dart';
-import 'layouts/drawer.dart';
-import 'layouts/drawer_list.dart';
-import 'layouts/leading_row.dart';
-import 'layouts/selected_body_layout.dart';
+
 
 class IndexLayout extends StatefulWidget {
   final GlobalKey<ScaffoldState>? scaffoldDrawerKey;
@@ -33,7 +28,7 @@ class _IndexLayoutState extends State<IndexLayout> {
                 shadowColor: Colors.transparent,
                 centerTitle: false,
                 backgroundColor: appCtrl.appTheme.whiteColor,
-                leadingWidth: Responsive.isDesktop(context) ? 392 : 100,
+                leadingWidth: Responsive.isDesktop(context) ? Sizes.s392 : Sizes.s100,
                 title: !Responsive.isDesktop(context)
                     ? Text(indexCtrl.pageName.tr,style: AppCss.nunitoSemiBold16.textColor(appCtrl.appTheme.blackColor),)
                     : Container(),
@@ -57,7 +52,7 @@ class _IndexLayoutState extends State<IndexLayout> {
                                     height:
                                     MediaQuery.of(context).size.height,
                                     width: value ? Sizes.s240 : Sizes.s70,
-                                    color: appCtrl.appTheme.txt,
+                                    color: appCtrl.appTheme.primary,
                                     child: SingleChildScrollView(
                                         controller: ScrollController(),
                                         child: Column(

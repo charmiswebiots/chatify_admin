@@ -1,5 +1,4 @@
 import '../../config.dart';
-import 'layouts/text_field_desktop.dart';
 
 class AddUserScreen extends StatelessWidget {
   final StateSetter? setState;
@@ -19,8 +18,8 @@ class AddUserScreen extends StatelessWidget {
                 ClipRRect(
                   borderRadius: const BorderRadius.all(Radius.circular(AppRadius.r50)),
                   child: SizedBox(
-                      height: 100,
-                      width: 100,
+                      height: Sizes.s100,
+                      width: Sizes.s100,
                       child:  addUserCtrl.imageUrl.isNotEmpty &&
                           addUserCtrl.pickImage != null
                           ?  Image.memory(

@@ -1,5 +1,4 @@
 import '../config.dart';
-import '../responsive.dart';
 
 class CommonButton extends StatelessWidget {
   final String title;
@@ -42,7 +41,7 @@ class CommonButton extends StatelessWidget {
         child: Container(
             width: width ?? MediaQuery.of(context).size.width,
             margin: EdgeInsets.symmetric(horizontal: margin),
-            height: Responsive.isMobile(context) ? 45 : height,
+            height: Responsive.isMobile(context) ? Sizes.s45 : height,
             decoration: BoxDecoration(
                 color: color ?? appCtrl.appTheme.primary,
                 border: border,

@@ -11,7 +11,7 @@ class DesktopSwitchCommon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        width: 180,
+        width: Sizes.s180,
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,

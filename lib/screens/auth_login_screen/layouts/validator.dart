@@ -9,7 +9,7 @@ class LoginValidator{
   // Check user name Validation
   String? checkNameValidation(value) {
     if (value.isEmpty) {
-      return "Please Enter Name";
+      return fonts.pleaseEnterName.tr;
     } else {
       return null;
     }
@@ -18,7 +18,7 @@ class LoginValidator{
   // Check Password Validation
   String? checkPasswordValidation(value) {
     if (value.isEmpty) {
-      return "Please Enter Password";
+      return fonts.pleaseEnterPassword.tr;
     } else {
       return null;
     }
@@ -27,7 +27,7 @@ class LoginValidator{
   // Check Number Validation
   String? checkNumberValidation(value) {
     if (value.isEmpty) {
-      return "Please Enter Number";
+      return fonts.pleaseEnterNumber.tr;
     } if (value.length < 10) {
       return fonts.enterValidNumber;
     }

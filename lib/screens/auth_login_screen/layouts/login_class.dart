@@ -1,9 +1,4 @@
-import 'package:chatify_admin/extensions/text_style_extensions.dart';
-import 'package:chatify_admin/extensions/widget_extension.dart';
-
 import '../../../../config.dart';
-import '../../../common/config.dart';
-import 'package:chatify_admin/common/common_fonts.dart';
 
 class LoginCommonClass {
   //login body

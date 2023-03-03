@@ -1,9 +1,6 @@
 import 'dart:developer';
 import 'dart:ui';
 import 'package:chatify_admin/routes/index.dart';
-import 'package:chatify_admin/screens/index/index.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'common/language/index.dart';
 import 'config.dart';
 import 'dart:html' as html;

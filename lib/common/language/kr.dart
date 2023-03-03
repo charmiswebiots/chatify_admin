@@ -52,8 +52,11 @@ final dynamic kr = {
 "videoCalls" : "화상 통화",
 "audioCalls" : "음성 통화",
 "adminStatus" : "관리자 상태",
-"sponsor" : "스폰서",
+"sponsor" : "스폰서 상태",
 "addStatus" : "추가상태",
+  "pleaseEnterName" : "이름을 입력하세요",
+  "pleaseEnterPassword" : "비밀번호를 입력 해주세요",
+  "pleaseEnterNumber" : "번호를 입력하세요",
 
   "staticPage": "정적 페이지",
   "notification": "알림",

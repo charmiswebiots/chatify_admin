@@ -52,8 +52,11 @@ final dynamic ar = {
   "videoCalls" : "مكالمة فيديو",
   "audioCalls" : "مكالمة صوتية",
   "adminStatus" : "حالة المسؤول",
-  "sponsor" : "راعي",
+  "sponsor" : "حالة الراعي",
   "addStatus" : "حالة إضافية",
+  "pleaseEnterName" : "الرجاء إدخال الاسم",
+  "pleaseEnterPassword" : "الرجاء إدخال كلمة المرور",
+  "pleaseEnterNumber" : "الرجاء إدخال الرقم",
 
   "staticPage": "صفحة ثابتة",
   "notification": "إشعارات",

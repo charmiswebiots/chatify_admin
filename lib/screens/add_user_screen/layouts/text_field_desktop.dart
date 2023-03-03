@@ -16,7 +16,7 @@ class TextFieldDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        width: MediaQuery.of(context).size.width < 1500 ? 230 : 350,
+        width: MediaQuery.of(context).size.width < 1500 ? Sizes.s230 : Sizes.s350,
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(title!.tr,
               style:

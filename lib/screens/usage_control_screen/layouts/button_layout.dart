@@ -1,5 +1,4 @@
 import '../../../config.dart';
-import '../../../widgets/button_common.dart';
 
 class ButtonLayout extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -13,7 +12,7 @@ class ButtonLayout extends StatelessWidget {
         return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           (Responsive.isMobile(context) || Responsive.isTablet(context)) && isNote == true
               ? SizedBox(
-                      width: 260,
+                      width: Sizes.s260,
                       child: Text(fonts.note.tr,
                           style: AppCss.nunitoSemiBold12
                               .textColor(appCtrl.appTheme.error)

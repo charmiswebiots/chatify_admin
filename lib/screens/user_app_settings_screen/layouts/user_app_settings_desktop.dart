@@ -32,16 +32,16 @@ class UserAppSettingsDesktop extends StatelessWidget {
         ]).paddingOnly(bottom: Insets.i20),
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           DesktopTextFieldCommon(
-              width: MediaQuery.of(context).size.width < 1500 ? 350 : 420,
+              width: MediaQuery.of(context).size.width < 1500 ? Sizes.s350 : Sizes.s420,
               validator: (number) => Validation().statusValidation(number),
               title: fonts.approvalMessage,
               controller: userSettingCtrl.approvalMessage),
           DesktopTextFieldCommon(
-              width: 220,
+              width: Sizes.s220,
               validator: (number) => Validation().statusValidation(number),
               title: fonts.maintenanceMessage,
               controller: userSettingCtrl.maintenanceMessage),
-          SizedBox(width:MediaQuery.of(context).size.width > 1500 ? 380 : 10)
+          SizedBox(width:MediaQuery.of(context).size.width > 1500 ? Sizes.s380 : Sizes.s10)
         ]).paddingOnly(bottom: Insets.i20)
       ]).paddingAll(Insets.i15);
     });

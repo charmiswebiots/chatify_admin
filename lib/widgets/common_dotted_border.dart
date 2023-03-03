@@ -1,5 +1,3 @@
-import 'package:dotted_border/dotted_border.dart';
-
 import '../config.dart';
 
 class CommonDottedBorder extends StatelessWidget {

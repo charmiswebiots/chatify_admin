@@ -1,7 +1,6 @@
 import 'dart:ui';
 import '../../../../config.dart';
 
-
 class GlassMorphicLayout extends StatelessWidget {
   final LinearGradient? linearGradient;
   final Widget? child;

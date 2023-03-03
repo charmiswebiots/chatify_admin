@@ -36,14 +36,14 @@ class UserAppSettingsMobile extends StatelessWidget {
                 userSettingCtrl.update();
               }),
           DesktopTextFieldCommon(
-            width: 420,
+            width: Sizes.s420,
               isAppSettings: true,
               validator: (number) =>
                   Validation().statusValidation(number),
               title: fonts.approvalMessage,
               controller: userSettingCtrl.approvalMessage),
           DesktopTextFieldCommon(
-              width: 420,
+              width: Sizes.s420,
               isAppSettings: true,
               validator: (number) =>
                   Validation().statusValidation(number),

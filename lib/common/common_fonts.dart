@@ -77,12 +77,14 @@ class Fonts{
   final enterValidEmail = "enterValidEmail";
   final addUser = "addUser";
   final allowUserSignup = "allowUserSignup";
-
   final videoCalls = "videoCalls";
   final audioCalls = "audioCalls";
-  final adminStatus = "adminStatus";
+  final adminStatus = "sponsor";
   final sponsor = "sponsor";
   final addStatus = "addStatus";
+  final pleaseEnterName = "pleaseEnterName";
+  final pleaseEnterPassword = "pleaseEnterPassword";
+  final pleaseEnterNumber = "pleaseEnterNumber";
 
 
 }

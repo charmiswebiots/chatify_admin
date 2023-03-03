@@ -1,8 +1,5 @@
 import 'dart:developer';
-import 'package:flutter/services.dart';
-
 import '../../config.dart';
-import 'dart:io';
 
 class AppController extends GetxController {
   AppTheme _appTheme = AppTheme.fromType(ThemeType.light);

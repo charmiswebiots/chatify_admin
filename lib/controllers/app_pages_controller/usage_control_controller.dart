@@ -1,8 +1,5 @@
 import 'dart:developer';
-
 import 'package:chatify_admin/config.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import '../../widgets/helper_function.dart';
 
 class UsageControlController extends GetxController {
      dynamic usageCtrl;
@@ -21,7 +18,9 @@ class UsageControlController extends GetxController {
            .collection(collectionName.admin)
            .doc(collectionName.usageControls)
            .get();
+       log("get data: $usageControls");
        usageCtrl = usageControls.data();
+       log("get data IN: $usageCtrl");
        broadCastMemberLimit.text = usageCtrl["broad_cast_members_limit"].toString();
        groupMemberLimit.text = usageCtrl["group_member_limit"].toString();
        maxContactSelectForward.text = usageCtrl["max_contact_select_forward"].toString();
@@ -42,19 +41,21 @@ class UsageControlController extends GetxController {
         usageCtrl["max_files_multi_share"] = int.parse(maxFileMultiShare.text);
         usageCtrl["status_delete_time"] = statusDeleteTime.text;
 
-        print("usage: $usageCtrl");
+        log("usage: $usageCtrl");
         bool isLoginTest = appCtrl.storage.read(session.isLoginTest) ?? false;
         if (isLoginTest) {
           accessDenied(fonts.modification.tr);
         }else {
           isLoading = true;
-          print("usage2: $usageCtrl");
+          log("usage2: $usageCtrl");
           update();
           await FirebaseFirestore.instance
               .collection(collectionName.admin)
               .doc(collectionName.usageControls)
               .update(usageCtrl).then((value) {
-            print("usage3: $usageCtrl");
+            log("collectionName: ${collectionName.admin}");
+            log("collectionNiAndar: ${collectionName.usageControls}");
+            log("usage3: $usageCtrl");
             isLoading = false;
             update();
           });

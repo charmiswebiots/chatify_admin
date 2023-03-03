@@ -1,9 +1,4 @@
-import 'package:chatify_admin/extensions/text_style_extensions.dart';
-import 'package:chatify_admin/extensions/widget_extension.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
 import '../../../../config.dart';
-import '../../../common/config.dart';
 
 class DarkModeLayout extends StatelessWidget {
   const DarkModeLayout({Key? key}) : super(key: key);

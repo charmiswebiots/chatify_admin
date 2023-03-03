@@ -20,7 +20,7 @@ class DesktopTextFieldCommon extends StatelessWidget {
               style: AppCss.nunitoSemiBold16
                   .textColor(appCtrl.appTheme.blackColor)),
           if(isNote == true)
-          Text(fonts.note,
+          Text(fonts.note.tr,
               style: AppCss.nunitoSemiBold12
                   .textColor(appCtrl.appTheme.error).textHeight(1.2)),
           const VSpace(Sizes.s15),

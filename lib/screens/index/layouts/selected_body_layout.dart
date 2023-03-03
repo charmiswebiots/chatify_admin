@@ -15,7 +15,7 @@ class SelectedIndexBodyLayout extends StatelessWidget {
             SliverList(
                 delegate: SliverChildListDelegate([
               Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                  padding: const EdgeInsets.symmetric(horizontal: Insets.i24),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -37,7 +37,7 @@ class SelectedIndexBodyLayout extends StatelessWidget {
                                           mouseCursor: SystemMouseCursors.click,
                                           child: Text(fonts.admin.tr,style: AppCss.nunitoMedium14.textColor(appCtrl.appTheme.blackColor))),
                                        Text('  /  ',style: AppCss.nunitoMedium14.textColor(appCtrl.appTheme.blackColor)),
-                                      Text(indexCtrl.pageName.tr,style: AppCss.nunitoMedium14.textColor(appCtrl.appTheme.blackColor),)
+                                      Text(indexCtrl.pageName.tr,style: AppCss.nunitoMedium14.textColor(appCtrl.appTheme.blackColor))
                                     ])
                                   ]),
                               GetBuilder<AppController>(

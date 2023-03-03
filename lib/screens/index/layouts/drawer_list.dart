@@ -1,6 +1,4 @@
 import 'dart:developer';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '../../../config.dart';
 import 'dart:html' as html;
 
@@ -41,7 +39,7 @@ class DrawerList extends StatelessWidget {
                     if (!Responsive.isDesktop(context)) {
                       Get.back();
                     }
-                    if (indexCtrl.selectedIndex == 5) {
+                    if (indexCtrl.selectedIndex == 4) {
                       FirebaseAuth.instance.signOut();
                       indexCtrl.selectedIndex = 0;
                       html.window.localStorage[session.isLogin] = "false";
@@ -55,16 +53,16 @@ class DrawerList extends StatelessWidget {
                     indexCtrl.update();
                   }).decorated(
                   color: indexCtrl.isHover && indexCtrl.isSelectedHover == e.key
-                      ? appCtrl.appTheme.gray.withOpacity(.5)
-                      : appCtrl.appTheme.txt,
+                      ? appCtrl.appTheme.primaryLight
+                      : appCtrl.appTheme.primary,
                   border: Border(
                       left: BorderSide(
                           color: indexCtrl.selectedIndex == e.key
-                              ? appCtrl.appTheme.primary
+                              ? appCtrl.appTheme.primaryLight
                               : indexCtrl.isHover &&
                                       indexCtrl.isSelectedHover == e.key
-                                  ? appCtrl.appTheme.primary
-                                  : appCtrl.appTheme.txt))));
+                                  ? appCtrl.appTheme.txt
+                                  : appCtrl.appTheme.primary))));
         }).toList()
       ]);
     });

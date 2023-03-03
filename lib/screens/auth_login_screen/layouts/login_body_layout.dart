@@ -1,10 +1,5 @@
-
 import 'package:flutter/cupertino.dart';
 import '../../../../config.dart';
-import '../../../common/config.dart';
-import '../../../controllers/app_pages_controller/login_controller.dart';
-import '../../../widgets/common_button.dart';
-import '../../../widgets/common_text_box.dart';
 import 'login_class.dart';
 
 class LoginBodyLayout extends StatelessWidget {
@@ -17,7 +12,7 @@ class LoginBodyLayout extends StatelessWidget {
           key: loginCtrl.formKey,
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             const VSpace(Sizes.s20),
-            LoginCommonClass().logoLayout(image: imageAssets.chatifyLogo),
+            LoginCommonClass().logoLayout(image: imageAssets.Logo),
             const VSpace(Sizes.s20),
             Text(fonts.welcomeBack.tr,
                 style: AppCss.nunitoblack28

@@ -1,6 +1,5 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'dart:developer';
 import '../../config.dart';
-import '../../widgets/helper_function.dart';
 
 class UserAppSettingsController extends GetxController {
 
@@ -17,7 +16,9 @@ class UserAppSettingsController extends GetxController {
         .collection(collectionName.admin)
         .doc(collectionName.userAppSettings)
         .get();
+    log("get data: $usageControls");
     usageCtrl = usageControls.data();
+    log("get data In: $usageCtrl");
     approvalMessage.text = usageCtrl["approval_message"].toString();
      maintenanceMessage.text = usageCtrl["maintenance_message"].toString();
     update();
@@ -31,19 +32,21 @@ class UserAppSettingsController extends GetxController {
       usageCtrl["approval_message"] = approvalMessage.text;
       usageCtrl["maintenance_message"] = maintenanceMessage.text;
 
-      print("usage: $usageCtrl");
+      log("usage: $usageCtrl");
       bool isLoginTest = appCtrl.storage.read(session.isLoginTest) ?? false;
       if (isLoginTest) {
         accessDenied(fonts.modification.tr);
       }else {
         isLoading = true;
-        print("usage2: $usageCtrl");
+        log("usage2: $usageCtrl");
         update();
         await FirebaseFirestore.instance
             .collection(collectionName.admin)
             .doc(collectionName.userAppSettings)
             .update(usageCtrl).then((value) {
-          print("usage3: $usageCtrl");
+          log("collectionName: ${collectionName.admin}");
+          log("collectionNiAndar: ${collectionName.userAppSettings}");
+          log("usage3: $usageCtrl");
           isLoading = false;
           update();
         });

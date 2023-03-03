@@ -52,8 +52,11 @@ final dynamic hi = {
   "videoCalls" : "वीडियो कॉल",
   "audioCalls" : "आवाज कॉल",
   "adminStatus" : "व्यवस्थापक स्थिति",
-  "sponsor" : "प्रायोजक",
+  "sponsor" : "प्रायोजक स्थिति",
   "addStatus" : "अतिरिक्त स्थिति",
+  "pleaseEnterName" : "कृपया नाम दर्ज करें",
+  "pleaseEnterPassword" : "कृपया पासवर्ड दर्ज करें",
+  "pleaseEnterNumber" : "कृपया संख्या दर्ज करें",
 
   "staticPage": "स्टेटिक पेज",
   "notification": "सूचनाएं",

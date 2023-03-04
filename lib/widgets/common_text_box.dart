@@ -66,7 +66,7 @@ class CommonTextBox extends StatelessWidget {
           onFieldSubmitted: onFieldSubmitted,
           onTap: onTap,
           readOnly: readOnly,
-          style: AppCss.nunitoSemiBold12.textColor(appCtrl.appTheme.contentColor).letterSpace(.2) ,
+          style: AppCss.poppinsSemiBold12.textColor(appCtrl.appTheme.contentColor).letterSpace(.2) ,
           maxLength: maxLength,
           decoration: InputDecoration(
               filled: filled,
@@ -75,7 +75,7 @@ class CommonTextBox extends StatelessWidget {
               errorText: errorText,
               counterText: "",
               hintStyle:
-              AppCss.nunitoSemiBold12.textColor(appCtrl.appTheme.contentColor).letterSpace(.2),
+              AppCss.poppinsSemiBold12.textColor(appCtrl.appTheme.contentColor).letterSpace(.2),
               isDense: true,
               contentPadding: const EdgeInsets.symmetric(horizontal: Insets.i15,vertical: Insets.i16),
               border: border ?? inputBorder,

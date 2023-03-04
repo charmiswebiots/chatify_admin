@@ -31,7 +31,7 @@ class DrawerList extends StatelessWidget {
                   title: Responsive.isDesktop(context) && value == false
                       ? Container()
                       : Text(e.value["title"].toString().tr,
-                          style: AppCss.nunitoMedium14
+                          style: AppCss.poppinsMedium14
                               .textColor(appCtrl.appTheme.white)),
                   onTap: () {
                     indexCtrl.selectedIndex = e.key;

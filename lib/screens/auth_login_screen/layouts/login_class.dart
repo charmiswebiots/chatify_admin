@@ -24,7 +24,7 @@ class LoginCommonClass {
 
   //title layout
   Widget titleLayout({String? title}) => Text(title.toString().tr,
-          style: AppCss.nunitoBold16.textColor(appCtrl.appTheme.contentColor))
+          style: AppCss.poppinsBold16.textColor(appCtrl.appTheme.contentColor))
       .alignment(Alignment.centerLeft);
 
   //forgot password
@@ -38,6 +38,6 @@ class LoginCommonClass {
             const HSpace(Sizes.s5),
             Text(fonts.forgotPassword.tr,
                 style:
-                    AppCss.nunitoblack16.textColor(appCtrl.appTheme.blackColor))
+                    AppCss.poppinsblack16.textColor(appCtrl.appTheme.blackColor))
           ]));
 }

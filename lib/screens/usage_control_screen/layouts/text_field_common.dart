@@ -15,13 +15,13 @@ class MobileTextFieldCommon extends StatelessWidget {
     return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
       Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Text(title!.tr,
-            style: AppCss.nunitoSemiBold16
+            style: AppCss.poppinsSemiBold16
                 .textColor(appCtrl.appTheme.blackColor)),
         if (isNote == true)
           SizedBox(
               width: Sizes.s140,
               child: Text(fonts.note.tr,
-                  style: AppCss.nunitoSemiBold12
+                  style: AppCss.poppinsSemiBold12
                       .textColor(appCtrl.appTheme.error)
                       .textHeight(1.2)))
       ]),
@@ -34,7 +34,7 @@ class MobileTextFieldCommon extends StatelessWidget {
                   cursorColor: appCtrl.appTheme.primary,
                   controller: controller!,
                   decoration: InputDecoration(
-                      errorStyle: AppCss.nunitoMedium10,
+                      errorStyle: AppCss.poppinsMedium10,
                       isDense: true,
                       focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(

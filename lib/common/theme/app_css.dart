@@ -5,8 +5,8 @@ part 'scale.dart';
 
 class AppCss {
   //monterrat font
-  static TextStyle nunito = TextStyle(
-    fontFamily: GoogleFonts.nunito().fontFamily,
+  static TextStyle poppins = TextStyle(
+    fontFamily: GoogleFonts.poppins().fontFamily,
     letterSpacing: 0,
 
     height: 1,
@@ -14,64 +14,64 @@ class AppCss {
 
 
 
-  //Text Style nunito extra bold
-  static TextStyle get nunitoExtraBold65 => nunito.extraThickBold.size(FontSizes.f65);
-  static TextStyle get nunitoExtraBold60 => nunito.extraThickBold.size(FontSizes.f60);
-  static TextStyle get nunitoExtraBold30 => nunito.extraThickBold.size(FontSizes.f30);
+  //Text Style poppins extra bold
+  static TextStyle get poppinsExtraBold65 => poppins.extraThickBold.size(FontSizes.f65);
+  static TextStyle get poppinsExtraBold60 => poppins.extraThickBold.size(FontSizes.f60);
+  static TextStyle get poppinsExtraBold30 => poppins.extraThickBold.size(FontSizes.f30);
 
-  //Text Style nunito bold
-  static TextStyle get nunitoblack28 => nunito.black.size(FontSizes.f28);
-  static TextStyle get nunitoblack24 => nunito.black.size(FontSizes.f24);
-  static TextStyle get nunitoblack20 => nunito.black.size(FontSizes.f20);
-  static TextStyle get nunitoblack18 => nunito.black.size(FontSizes.f18);
-  static TextStyle get nunitoblack16 => nunito.black.size(FontSizes.f16);
-  static TextStyle get nunitoblack14 => nunito.black.size(FontSizes.f14);
-
-
-  //Text Style nunito bold
-  static TextStyle get nunitoExtraBold22 => nunito.extraBold.size(FontSizes.f22);
-  static TextStyle get nunitoExtraBold18 => nunito.extraBold.size(FontSizes.f18);
-  static TextStyle get nunitoExtraBold16 => nunito.extraBold.size(FontSizes.f16);
-  static TextStyle get nunitoExtraBold14 => nunito.extraBold.size(FontSizes.f14);
-  static TextStyle get nunitoExtraBold12 => nunito.extraBold.size(FontSizes.f12);
-
-  //Text Style semi nunito bold
-  static TextStyle get nunitoBold50 => nunito.bold.size(FontSizes.f50);
-  static TextStyle get nunitoBold35 => nunito.bold.size(FontSizes.f35);
-  static TextStyle get nunitoBold24 => nunito.bold.size(FontSizes.f24);
-  static TextStyle get nunitoBold20 => nunito.bold.size(FontSizes.f20);
-  static TextStyle get nunitoBold18 => nunito.bold.size(FontSizes.f18);
-  static TextStyle get nunitoBold16 => nunito.bold.size(FontSizes.f16);
-  static TextStyle get nunitoBold14 => nunito.bold.size(FontSizes.f14);
-  static TextStyle get nunitoBold12 => nunito.bold.size(FontSizes.f12);
-  static TextStyle get nunitoBold10 => nunito.bold.size(FontSizes.f10);
-  static TextStyle get nunitoSemiBold24=> nunito.semiBold.size(FontSizes.f24);
-  static TextStyle get nunitoSemiBold20=> nunito.semiBold.size(FontSizes.f20);
-  static TextStyle get nunitoSemiBold18=> nunito.semiBold.size(FontSizes.f18);
-  static TextStyle get nunitoSemiBold16=> nunito.semiBold.size(FontSizes.f16);
-  static TextStyle get nunitoSemiBold15=> nunito.semiBold.size(FontSizes.f15);
-  static TextStyle get nunitoSemiBold14=> nunito.semiBold.size(FontSizes.f14);
-  static TextStyle get nunitoSemiBold12=> nunito.semiBold.size(FontSizes.f12);
-  static TextStyle get nunitoSemiBold10=> nunito.semiBold.size(FontSizes.f10);
+  //Text Style poppins bold
+  static TextStyle get poppinsblack28 => poppins.black.size(FontSizes.f28);
+  static TextStyle get poppinsblack24 => poppins.black.size(FontSizes.f24);
+  static TextStyle get poppinsblack20 => poppins.black.size(FontSizes.f20);
+  static TextStyle get poppinsblack18 => poppins.black.size(FontSizes.f18);
+  static TextStyle get poppinsblack16 => poppins.black.size(FontSizes.f16);
+  static TextStyle get poppinsblack14 => poppins.black.size(FontSizes.f14);
 
 
-  //Text Style nunito medium
-  static TextStyle get nunitoMedium28 => nunito.medium.size(FontSizes.f28);
-  static TextStyle get nunitoMedium20 => nunito.medium.size(FontSizes.f20);
-  static TextStyle get nunitoMedium18 => nunito.medium.size(FontSizes.f18);
-  static TextStyle get nunitoMedium16 => nunito.medium.size(FontSizes.f16);
-  static TextStyle get nunitoMedium14 => nunito.medium.size(FontSizes.f14);
-  static TextStyle get nunitoMedium12 => nunito.medium.size(FontSizes.f12);
-  static TextStyle get nunitoMedium10 => nunito.medium.size(FontSizes.f10);
+  //Text Style poppins bold
+  static TextStyle get poppinsExtraBold22 => poppins.extraBold.size(FontSizes.f22);
+  static TextStyle get poppinsExtraBold18 => poppins.extraBold.size(FontSizes.f18);
+  static TextStyle get poppinsExtraBold16 => poppins.extraBold.size(FontSizes.f16);
+  static TextStyle get poppinsExtraBold14 => poppins.extraBold.size(FontSizes.f14);
+  static TextStyle get poppinsExtraBold12 => poppins.extraBold.size(FontSizes.f12);
 
-  //Text Style nunito regular
-  static TextStyle get nunitoRegular18 => nunito.regular.size(FontSizes.f18);
-  static TextStyle get nunitoRegular16 => nunito.regular.size(FontSizes.f16);
-  static TextStyle get nunitoRegular14 => nunito.regular.size(FontSizes.f14);
-  static TextStyle get nunitoRegular12 => nunito.regular.size(FontSizes.f12);
-  static TextStyle get nunitoRegular11 => nunito.regular.size(FontSizes.f11);
+  //Text Style semi poppins bold
+  static TextStyle get poppinsBold50 => poppins.bold.size(FontSizes.f50);
+  static TextStyle get poppinsBold35 => poppins.bold.size(FontSizes.f35);
+  static TextStyle get poppinsBold24 => poppins.bold.size(FontSizes.f24);
+  static TextStyle get poppinsBold20 => poppins.bold.size(FontSizes.f20);
+  static TextStyle get poppinsBold18 => poppins.bold.size(FontSizes.f18);
+  static TextStyle get poppinsBold16 => poppins.bold.size(FontSizes.f16);
+  static TextStyle get poppinsBold14 => poppins.bold.size(FontSizes.f14);
+  static TextStyle get poppinsBold12 => poppins.bold.size(FontSizes.f12);
+  static TextStyle get poppinsBold10 => poppins.bold.size(FontSizes.f10);
+  static TextStyle get poppinsSemiBold24=> poppins.semiBold.size(FontSizes.f24);
+  static TextStyle get poppinsSemiBold20=> poppins.semiBold.size(FontSizes.f20);
+  static TextStyle get poppinsSemiBold18=> poppins.semiBold.size(FontSizes.f18);
+  static TextStyle get poppinsSemiBold16=> poppins.semiBold.size(FontSizes.f16);
+  static TextStyle get poppinsSemiBold15=> poppins.semiBold.size(FontSizes.f15);
+  static TextStyle get poppinsSemiBold14=> poppins.semiBold.size(FontSizes.f14);
+  static TextStyle get poppinsSemiBold12=> poppins.semiBold.size(FontSizes.f12);
+  static TextStyle get poppinsSemiBold10=> poppins.semiBold.size(FontSizes.f10);
 
 
-  static TextStyle get nunitoLight16 => nunito.light.size(FontSizes.f16);
+  //Text Style poppins medium
+  static TextStyle get poppinsMedium28 => poppins.medium.size(FontSizes.f28);
+  static TextStyle get poppinsMedium20 => poppins.medium.size(FontSizes.f20);
+  static TextStyle get poppinsMedium18 => poppins.medium.size(FontSizes.f18);
+  static TextStyle get poppinsMedium16 => poppins.medium.size(FontSizes.f16);
+  static TextStyle get poppinsMedium14 => poppins.medium.size(FontSizes.f14);
+  static TextStyle get poppinsMedium12 => poppins.medium.size(FontSizes.f12);
+  static TextStyle get poppinsMedium10 => poppins.medium.size(FontSizes.f10);
+
+  //Text Style poppins regular
+  static TextStyle get poppinsRegular18 => poppins.regular.size(FontSizes.f18);
+  static TextStyle get poppinsRegular16 => poppins.regular.size(FontSizes.f16);
+  static TextStyle get poppinsRegular14 => poppins.regular.size(FontSizes.f14);
+  static TextStyle get poppinsRegular12 => poppins.regular.size(FontSizes.f12);
+  static TextStyle get poppinsRegular11 => poppins.regular.size(FontSizes.f11);
+
+
+  static TextStyle get poppinsLight16 => poppins.light.size(FontSizes.f16);
 
 }

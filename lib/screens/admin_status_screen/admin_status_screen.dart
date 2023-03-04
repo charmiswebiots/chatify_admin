@@ -20,7 +20,7 @@ class AdminStatusScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(fonts.sponsor.tr,
-                            style: AppCss.nunitoSemiBold16.textColor(
+                            style: AppCss.poppinsSemiBold16.textColor(
                                 appCtrl.appTheme.blackColor)),
                         const VSpace(Sizes.s20),
                         Column(
@@ -88,7 +88,7 @@ class AdminStatusScreen extends StatelessWidget {
               if (adminStatusCtrl.isLoading)
                 Container(
                     child: Text("Status Update Successfully",
-                      style: AppCss.nunitoBold12.textColor(
+                      style: AppCss.poppinsBold12.textColor(
                           appCtrl.appTheme.whiteColor),
                     ).paddingAll(Insets.i10).decorated(
                         color: appCtrl.appTheme.green,

@@ -22,7 +22,7 @@ class LanguageLayout extends StatelessWidget {
                   child: Padding(
                       padding: const EdgeInsets.only(left: Insets.i16 * 0.5),
                       child: Text(fonts.selectLanguage.tr,
-                          style: AppCss.nunitoSemiBold14
+                          style: AppCss.poppinsSemiBold14
                               .textColor(appCtrl.appTheme.blackColor))))
             ])),
         itemBuilder: (context) {
@@ -80,7 +80,7 @@ class LanguageLayout extends StatelessWidget {
                     },
                     child: Text(
                       "${e.value["title"].toString().tr} - ${e.value["title"].toString().toUpperCase()}",
-                      style: AppCss.nunitoMedium14
+                      style: AppCss.poppinsMedium14
                           .textColor(appCtrl.appTheme.blackColor),
                     )))
                 .toList(),

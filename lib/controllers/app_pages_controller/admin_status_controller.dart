@@ -158,7 +158,7 @@ class AdminStatusController extends GetxController {
     log("reference : $webImage");
     UploadTask? uploadTask;
     uploadTask = reference.putData(webImage);
-
+    log("upladTask: ${reference.putData(webImage)}");
     uploadTask.then((res) async {
       log("res : $res");
       res.ref.getDownloadURL().then((downloadUrl) async {
@@ -167,11 +167,12 @@ class AdminStatusController extends GetxController {
         update();
         await Future.delayed(Durations.s3);
         onAddStatus();
-
       }, onError: (err) {
+        update();
         log("error: $err");
       });
     });
+    update();
   }
 
   //add status
@@ -180,25 +181,20 @@ class AdminStatusController extends GetxController {
     update();
     log("imageUrl : $imageUrl");
     await addStatus(imageUrl,"image");
-
     isLoading = false;
     update();
   }
 
   //status delete after 24 hours
   statusDeleteAfter24Hours() async {
-    var user = appCtrl.storage.read(session.user) ?? "";
-    if (user != "") {
       FirebaseFirestore.instance
           .collection(collectionName.adminStatus)
-          .where("uid", isEqualTo: user["id"])
           .get()
           .then((value) async {
         if (value.docs.isNotEmpty) {
           Status status = Status.fromJson(value.docs[0].data());
           await getPhotoUrl(status.photoUrl!).then((list) async {
             List<PhotoUrl> photoUrl = list;
-
             if (photoUrl.isEmpty) {
               FirebaseFirestore.instance
                   .collection(collectionName.adminStatus)
@@ -207,7 +203,6 @@ class AdminStatusController extends GetxController {
             } else {
               var statusesSnapshot = await FirebaseFirestore.instance
                   .collection(collectionName.adminStatus)
-                  .where('uid', isEqualTo: user["id"])
                   .get();
               await FirebaseFirestore.instance
                   .collection(collectionName.adminStatus)
@@ -218,7 +213,7 @@ class AdminStatusController extends GetxController {
           });
         }
       });
-    }
+
   }
 
   Future<List<PhotoUrl>> getPhotoUrl(List<PhotoUrl> photoUrl) async {

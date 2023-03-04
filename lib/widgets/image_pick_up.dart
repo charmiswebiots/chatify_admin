@@ -11,7 +11,7 @@ class ImagePickUp extends StatelessWidget {
             children: [
            Icon(Icons.image,color: appCtrl.appTheme.blackColor),
           const HSpace(Sizes.s10),
-          Text(fonts.addImage.tr,style: AppCss.nunitoBold14.textColor(appCtrl.appTheme.blackColor))
+          Text(fonts.addImage.tr,style: AppCss.poppinsBold14.textColor(appCtrl.appTheme.blackColor))
         ]));
   }
 }

@@ -14,7 +14,7 @@ class ButtonLayout extends StatelessWidget {
               ? SizedBox(
                       width: Sizes.s260,
                       child: Text(fonts.note.tr,
-                          style: AppCss.nunitoSemiBold12
+                          style: AppCss.poppinsSemiBold12
                               .textColor(appCtrl.appTheme.error)
                               .textHeight(1.2)))
                   .paddingOnly(left: Insets.i15)

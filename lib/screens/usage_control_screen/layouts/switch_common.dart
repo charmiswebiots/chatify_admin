@@ -11,7 +11,7 @@ class MobileSwitchCommon extends StatelessWidget {
     return  Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(title!.tr,style: AppCss.nunitoSemiBold16.textColor(appCtrl.appTheme.blackColor)),
+        Text(title!.tr,style: AppCss.poppinsSemiBold16.textColor(appCtrl.appTheme.blackColor)),
         Switch(
           activeColor: appCtrl.appTheme.primary,
             materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,

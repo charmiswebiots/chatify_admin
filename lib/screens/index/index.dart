@@ -30,7 +30,7 @@ class _IndexLayoutState extends State<IndexLayout> {
                 backgroundColor: appCtrl.appTheme.whiteColor,
                 leadingWidth: Responsive.isDesktop(context) ? Sizes.s392 : Sizes.s100,
                 title: !Responsive.isDesktop(context)
-                    ? Text(indexCtrl.pageName.tr,style: AppCss.nunitoSemiBold16.textColor(appCtrl.appTheme.blackColor),)
+                    ? Text(indexCtrl.pageName.tr,style: AppCss.poppinsSemiBold16.textColor(appCtrl.appTheme.blackColor),)
                     : Container(),
                 leading:  LeadingRow(scaffoldKey: widget.scaffoldKey,scaffoldDrawerKey: widget.scaffoldDrawerKey),
                 actions: const [DarkLanguageLayout()]),
@@ -38,7 +38,8 @@ class _IndexLayoutState extends State<IndexLayout> {
             drawer: const IndexDrawer(),
             body: SafeArea(
                 child: Scaffold(
-                    backgroundColor: appCtrl.appTheme.whiteColor,
+                    backgroundColor: appCtrl.appTheme.primary.withOpacity(0.1),
+
                     key: widget.scaffoldDrawerKey,
                     body: Row(
                         mainAxisSize: MainAxisSize.max,

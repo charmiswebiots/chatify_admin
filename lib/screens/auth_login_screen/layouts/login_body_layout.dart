@@ -15,12 +15,12 @@ class LoginBodyLayout extends StatelessWidget {
             LoginCommonClass().logoLayout(image: imageAssets.Logo),
             const VSpace(Sizes.s20),
             Text(fonts.welcomeBack.tr,
-                style: AppCss.nunitoblack28
+                style: AppCss.poppinsblack28
                     .textColor(appCtrl.appTheme.blackColor)),
             const VSpace(Sizes.s10),
             Text(fonts.helloAgain.tr,
                     textAlign: TextAlign.center,
-                    style: AppCss.nunitoSemiBold14
+                    style: AppCss.poppinsSemiBold14
                         .textColor(appCtrl.appTheme.contentColor))
                 .paddingSymmetric(horizontal: Insets.i25),
             const VSpace(Sizes.s25),
@@ -58,7 +58,7 @@ class LoginBodyLayout extends StatelessWidget {
                 onTap: () => loginCtrl.signIn(context),
                 padding: 0,
                 height: Sizes.s35,
-                style: AppCss.nunitoMedium14.textColor(appCtrl.appTheme.white)),
+                style: AppCss.poppinsMedium14.textColor(appCtrl.appTheme.white)),
             const VSpace(Sizes.s40)
           ]));
     });

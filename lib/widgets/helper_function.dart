@@ -81,7 +81,7 @@ showAlert({title, context}) async {
             child: FlashBar(
                 content: Text(title.toString().tr,
                     textAlign: TextAlign.center,
-                    style: AppCss.nunitoMedium14
+                    style: AppCss.poppinsMedium14
                         .textColor(appCtrl.appTheme.whiteColor)),
                 showProgressIndicator: false));
       });
@@ -97,7 +97,7 @@ accessDenied(String content) {
         CommonButton(
           title: "Close",
           width: Sizes.s80,
-          style: AppCss.nunitoMedium16.textColor(appCtrl.appTheme.white),
+          style: AppCss.poppinsMedium16.textColor(appCtrl.appTheme.white),
           onTap: () => Get.back(),
         )
       ],

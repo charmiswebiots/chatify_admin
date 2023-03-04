@@ -17,7 +17,7 @@ class DesktopSwitchCommon extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(title!.tr,
-                  style: AppCss.nunitoSemiBold16
+                  style: AppCss.poppinsSemiBold16
                       .textColor(appCtrl.appTheme.blackColor)),
               const VSpace(Sizes.s10),
               Switch(

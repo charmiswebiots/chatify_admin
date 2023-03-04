@@ -10,9 +10,10 @@ class SvgAssets{
   final String page = 'assets/svg/page.svg';
   final String sun = 'assets/svg/sun.svg';
   final String orders = 'assets/svg/orders.svg';
-  final String call = 'assets/svg/call.svg';
-  final String groups = 'assets/svg/groups.svg';
-  final String videoCall = 'assets/svg/videoCall.svg';
+  final String call = 'assets/svg/totalCalls.svg';
+  final String groups = 'assets/svg/totalUser.svg';
+  final String videoCall = 'assets/svg/videoCalls.svg';
+  final String audioCall = 'assets/svg/audioCalls.svg';
   final String status = 'assets/svg/status.svg';
   final String addUser = 'assets/svg/addUser.svg';
 

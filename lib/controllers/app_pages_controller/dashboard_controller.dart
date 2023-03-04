@@ -56,7 +56,7 @@ class DashboardController extends GetxController{
     },
     {
       'title': 'audioCalls',
-      'icon': svgAssets.call
+      'icon': svgAssets.audioCall
     },
   ];
 }

@@ -13,6 +13,6 @@ class UpdateButton extends StatelessWidget {
             backgroundColor: appCtrl.appTheme.primary),
         child: Text(title!.tr,
             style:
-            AppCss.nunitoMedium16.textColor(appCtrl.appTheme.white)));
+            AppCss.poppinsMedium16.textColor(appCtrl.appTheme.white)));
   }
 }

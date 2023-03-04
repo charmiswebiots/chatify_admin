@@ -12,7 +12,7 @@ class DarkModeLayout extends StatelessWidget {
               height: Sizes.s15),
           const HSpace(Sizes.s10),
           Text(appCtrl.isTheme ? fonts.lightMode.tr : fonts.darkMode.tr,
-              style: AppCss.nunitoSemiBold14
+              style: AppCss.poppinsSemiBold14
                   .textColor(appCtrl.appTheme.blackColor))
         ]).inkWell(onTap: ()async{
           appCtrl.isTheme = !appCtrl.isTheme;

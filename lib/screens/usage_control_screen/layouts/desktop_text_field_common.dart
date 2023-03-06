@@ -17,36 +17,32 @@ class DesktopTextFieldCommon extends StatelessWidget {
         width: width/*isAppSettings == true ? 420 : MediaQuery.of(context).size.width < 1500 ? 300 : MediaQuery.of(context).size.width > 1500 ? 420 : 180*/,
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(title!.tr,
-              style: AppCss.poppinsSemiBold16
-                  .textColor(appCtrl.appTheme.blackColor)),
+              style: AppCss.poppinsMedium18
+                  .textColor(appCtrl.appTheme.dark)),
           if(isNote == true)
           Text(fonts.note.tr,
               style: AppCss.poppinsSemiBold12
                   .textColor(appCtrl.appTheme.error).textHeight(1.2)),
           const VSpace(Sizes.s15),
           TextFormField(
-            style: TextStyle(color: appCtrl.appTheme.blackColor),
+            style: AppCss.poppinsMedium14.textColor(appCtrl.appTheme.gray),
               validator: validator,
               cursorColor: appCtrl.appTheme.primary,
               controller: controller!,
               decoration: InputDecoration(
                     errorStyle: AppCss.poppinsMedium10,
                   isDense: true,
-                  focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                          color: appCtrl.appTheme.primary, width: 2)),
-                  disabledBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: appCtrl.appTheme.primary)),
+                  filled: true,
+                  fillColor: appCtrl.appTheme.gray.withOpacity(0.1),
+                border: const OutlineInputBorder(
+                    borderRadius:
+                    BorderRadius.all(Radius.circular(AppRadius.r8)),
+                    borderSide:
+                    BorderSide(width: 0, style: BorderStyle.none)),
                   contentPadding: const EdgeInsets.symmetric(
-                      vertical: Insets.i10, horizontal: Insets.i10),
-                  enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: appCtrl.appTheme.primary)),
-                  border: OutlineInputBorder(
-                      borderSide: BorderSide(
-                          color: appCtrl.appTheme.primary))))
-              .paddingOnly(right: Insets.i10)
-        ]).paddingOnly(bottom: Insets.i20));
+                      vertical: Insets.i15, horizontal: Insets.i10),
+                 ))
+
+        ]));
   }
 }

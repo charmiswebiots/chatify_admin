@@ -1,3 +1,5 @@
+import 'package:percent_indicator/linear_percent_indicator.dart';
+
 import '../../config.dart';
 
 class Dashboard extends StatelessWidget {
@@ -93,28 +95,49 @@ class Dashboard extends StatelessWidget {
                                         dashboardCtrl.listItem[index]["icon"])
                                   ]),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text("0%",style: AppCss.poppinsMedium14.textColor(appCtrl.appTheme.gray)),
-                                  Text("89%",style: AppCss.poppinsMedium14.textColor(appCtrl.appTheme.primary))
+                                  Text("0%",
+                                      style: AppCss.poppinsMedium14
+                                          .textColor(appCtrl.appTheme.gray)),
+                                  /*Text("89%",style: AppCss.poppinsMedium14.textColor(appCtrl.appTheme.primary)),*/
+                                  Text(
+                                      '${(dashboardCtrl.progressValue * 100).round()}%'),
                                 ],
                               ),
-                              SliderTheme(
-                                data: SliderTheme.of(context).copyWith(
-                                  trackHeight: Sizes.s10,
-                                    overlayShape: SliderComponentShape.noOverlay,
-                                    thumbColor: Colors.transparent,
-                                    thumbShape: SliderComponentShape.noThumb),
-                                child: Slider(
-                                  value: 50,
-                                  max: 100,
-                                  min: 0,
-                                  activeColor: appCtrl.appTheme.primary,
-                                  inactiveColor: appCtrl.appTheme.primaryLight.withOpacity(0.1),
-                                  onChanged: (double value) {},
-                                ),
-                              ),
-                            ])) 
+                              /*LinearPercentIndicator(
+                                  padding: EdgeInsets.zero,
+                                  width: MediaQuery.of(context)
+                                      .size
+                                      .width *
+                                      0.2*//* Responsive.isMobile(context)
+                                      ? MediaQuery.of(context).size.width * 0.72
+                                      : Responsive.isTablet(context)
+                                          ? MediaQuery.of(context).size.width *
+                                              0.375
+                                          : Responsive.isDesktop(context)
+                                              ? MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.156
+                                              : 0.3*//*,
+                                  animation: true,
+                                  lineHeight: 10,
+                                  animationDuration: 2000,
+                                  percent: 0.9,
+                                  backgroundColor: appCtrl.appTheme.primaryLight
+                                      .withOpacity(0.1),
+                                  progressColor: appCtrl.appTheme.primary,
+                                  barRadius:
+                                      const Radius.circular(AppRadius.r50)),*/
+                              /*LinearProgressIndicator(
+                      backgroundColor: appCtrl.appTheme.primaryLight.withOpacity(0.1),
+                      valueColor:  AlwaysStoppedAnimation<Color>( appCtrl.appTheme.primary),
+                      value: dashboardCtrl.progressValue,
+
+                    ),*/
+                            ]))
                     .paddingAll(Insets.i4)
                     .decorated(
                         borderRadius: BorderRadius.circular(Insets.i18),
@@ -128,6 +151,7 @@ class Dashboard extends StatelessWidget {
     });
   }
 }
+
 class CustomTrackShape extends RoundedRectSliderTrackShape {
   @override
   Rect getPreferredRect({

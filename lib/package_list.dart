@@ -7,4 +7,3 @@ export 'package:flutter_dropzone/flutter_dropzone.dart';
 export 'package:flash/flash.dart';
 export 'package:cloud_firestore/cloud_firestore.dart';
 export 'package:firebase_storage/firebase_storage.dart';
-export 'package:video_player/video_player.dart';

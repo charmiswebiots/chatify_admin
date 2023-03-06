@@ -49,8 +49,8 @@ dependencies:
   flutter_dropzone: ^3.0.5
   dotted_border: ^2.0.0+3
   image_picker: ^0.8.6+1
-  video_player: ^2.5.2
-  chewie: ^1.4.0
+  percent_indicator: ^4.2.3
+  flutter_switch: ^0.3.2
 
 dev_dependencies:
   flutter_test:

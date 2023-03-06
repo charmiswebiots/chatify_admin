@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import '../../config.dart';
 
 class DashboardController extends GetxController{
@@ -34,12 +36,25 @@ class DashboardController extends GetxController{
         });
       }
     });
-    update();
+
+    const oneSec = Duration(seconds: 1);
+    Timer.periodic(oneSec, (Timer t) async {
+        progressValue += 0.1;
+        // we "finish" downloading here
+        if (progressValue.toStringAsFixed(1) == '1.0') {
+          loading = false;
+          t.cancel();
+          return;
+        }
+    });
+
+  update();
 
     // TODO: implement onReady
     super.onReady();
   }
-
+  bool loading = true;
+  double progressValue = 0;
 
   final List<Map<String, dynamic>> listItem = [
     {

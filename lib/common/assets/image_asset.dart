@@ -8,4 +8,5 @@ class ImageAssets{
   final String appSetting = 'assets/images/appSetting.png';
   final String logout = 'assets/images/logout.png';
   final String addUser = 'assets/images/addUser.png';
+  final String moon = 'assets/images/moon.png';
 }

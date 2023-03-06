@@ -6,7 +6,6 @@ import '../../config.dart';
 
 class AdminStatusController extends GetxController {
   late DropzoneViewController? controller1;
-  VideoPlayerController? videoCtrl;
   PickedFile? pickedFile;
   bool dragging = false;
   bool isLoading = false;

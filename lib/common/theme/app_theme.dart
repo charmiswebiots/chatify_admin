@@ -45,6 +45,7 @@ class AppTheme {
   Color greyLight25;
   Color switchThumb;
   Color number;
+  Color dark;
 
   /// Default constructor
   AppTheme({
@@ -83,6 +84,7 @@ class AppTheme {
     required this.greyLight25,
     required this.switchThumb,
     required this.number,
+    required this.dark,
   });
 
   /// fromType factory constructor
@@ -124,7 +126,8 @@ class AppTheme {
           textColor: Colors.white,
           greyLight25: const Color(0xFFEDEFF4),
             switchThumb: Colors.white10,
-          number: const Color(0xff363941)
+          number: const Color(0xff363941),
+          dark: const Color(0xff010D21),
         );
 
       case ThemeType.dark:
@@ -163,7 +166,8 @@ class AppTheme {
           homeCategoryColor: const Color(0xFFEAEDF2),
           greyLight25: Colors.black,
           switchThumb: Colors.grey.shade500,
-            number: const Color(0xff363941)
+            number: const Color(0xff363941),
+          dark: const Color(0xff010D21),
         );
     }
   }

@@ -17,7 +17,7 @@ class UserAppSettingsScreen extends StatelessWidget {
                     Responsive.isMobile(context) || Responsive.isTablet(context)
                         ? const UserAppSettingsMobile()
                         : const UserAppSettingsDesktop(),
-                    ButtonLayout(onPressed: () => userSettingCtrl.updateData())
+                    ButtonLayout(onTap: () => userSettingCtrl.updateData())
                   ])).boxExtension()),
               if (userSettingCtrl.isLoading)
                 Center(

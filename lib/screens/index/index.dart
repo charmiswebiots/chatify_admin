@@ -53,7 +53,7 @@ class _IndexLayoutState extends State<IndexLayout> {
                                     height:
                                     MediaQuery.of(context).size.height,
                                     width: value ? Sizes.s240 : Sizes.s70,
-                                    color: appCtrl.appTheme.primary,
+                                    color: appCtrl.appTheme.dark,
                                     child: SingleChildScrollView(
                                         controller: ScrollController(),
                                         child: Column(

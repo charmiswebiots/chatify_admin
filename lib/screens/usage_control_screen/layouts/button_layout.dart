@@ -20,8 +20,13 @@ class ButtonLayout extends StatelessWidget {
                             .textHeight(1.2)))
                 .paddingOnly(left: Insets.i15)
             : Container(),
-        CommonButton(title: fonts.update, onTap: onTap, height: 60, width: 200,style: AppCss.poppinsMedium14.textColor(appCtrl.appTheme.whiteColor))
-            .paddingOnly(bottom: Insets.i20, right: Insets.i20, top: Insets.i10)
+        CommonButton(
+                title: fonts.update,
+                onTap: onTap,
+                width: Sizes.s150,
+                style: AppCss.poppinsMedium18
+                    .textColor(appCtrl.appTheme.whiteColor))
+            .paddingOnly(top: Insets.i30)
       ]);
     });
   }

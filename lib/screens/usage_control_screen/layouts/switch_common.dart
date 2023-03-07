@@ -8,15 +8,18 @@ class MobileSwitchCommon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(title!.tr,style: AppCss.poppinsSemiBold16.textColor(appCtrl.appTheme.blackColor)),
-        Switch(
-          activeColor: appCtrl.appTheme.primary,
-            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            value: value!, onChanged: onChanged)
-      ]
-    ).paddingOnly(bottom: Insets.i10);
+    return  SizedBox(
+      width: Sizes.s400,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(title!.tr,style: AppCss.poppinsMedium18.textColor(appCtrl.appTheme.dark)),
+          Switch(
+            activeColor: appCtrl.appTheme.primary,
+              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              value: value!, onChanged: onChanged)
+        ]
+      ).paddingOnly(bottom: Insets.i10),
+    );
   }
 }

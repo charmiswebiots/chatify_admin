@@ -57,6 +57,7 @@ class AppCss {
 
   //Text Style poppins medium
   static TextStyle get poppinsMedium28 => poppins.medium.size(FontSizes.f28);
+  static TextStyle get poppinsMedium22 => poppins.medium.size(FontSizes.f22);
   static TextStyle get poppinsMedium20 => poppins.medium.size(FontSizes.f20);
   static TextStyle get poppinsMedium18 => poppins.medium.size(FontSizes.f18);
   static TextStyle get poppinsMedium16 => poppins.medium.size(FontSizes.f16);

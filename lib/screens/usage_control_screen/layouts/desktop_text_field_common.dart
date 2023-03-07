@@ -18,7 +18,7 @@ class DesktopTextFieldCommon extends StatelessWidget {
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Text(title!.tr,
               style: AppCss.poppinsMedium18
-                  .textColor(appCtrl.appTheme.dark)),
+                  .textColor(appCtrl.appTheme.dark).textHeight(1.5)),
           if(isNote == true)
           Text(fonts.note.tr,
               style: AppCss.poppinsSemiBold12
@@ -27,6 +27,9 @@ class DesktopTextFieldCommon extends StatelessWidget {
           TextFormField(
             style: AppCss.poppinsMedium14.textColor(appCtrl.appTheme.gray),
               validator: validator,
+              minLines: 2,
+              maxLines: 5,
+              keyboardType: TextInputType.multiline,
               cursorColor: appCtrl.appTheme.primary,
               controller: controller!,
               decoration: InputDecoration(

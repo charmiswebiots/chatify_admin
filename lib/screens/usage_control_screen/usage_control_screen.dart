@@ -97,12 +97,12 @@ class UsageControlScreen extends StatelessWidget {
                               ],
                             ).paddingAll(Insets.i30),
                             ).boxExtension()
-                          ],
-                        ),
+                          ]
+                        )
                       ),
                         // Update button & Note
-                                  ButtonLayout(isNote: true,onTap: () => usageCtrl.updateData())
-                    ],
+                      ButtonLayout(isNote: true,onTap: () => usageCtrl.updateData())
+                    ]
                   )),
               if (usageCtrl.isLoading)
                 Center(child: CircularProgressIndicator(color: appCtrl.appTheme.primary))

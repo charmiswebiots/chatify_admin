@@ -1,37 +1,41 @@
 import '../../../config.dart';
+import '../../../models/user_setting_model.dart';
 
 class UserAppSettingsDesktop extends StatelessWidget {
-  const UserAppSettingsDesktop({Key? key}) : super(key: key);
+  final UserAppSettingModel? userAppSettingModel;
+
+  const UserAppSettingsDesktop({Key? key, this.userAppSettingModel})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder<UserAppSettingsController>(builder: (userSettingCtrl) {
-      return Column(children: [
+      return Stack(children: [
         Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           DesktopSwitchCommon(
               title: fonts.allowUserBlock,
-              value: userSettingCtrl.usageCtrl["allow_user_block"],
-              onChanged: (val) {
-                userSettingCtrl.usageCtrl["allow_user_block"] = val;
-                userSettingCtrl.update();
-              }),
+              value: userAppSettingModel!.allowUserBlock,
+              onChanged: (val) => userSettingCtrl.commonSwitcherValueChange(
+                  "allowUserBlock", val)),
           DesktopSwitchCommon(
               title: fonts.approvalNeeded,
-              value: userSettingCtrl.usageCtrl["approval_needed"],
-              onChanged: (val) {
-                userSettingCtrl.usageCtrl["approval_needed"] = val;
-                userSettingCtrl.update();
-              }),
+              value: userAppSettingModel!.approvalNeeded,
+              onChanged: (val) => userSettingCtrl.commonSwitcherValueChange(
+                  "approvalNeeded", val)),
           DesktopSwitchCommon(
-            isDivider: true,
+              isDivider: true,
               title: fonts.isMaintenanceMode,
-              value: userSettingCtrl.usageCtrl["isMaintenanceMode"],
-              onChanged: (val) {
-                userSettingCtrl.usageCtrl["isMaintenanceMode"] = val;
-                userSettingCtrl.update();
-              })
-        ])
-      ]).paddingAll(Insets.i30);
+              value: userAppSettingModel!.isMaintenanceMode,
+              onChanged: (val) => userSettingCtrl.commonSwitcherValueChange(
+                  "isMaintenanceMode", val))
+        ]).paddingAll(Insets.i55).boxExtension().marginOnly(top: Insets.i15),
+        CommonButton(
+          title: fonts.adShowHide.tr.toUpperCase(),
+          style: AppCss.poppinsMedium12.textColor(appCtrl.appTheme.white),
+          width: Sizes.s250,
+          margin: Insets.i15,
+        ),
+      ]);
     });
   }
 }

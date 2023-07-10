@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 
 class Fonts{
 
+  final chatifyAdmin = "chatifyAdmin";
   final selectLanguage = "selectLanguage";
   final lightMode = "lightMode";
   final darkMode = "darkMode";
@@ -85,6 +86,41 @@ class Fonts{
   final pleaseEnterName = "pleaseEnterName";
   final pleaseEnterPassword = "pleaseEnterPassword";
   final pleaseEnterNumber = "pleaseEnterNumber";
+  final addWallPaper = "addWallPaper";
+  final updateWallPaper = "updateWallPaper";
+  final id = "id";
+  final action = "action";
+  final deleteThisWallPaper = "deleteThisWallPaper";
+  final close = "close";
+  final delete = "delete";
+  final inValidPassword = "inValidPassword";
+  final invalidEmailPassword = "invalidEmailPassword";
+  final isAddEnable = "isAddEnable";
+  final googleAdmobEnable = "googleAdmobEnable";
+  final adShowHide = "adShowHide";
+  final facebookAdmobEnable = "facebookAdmobEnable";
+  final rateApp = "rateApp";
+  final rateAppIos = "rateAppIos";
+  final usageControl = "usageControl";
+  final credential = "credential";
+  final reportFrom = "reportFrom";
+  final reportTo = "reportTo";
+  final dateTime = "dateTime";
+  final actions = "actions";
+  final isSingleChat = "isSingleChat";
+  final deleteUser = "deleteUser";
+  final report = "report";
+  final androidBannerId = "androidBannerId";
+  final iosBannerId = "iosBannerId";
+  final interstitialBannerId = "interstitialBannerId";
+  final interstitialIosBannerId = "interstitialIosBannerId";
+  final facebookAndroidId = "facebookAndroidId";
+  final facebookIosId = "facebookIosId";
+  final facebookAndroidInterstitialId = "facebookAndroidInterstitialId";
+  final facebookIosInterstitialId = "facebookIosInterstitialId";
+  final deleteCharacterConfirmation = "deleteCharacterConfirmation";
+  final gifApi = "gifApi";
+  final firebaseServerToken = "firebaseServerToken";
 
 
 }

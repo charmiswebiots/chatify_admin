@@ -4,7 +4,9 @@ import '../../../config.dart';
 class LeadingRow extends StatelessWidget {
   final GlobalKey<ScaffoldState>? scaffoldDrawerKey;
   final GlobalKey<ScaffoldState>? scaffoldKey;
-  const LeadingRow({Key? key,this.scaffoldKey,this.scaffoldDrawerKey}) : super(key: key);
+
+  const LeadingRow({Key? key, this.scaffoldKey, this.scaffoldDrawerKey})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +21,14 @@ class LeadingRow extends StatelessWidget {
                       log("message");
                     },
                     child: Container(
+                      padding:const EdgeInsets.symmetric(vertical: Insets.i10),
+                      color: appCtrl.appTheme.dark,
+                      child: Image.asset(
+                        imageAssets.chatifyLogo2,
                         width: Sizes.s240,
-                        padding: const EdgeInsets.symmetric(vertical: Insets.i15),
-                        height: double.infinity,
-                        color: appCtrl.appTheme.dark,
-                        child: Image.asset( imageAssets.chatifyLogo1)));
+
+                      ),
+                    ));
               }
               return InkWell(
                   onTap: () {
@@ -36,7 +41,7 @@ class LeadingRow extends StatelessWidget {
                           padding: const EdgeInsets.all(Insets.i10),
                           color: appCtrl.appTheme.dark,
                           height: double.infinity,
-                          child: Image.asset(imageAssets.Logo,
+                          child: Image.asset(imageAssets.chatifyLogo2,
                               fit: BoxFit.contain))
                       : Container());
             }),
@@ -53,12 +58,11 @@ class LeadingRow extends StatelessWidget {
                   scaffoldKey!.currentState!.openDrawer();
                 }
               } else if (Responsive.isDesktop(context)) {
-
                 scaffoldKey!.currentState!.closeDrawer();
                 indexCtrl.isOpen.value = !indexCtrl.isOpen.value;
               }
             },
-            child:  Icon(Icons.menu,color: appCtrl.appTheme.blackColor))
+            child: Icon(Icons.menu, color: appCtrl.appTheme.blackColor))
       ]);
     });
   }

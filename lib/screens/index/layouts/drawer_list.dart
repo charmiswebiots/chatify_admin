@@ -1,11 +1,11 @@
 import 'dart:developer';
 import '../../../config.dart';
-import 'dart:html' as html;
+import 'package:universal_html/html.dart' as html;
 
 class DrawerList extends StatelessWidget {
   final bool? value;
-
-  const DrawerList({Key? key, this.value}) : super(key: key);
+  final GlobalKey<ScaffoldState>? scaffoldKey;
+  const DrawerList({Key? key, this.value,this.scaffoldKey}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,63 +24,107 @@ class DrawerList extends StatelessWidget {
                 log("val : ${indexCtrl.isHover}");
               },
               child: Container(
-                alignment: Alignment.center,
-                height: 50,
-                width: double.infinity,
-                child: Row(
-                  children: [
-                    SvgPicture.asset(e.value["icon"]!,color: appCtrl.appTheme.whiteColor),
-                    const HSpace(Sizes.s20),
-                    Responsive.isDesktop(context) && value == false
-                        ? Container()
-                        : Text(e.value["title"].toString().tr,
-                        style: AppCss.poppinsMedium14
-                            .textColor(indexCtrl.selectedIndex == e.key
-                            ? appCtrl.appTheme.whiteColor
-                            : indexCtrl.isHover &&
-                            indexCtrl.isSelectedHover == e.key
-                            ? appCtrl.appTheme.whiteColor
-                            : appCtrl.appTheme.gray))
-                  ]
-                ).paddingSymmetric(horizontal: Insets.i15)
-                  ).inkWell(
-                  onTap: () {
-                indexCtrl.selectedIndex = e.key;
-                indexCtrl.pageName = e.value["title"]!;
-                if (!Responsive.isDesktop(context)) {
-                  Get.back();
-                }
-                if (indexCtrl.selectedIndex == 4) {
-                  FirebaseAuth.instance.signOut();
-                  indexCtrl.selectedIndex = 0;
-                  html.window.localStorage[session.isLogin] = "false";
-                  appCtrl.isLogged = false;
-                  appCtrl.storage.remove("isSignIn");
-                  appCtrl.storage.remove(session.isDarkMode);
-                  appCtrl.storage.remove(session.languageCode);
-                  log("index: ${indexCtrl.selectedIndex}");
-                  Get.offAll(() => LoginScreen());
-                }
-                indexCtrl.update();
-              }).decorated(
-                borderRadius: const BorderRadius.all(Radius.circular(AppRadius.r8)),
-                color: indexCtrl.selectedIndex == e.key
-                    ? appCtrl.appTheme.primary
-                    : indexCtrl.isHover &&
-                    indexCtrl.isSelectedHover == e.key
-                    ? appCtrl.appTheme.primaryLight
-                    : appCtrl.appTheme.dark
-                 /* color: indexCtrl.isHover && indexCtrl.isSelectedHover == e.key
-                      ? appCtrl.appTheme.primaryLight
-                      : appCtrl.appTheme.dark,
-                  border: Border(
-                      left: BorderSide(
-                          color: indexCtrl.selectedIndex == e.key
-                              ? appCtrl.appTheme.primaryLight
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.symmetric(
+                          horizontal:
+                              Responsive.isDesktop(context) && value == false
+                                  ? 0
+                                  : Insets.i15,
+                          vertical: Insets.i5),
+                      width: double.infinity,
+                      child: Responsive.isDesktop(context) && value == false
+                          ? SvgPicture.asset(e.value["icon"]!,color: indexCtrl
+                          .selectedIndex ==
+                          e.key
+                          ? appCtrl.appTheme.white
+                          : indexCtrl.isHover &&
+                          indexCtrl
+                              .isSelectedHover ==
+                              e.key
+                          ? appCtrl.appTheme.white
+                          : appCtrl
+                          .appTheme.white)
+                          : Row(children: [
+                              SvgPicture.asset(e.value["icon"]!,color: indexCtrl
+                                  .selectedIndex ==
+                                  e.key
+                                  ? appCtrl.appTheme.white
+                                  : indexCtrl.isHover &&
+                                  indexCtrl
+                                      .isSelectedHover ==
+                                      e.key
+                                  ? appCtrl.appTheme.white
+                                  : appCtrl
+                                  .appTheme.white,),
+                              const HSpace(Sizes.s20),
+                              Responsive.isDesktop(context) && value == false
+                                  ? Container()
+                                  : Expanded(
+                                      child: Text(
+                                          e.value["title"] != null
+                                              ? e.value["title"].toString().tr
+                                              : "",
+                                          style: AppCss.poppinsMedium14
+                                              .textColor(indexCtrl
+                                                          .selectedIndex ==
+                                                      e.key
+                                                  ? appCtrl.appTheme.white
+                                                  : indexCtrl.isHover &&
+                                                          indexCtrl
+                                                                  .isSelectedHover ==
+                                                              e.key
+                                                      ? appCtrl.appTheme.white
+                                                      : appCtrl
+                                                          .appTheme.white)),
+                                    )
+                            ]))
+                  .inkWell(onTap: () {
+                    log("MOBILE");
+                    if(Responsive.isMobile(context)){
+                      scaffoldKey!.currentState!.closeDrawer();
+                    }
+                    if (e.value["title"] == "dashboard") {
+                      indexCtrl.selectedIndex = 0;
+
+                    } else if (e.value["title"] == "usageControl") {
+                      indexCtrl.selectedIndex = 1;
+                    } else if (e.value["title"] == "appSetting") {
+                      indexCtrl.selectedIndex = 2;
+                    } else if (e.value["title"] == "sponsor") {
+                      indexCtrl.selectedIndex = 3;
+                    } else if (e.value["title"] == "wallpaper") {
+                      indexCtrl.selectedIndex = 4;
+                    } else if (e.value["title"] == "report") {
+                      indexCtrl.selectedIndex = 5;
+                    } else if (e.value["title"] == "logout") {
+                      FirebaseAuth.instance.signOut();
+                      indexCtrl.selectedIndex = 0;
+                      html.window.localStorage[session.isLogin] = "false";
+                      appCtrl.isLogged = false;
+                      appCtrl.storage.remove("isSignIn");
+                      appCtrl.storage.remove(session.isDarkMode);
+                      appCtrl.storage.remove(session.languageCode);
+                      appCtrl.isTheme = false;
+                      appCtrl.languageVal = "en";
+                      log("index: ${indexCtrl.selectedIndex}");
+                      Get.offAll(() => LoginScreen());
+                    }
+                    indexCtrl.pageName = e.value["title"].toString();
+                    indexCtrl.update();
+                  })
+                  .decorated(
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(AppRadius.r6)),
+                      color: Responsive.isDesktop(context) && value == false
+                          ? appCtrl.appTheme.dark
+                          : indexCtrl.selectedIndex == e.key
+                              ? appCtrl.appTheme.primary
                               : indexCtrl.isHover &&
                                       indexCtrl.isSelectedHover == e.key
-                                  ? appCtrl.appTheme.txt
-                                  : appCtrl.appTheme.dark))*/).paddingSymmetric(horizontal: Insets.i15,vertical: Insets.i10));
+                                  ? appCtrl.appTheme.primary
+                                  : appCtrl.appTheme.dark)
+                  .paddingSymmetric(
+                      horizontal: Insets.i15, vertical: Insets.i10));
         }).toList()
       ]);
     });

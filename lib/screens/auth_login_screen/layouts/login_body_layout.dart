@@ -1,3 +1,4 @@
+import 'package:chatify_admin/widgets/common_widget_class.dart';
 import 'package:flutter/cupertino.dart';
 import '../../../../config.dart';
 import 'login_class.dart';
@@ -12,7 +13,7 @@ class LoginBodyLayout extends StatelessWidget {
           key: loginCtrl.formKey,
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             const VSpace(Sizes.s20),
-            LoginCommonClass().logoLayout(image: imageAssets.Logo),
+            LoginCommonClass().logoLayout(image: imageAssets.chatifyLogo1),
             const VSpace(Sizes.s20),
             Text(fonts.welcomeBack.tr,
                 style: AppCss.poppinsblack28
@@ -59,7 +60,10 @@ class LoginBodyLayout extends StatelessWidget {
                 padding: 0,
                 height: Sizes.s35,
                 style: AppCss.poppinsMedium14.textColor(appCtrl.appTheme.white)),
-            const VSpace(Sizes.s40)
+            const VSpace(Sizes.s40),
+            CommonWidgetClass().credentialCopy("admin@gmail.com"),
+            const VSpace(Sizes.s5),
+            CommonWidgetClass().credentialCopy("Admin1234"),
           ]));
     });
   }

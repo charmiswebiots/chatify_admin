@@ -1,4 +1,10 @@
+import 'dart:developer';
+
+import 'package:chatify_admin/models/user_setting_model.dart';
+import 'package:chatify_admin/screens/user_app_settings_screen/layouts/ad_show_hide.dart';
+
 import '../../config.dart';
+import 'layouts/all_text_box_desktop.dart';
 
 class UserAppSettingsScreen extends StatelessWidget {
   final userSettingCtrl = Get.put(UserAppSettingsController());
@@ -7,77 +13,78 @@ class UserAppSettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<UserAppSettingsController>(builder: (userSettingCtrl) {
-      if (userSettingCtrl.usageCtrl != null) {
-        return Stack(alignment: Alignment.center, children: [
-              Form(
-                  key: userSettingCtrl.formKey,
-                  child: Column(
-                    children: [
-                      IntrinsicHeight(
-                        child: Row(
-                          children: [
-                            SizedBox(
-                                child: Column(children: [
-                              Responsive.isMobile(context) || Responsive.isTablet(context)
-                                  ? const UserAppSettingsMobile()
-                                  : const UserAppSettingsDesktop(),
-
-                            ])).boxExtension(),
-                            if(Responsive.isDesktop(context))
-                            const HSpace(Sizes.s20),
-                             if(Responsive.isDesktop(context))
-                            SizedBox(
-                                child:  Column(
-                                  children: [
-                                    MediaQuery.of(context).size.width < 1700 ?
-                                    Column(
-                                      children: [
-                                        DesktopTextFieldCommon(
-                                            width:MediaQuery.of(context).size.width < 1500 ? Sizes.s200 : Sizes.s300,
-                                            validator: (number) => Validation().statusValidation(number),
-                                            title: fonts.approvalMessage,
-                                            controller: userSettingCtrl.approvalMessage),
-                                        const VSpace(Sizes.s30),
-                                        DesktopTextFieldCommon(
-                                            width: MediaQuery.of(context).size.width < 1500 ? Sizes.s200 : Sizes.s300,
-                                            validator: (number) => Validation().statusValidation(number),
-                                            title: fonts.maintenanceMessage,
-                                            controller: userSettingCtrl.maintenanceMessage)
-                                      ]
-                                    ).paddingAll(Insets.i30) :
-                                    Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                                      DesktopTextFieldCommon(
-                                          width: Sizes.s390,
-                                          validator: (number) => Validation().statusValidation(number),
-                                          title: fonts.approvalMessage,
-                                          controller: userSettingCtrl.approvalMessage),
-                                      const HSpace(Sizes.s30),
-                                      DesktopTextFieldCommon(
-                                          width: Sizes.s390,
-                                          validator: (number) => Validation().statusValidation(number),
-                                          title: fonts.maintenanceMessage,
-                                          controller: userSettingCtrl.maintenanceMessage),
-                                    ]).paddingAll(Insets.i30)
-                                  ]
+    return GetBuilder<UserAppSettingsController>(builder: (_) {
+      return StreamBuilder(
+          stream: FirebaseFirestore.instance
+              .collection(collectionName.config)
+              .doc(collectionName.userAppSettings)
+              .snapshots(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              log("CHECK DATA : ${snapshot.data!.data()}");
+              userSettingCtrl.usageCtrl =
+                  UserAppSettingModel.fromJson(snapshot.data!.data()!);
+              return SingleChildScrollView(
+                  child: Stack(alignment: Alignment.center, children: [
+                Form(
+                    key: userSettingCtrl.formKey,
+                    child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                          IntrinsicHeight(
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: SizedBox(
+                                      child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                        Responsive.isMobile(context) ||
+                                                Responsive.isTablet(context)
+                                            // Mobile view
+                                            ? UserAppSettingsMobile(
+                                                userAppSettingModel:
+                                                    userSettingCtrl.usageCtrl)
+                                            // Desktop view
+                                            : UserAppSettingsDesktop(
+                                                userAppSettingModel:
+                                                    userSettingCtrl.usageCtrl),
+                                      ])),
                                 ),
-                            ).boxExtension()
-                          ]
-                        )
-                      ),
-                      ButtonLayout(onTap: () => userSettingCtrl.updateData())
-                    ]
-                  )),
-              if (userSettingCtrl.isLoading)
-                Center(
-                    child: CircularProgressIndicator(
-                        color: appCtrl.appTheme.primary))
-            ]);
-      } else {
-        return Center(
-              child:
-                  CircularProgressIndicator(color: appCtrl.appTheme.primary));
-      }
+                                const HSpace(Sizes.s20),
+                                if (Responsive.isDesktop(context))
+                                  Expanded(
+                                    child: AdShowHide(
+                                        userAppSettingModel:
+                                            userSettingCtrl.usageCtrl),
+                                  ),
+                              ],
+                            ),
+                          ),
+
+                          const VSpace(Sizes.s20),
+                          if (Responsive.isDesktop(context))
+                            const AllTextBoxDesktop(),
+                          // Update button & Note
+                          ButtonLayout(
+                              onTap: () => userSettingCtrl.updateData())
+                        ])
+                        .paddingSymmetric(
+                            horizontal: Responsive.isDesktop(context)
+                                ? Insets.i100
+                                : Insets.i30,
+                            vertical: Insets.i25)
+                        .boxExtension()),
+                if (userSettingCtrl.isLoading)
+                  Center(
+                      child: CircularProgressIndicator(
+                          color: appCtrl.appTheme.primary))
+              ]));
+            } else {
+              return Container();
+            }
+          });
     });
   }
 }

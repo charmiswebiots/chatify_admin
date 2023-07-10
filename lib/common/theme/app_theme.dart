@@ -46,6 +46,7 @@ class AppTheme {
   Color switchThumb;
   Color number;
   Color dark;
+  Color drawerTextColor;
 
   /// Default constructor
   AppTheme({
@@ -85,6 +86,7 @@ class AppTheme {
     required this.switchThumb,
     required this.number,
     required this.dark,
+    required this.drawerTextColor,
   });
 
   /// fromType factory constructor
@@ -128,6 +130,7 @@ class AppTheme {
             switchThumb: Colors.white10,
           number: const Color(0xff363941),
           dark: const Color(0xff010D21),
+          drawerTextColor: const Color(0xff999EA6),
         );
 
       case ThemeType.dark:
@@ -168,6 +171,7 @@ class AppTheme {
           switchThumb: Colors.grey.shade500,
             number: const Color(0xff363941),
           dark: const Color(0xff010D21),
+          drawerTextColor: const Color(0xff999EA6),
         );
     }
   }

@@ -12,13 +12,11 @@ class AdminStatusController extends GetxController {
   Set<Uri> files = {};
   Image? image;
   File? video;
-  String imageName = "",
-      imageUrl = "";
+  String imageName = "", imageUrl = "";
   Uint8List webImage = Uint8List(8);
   Uint8List uploadWebImage = Uint8List(8);
   io.File? pickImage;
-  bool isUploadSize = false,
-      isAlert = false;
+  bool isUploadSize = false, isAlert = false;
   XFile? imageFile;
   XFile? videoFile;
   List<PhotoUrl> newPhotoList = [];
@@ -109,13 +107,14 @@ class AdminStatusController extends GetxController {
   }
 
   //add status
-  addStatus(imageUrl,statusType,{statusText,statusBgColor}) async {
-       log("addStatus");
+  addStatus(imageUrl, statusType, {statusText, statusBgColor}) async {
+    log("addStatus");
     List<PhotoUrl> statusImageUrls = [];
 
     var statusesSnapshot = await FirebaseFirestore.instance
-        .collection(collectionName.adminStatus).get();
-       log('snapShot: $statusesSnapshot');
+        .collection(collectionName.adminStatus)
+        .get();
+    log('snapShot: $statusesSnapshot');
     if (statusesSnapshot.docs.isNotEmpty) {
       Status status = Status.fromJson(statusesSnapshot.docs[0].data());
       statusImageUrls = status.photoUrl!;
@@ -123,7 +122,7 @@ class AdminStatusController extends GetxController {
         "image": imageUrl!,
         "timestamp": DateTime.now().millisecondsSinceEpoch.toString(),
         "isExpired": false,
-        "statusType":statusType,
+        "statusType": statusType,
       };
 
       statusImageUrls.add(PhotoUrl.fromJson(data));
@@ -131,14 +130,14 @@ class AdminStatusController extends GetxController {
           .collection(collectionName.adminStatus)
           .doc(statusesSnapshot.docs[0].id)
           .update(
-          {'photoUrl': statusImageUrls.map((e) => e.toJson()).toList()});
+              {'photoUrl': statusImageUrls.map((e) => e.toJson()).toList()});
       return;
     } else {
       var data = {
         "image": imageUrl!,
         "timestamp": DateTime.now().millisecondsSinceEpoch.toString(),
         "isExpired": false,
-        "statusType":statusType,
+        "statusType": statusType,
       };
       statusImageUrls = [PhotoUrl.fromJson(data)];
     }
@@ -148,30 +147,37 @@ class AdminStatusController extends GetxController {
         createdAt: DateTime.now().millisecondsSinceEpoch.toString(),
         isSeenByOwn: false);
 
-    await FirebaseFirestore.instance.collection(collectionName.adminStatus).add(status.toJson());
+    await FirebaseFirestore.instance
+        .collection(collectionName.adminStatus)
+        .add(status.toJson());
   }
 
-  Future uploadImage( {String? fileNameText}) async {
-    String fileName = DateTime.now().millisecondsSinceEpoch.toString();
-    Reference reference = FirebaseStorage.instance.ref().child(fileName);
-    log("reference : $webImage");
-    UploadTask? uploadTask;
-    uploadTask = reference.putData(webImage);
-    log("upladTask: ${reference.putData(webImage)}");
-    uploadTask.then((res) async {
-      log("res : $res");
-      res.ref.getDownloadURL().then((downloadUrl) async {
-        imageUrl = downloadUrl;
-        log("imageUrl1 : $imageUrl");
-        update();
-        await Future.delayed(Durations.s3);
-        onAddStatus();
-      }, onError: (err) {
-        update();
-        log("error: $err");
+  Future uploadImage({String? fileNameText}) async {
+    bool isLoginTest = appCtrl.storage.read(session.isLoginTest);
+    if (isLoginTest) {
+      accessDenied(fonts.modification.tr);
+    } else {
+      String fileName = DateTime.now().millisecondsSinceEpoch.toString();
+      Reference reference = FirebaseStorage.instance.ref().child(fileName);
+      log("reference : $webImage");
+      UploadTask? uploadTask;
+      uploadTask = reference.putData(webImage);
+      log("upladTask: ${reference.putData(webImage)}");
+      uploadTask.then((res) async {
+        log("res : $res");
+        res.ref.getDownloadURL().then((downloadUrl) async {
+          imageUrl = downloadUrl;
+          log("imageUrl1 : $imageUrl");
+          update();
+          await Future.delayed(Durations.s3);
+          onAddStatus();
+        }, onError: (err) {
+          update();
+          log("error: $err");
+        });
       });
-    });
-    update();
+      update();
+    }
   }
 
   //add status
@@ -179,40 +185,38 @@ class AdminStatusController extends GetxController {
     isLoading = true;
     update();
     log("imageUrl : $imageUrl");
-    await addStatus(imageUrl,"image");
+    await addStatus(imageUrl, "image");
     isLoading = false;
     update();
   }
 
   //status delete after 24 hours
   statusDeleteAfter24Hours() async {
-      FirebaseFirestore.instance
-          .collection(collectionName.adminStatus)
-          .get()
-          .then((value) async {
-        if (value.docs.isNotEmpty) {
-          Status status = Status.fromJson(value.docs[0].data());
-          await getPhotoUrl(status.photoUrl!).then((list) async {
-            List<PhotoUrl> photoUrl = list;
-            if (photoUrl.isEmpty) {
-              FirebaseFirestore.instance
-                  .collection(collectionName.adminStatus)
-                  .doc(value.docs[0].id)
-                  .delete();
-            } else {
-              var statusesSnapshot = await FirebaseFirestore.instance
-                  .collection(collectionName.adminStatus)
-                  .get();
-              await FirebaseFirestore.instance
-                  .collection(collectionName.adminStatus)
-                  .doc(statusesSnapshot.docs[0].id)
-                  .update(
-                  {'photoUrl': photoUrl.map((e) => e.toJson()).toList()});
-            }
-          });
-        }
-      });
-
+    FirebaseFirestore.instance
+        .collection(collectionName.adminStatus)
+        .get()
+        .then((value) async {
+      if (value.docs.isNotEmpty) {
+        Status status = Status.fromJson(value.docs[0].data());
+        await getPhotoUrl(status.photoUrl!).then((list) async {
+          List<PhotoUrl> photoUrl = list;
+          if (photoUrl.isEmpty) {
+            FirebaseFirestore.instance
+                .collection(collectionName.adminStatus)
+                .doc(value.docs[0].id)
+                .delete();
+          } else {
+            var statusesSnapshot = await FirebaseFirestore.instance
+                .collection(collectionName.adminStatus)
+                .get();
+            await FirebaseFirestore.instance
+                .collection(collectionName.adminStatus)
+                .doc(statusesSnapshot.docs[0].id)
+                .update({'photoUrl': photoUrl.map((e) => e.toJson()).toList()});
+          }
+        });
+      }
+    });
   }
 
   Future<List<PhotoUrl>> getPhotoUrl(List<PhotoUrl> photoUrl) async {
@@ -232,5 +236,4 @@ class AdminStatusController extends GetxController {
     update();
     return newPhotoList;
   }
-
 }

@@ -1,76 +1,55 @@
+import 'package:chatify_admin/models/usage_control_model.dart';
+import 'package:chatify_admin/models/user_setting_model.dart';
+
 import '../../../config.dart';
 
 class UsageControlMobile extends StatelessWidget {
-  const UsageControlMobile({Key? key}) : super(key: key);
+  final UsageControlModel? usageControlModel;
+  const UsageControlMobile({Key? key,this.usageControlModel}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder<UsageControlController>(builder: (usageCtrl) {
-      return Column(children: [
+      return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
         MobileSwitchCommon(
             title: fonts.allowCreatingBroadcast,
-            value: usageCtrl.usageCtrl["allow_creating_broadcast"],
-            onChanged: (val) {
-              usageCtrl.usageCtrl["allow_creating_broadcast"] = val;
-              usageCtrl.update();
-            }),
+            value: usageControlModel!.allowCreatingBroadcast!,
+            onChanged: (val)=> usageCtrl.onChangeSwitcher("allowCreatingBroadcast", val)),
         MobileSwitchCommon(
           title: fonts.allowCreatingGroup,
-          value: usageCtrl.usageCtrl["allow_creating_group"],
-          onChanged: (val) {
-            usageCtrl.usageCtrl["allow_creating_group"] = val;
-            usageCtrl.update();
-          },
+          value: usageControlModel!.allowCreatingGroup,
+          onChanged: (val)=> usageCtrl.onChangeSwitcher("allowCreatingGroup", val)
         ),
         MobileSwitchCommon(
             title: fonts.allowCreatingStatus,
-            value: usageCtrl.usageCtrl["allow_creating_status"],
-            onChanged: (val) {
-              usageCtrl.usageCtrl["allow_creating_status"] = val;
-              usageCtrl.update();
-            }),
+            value: usageControlModel!.allowCreatingStatus,
+            onChanged: (val) => usageCtrl.onChangeSwitcher("allowCreatingStatus", val)),
         MobileSwitchCommon(
             title: fonts.callsAllowed,
-            value: usageCtrl.usageCtrl["calls_allowed"],
-            onChanged: (val) {
-              usageCtrl.usageCtrl["calls_allowed"] = val;
-              usageCtrl.update();
-            }),
+            value: usageControlModel!.callsAllowed,
+            onChanged: (val) => usageCtrl.onChangeSwitcher("callsAllowed", val)),
         MobileSwitchCommon(
             title: fonts.existenceUser,
-            value: usageCtrl.usageCtrl["existence_users"],
-            onChanged: (val) {
-              usageCtrl.usageCtrl["existence_users"] = val;
-              usageCtrl.update();
-            }),
+            value: usageControlModel!.existenceUsers,
+            onChanged: (val)  => usageCtrl.onChangeSwitcher("existenceUsers", val)),
         MobileSwitchCommon(
             title: fonts.mediaSendAllowed,
-            value: usageCtrl.usageCtrl["media_send_allowed"],
-            onChanged: (val) {
-              usageCtrl.usageCtrl["media_send_allowed"] = val;
-              usageCtrl.update();
-            }),
+            value: usageControlModel!.mediaSendAllowed,
+            onChanged: (val)  => usageCtrl.onChangeSwitcher("mediaSendAllowed", val)),
         MobileSwitchCommon(
             title: fonts.showLogoutButton,
-            value: usageCtrl.usageCtrl["show_logout_button"],
-            onChanged: (val) {
-              usageCtrl.usageCtrl["show_logout_button"] = val;
-              usageCtrl.update();
-            }),
+            value: usageControlModel!.showLogoutButton,
+            onChanged: (val) => usageCtrl.onChangeSwitcher("showLogoutButton", val)),
         MobileSwitchCommon(
             title: fonts.textMessageAllowed,
-            value: usageCtrl.usageCtrl["text_message_allowed"],
-            onChanged: (val) {
-              usageCtrl.usageCtrl["text_message_allowed"] = val;
-              usageCtrl.update();
-            }),
+            value: usageControlModel!.textMessageAllowed,
+            onChanged: (val) => usageCtrl.onChangeSwitcher("textMessageAllowed", val)),
         MobileSwitchCommon(
             title: fonts.allowUserSignup,
-            value: usageCtrl.usageCtrl["allow_user_signup"],
-            onChanged: (val) {
-              usageCtrl.usageCtrl["allow_user_signup"] = val;
-              usageCtrl.update();
-            }),
+            value: usageControlModel!.allowUserSignup,
+            onChanged: (val) => usageCtrl.onChangeSwitcher("allowUserSignup", val)),
         MobileTextFieldCommon(
             validator: (number) => Validation().broadCastValidation(number),
             title: fonts.broadcastMemberLimit,

@@ -14,13 +14,20 @@ void main() async {
   Get.put(AppController());
   await Firebase.initializeApp(
     options: const FirebaseOptions(
-        apiKey: "AIzaSyCMf3V7y9t0QTbne7HFQYxQ7AVaV7ZlsaU",
-        authDomain: "chatter-e3d94.firebaseapp.com",
-        projectId: "chatter-e3d94",
-        storageBucket: "chatter-e3d94.appspot.com",
-        messagingSenderId: "554550103320",
-        appId: "1:554550103320:web:a00ea84cbafd303de0626d",
-        measurementId: "G-PJYE5GMG4M"),
+        /*apiKey: "AIzaSyAoc27X-TFvbjKbL5XGgq9zyQj3ZEE2LNs",
+        authDomain: "chatify-195b1.firebaseapp.com",
+        projectId: "chatify-195b1",
+        storageBucket: "chatify-195b1.appspot.com",
+        messagingSenderId: "432304404919",
+        appId: "1:432304404919:web:13d8d0c43bb63bc1045032",
+        measurementId: "G-591LHY9MBM"*/
+        apiKey: "AIzaSyARL103Jpa5MjBJImQfwwGFRLNrye0-c3k",
+        authDomain: "chat-clone-d5c03.firebaseapp.com",
+        projectId: "chat-clone-d5c03",
+        storageBucket: "chat-clone-d5c03.appspot.com",
+        messagingSenderId: "879384621248",
+        appId: "1:879384621248:web:782ba61d05c6ba9d347d25",
+        measurementId: "G-YZZXPWPL51"),
   );
 
 
@@ -61,7 +68,7 @@ class _MyAppState extends State<MyApp> {
       locale: const Locale('en', 'US'),
       fallbackLocale: const Locale('en', 'US'),
       // tran
-      title: "Chatify Admin",
+      title: fonts.chatifyAdmin.tr,
       home: appCtrl.isLogged == true ? IndexLayout(scaffoldDrawerKey: scaffoldDrawerKey,scaffoldKey: scaffoldKey) : LoginScreen(),
       getPages: appRoute.getPages,
       theme: AppTheme.fromType(ThemeType.light).themeData,

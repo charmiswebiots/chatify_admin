@@ -13,7 +13,7 @@ class MobileSwitchCommon extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(title!.tr,style: AppCss.poppinsMedium18.textColor(appCtrl.appTheme.dark)),
+          Text(title!.tr,style: AppCss.poppinsMedium18.textColor(appCtrl.isTheme ?appCtrl.appTheme.white :appCtrl.appTheme.dark)),
           Switch(
             activeColor: appCtrl.appTheme.primary,
               materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,

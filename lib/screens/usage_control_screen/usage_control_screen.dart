@@ -1,3 +1,10 @@
+import 'dart:developer';
+
+import 'package:chatify_admin/models/usage_control_model.dart';
+import 'package:chatify_admin/screens/usage_control_screen/layouts/usage_control_text_box_desktop.dart';
+import 'package:chatify_admin/screens/user_app_settings_screen/layouts/all_text_box_desktop.dart';
+import 'package:chatify_admin/screens/usage_control_screen/layouts/usage_control_responsive.dart';
+
 import '../../config.dart';
 
 class UsageControlScreen extends StatelessWidget {
@@ -7,109 +14,49 @@ class UsageControlScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return GetBuilder<UsageControlController>(builder: (_) {
-      return usageCtrl.usageCtrl != null
-          ? Stack(alignment: Alignment.center, children: [
-              Form(
-                  key: usageCtrl.formKey,
-                  child: Column(
-                    children: [
-                      IntrinsicHeight(
-                        child: Row(
-                          children: [
-                            SizedBox(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                  Responsive.isMobile(context) ||
-                                          Responsive.isTablet(context)
-                                  // Mobile view
-                                      ? const UsageControlMobile()
-                                  // Desktop view
-                                      : const UsageControlDesktop(),
+      if (usageCtrl.usageCtrl != null) {
+        return StreamBuilder(
+            stream: FirebaseFirestore.instance
+                .collection(collectionName.config).doc(collectionName.usageControls)
+                .snapshots(),
+            builder: (context, snapShot) {
+              if (snapShot.hasData) {
 
-
-                                ])).boxExtension(),
-                            const HSpace(Sizes.s20),
-                            SizedBox(
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                usageCtrl.usageCtrl = UsageControlModel.fromJson(snapShot.data!.data()!);
+                return SingleChildScrollView(
+                    child: Stack(alignment: Alignment.center, children: [
+                  Form(
+                      key: usageCtrl.formKey,
+                      child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                          DesktopTextFieldCommon(
-                                  width: Sizes.s236,
-                                  validator: (number) => Validation()
-                                      .groupValidation(number),
-                                  title: fonts.groupMemberLimit,
-                                  controller:
-                                  usageCtrl.groupMemberLimit),
-                          const VSpace(Sizes.s30),
-                          DesktopTextFieldCommon(
-                                  width: Sizes.s236,
-                                  validator: (number) => Validation()
-                                      .maxContactValidation(number),
-                                  title: fonts.maxContactSelectForward,
-                                  controller: usageCtrl
-                                      .maxContactSelectForward),
-                                    const VSpace(Sizes.s30),
-                          DesktopTextFieldCommon(
-                                  width: Sizes.s236,
-                                  validator: (number) => Validation()
-                                      .maxFileValidation(number),
-                                  title: fonts.maxFileSize,
-                                  controller: usageCtrl.maxFileSize)
-                                  ],
-                                ),
-                                const HSpace(Sizes.s30),
-                                Column(
-                                    mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      DesktopTextFieldCommon(
-                                          width: Sizes.s236,
-                                          validator: (number) => Validation()
-                                              .maxFileMultiValidation(number),
-                                          title: fonts.maxFileMultiShare,
-                                          controller:
-                                          usageCtrl.maxFileMultiShare),
-                                      const VSpace(Sizes.s30),
-                                      DesktopTextFieldCommon(
-                                          width: Sizes.s236,
-                                          isNote: true,
-                                          validator: (number) => Validation()
-                                              .statusValidation(number),
-                                          title: fonts.statusDeleteTime,
-                                          controller:
-                                          usageCtrl.statusDeleteTime),
-                                      const VSpace(Sizes.s30),
-                                      DesktopTextFieldCommon(
-                                          width: Sizes.s236,
-                                          validator: (number) => Validation()
-                                              .broadCastValidation(number),
-                                          title: fonts.broadcastMemberLimit,
-                                          controller:
-                                          usageCtrl.broadCastMemberLimit)
-                                    ]),
-                              ],
-                            ).paddingAll(Insets.i30),
-                            ).boxExtension()
-                          ]
-                        )
-                      ),
-                        // Update button & Note
-                      ButtonLayout(isNote: true,onTap: () => usageCtrl.updateData())
-                    ]
-                  )),
-              if (usageCtrl.isLoading)
-                Center(child: CircularProgressIndicator(color: appCtrl.appTheme.primary))
-            ])
-          : Center(
-              child:
-                  CircularProgressIndicator(color: appCtrl.appTheme.primary));
+                            UsageControlResponsive(configModel: usageCtrl.usageCtrl),
+                            const VSpace(Sizes.s20),
+                            if (Responsive.isDesktop(context))
+                              const UsageControlAllTextBoxDesktop(),
+                            // Update button & Note
+                            ButtonLayout(onTap: () => usageCtrl.updateData())
+                          ])
+                          .paddingSymmetric(
+                              horizontal: Responsive.isDesktop(context)
+                                  ? Insets.i100
+                                  : Insets.i30,
+                              vertical: Insets.i25)
+                          .boxExtension()),
+                  if (usageCtrl.isLoading)
+                    Center(
+                        child: CircularProgressIndicator(
+                            color: appCtrl.appTheme.primary))
+                ]));
+              } else {
+                return Container();
+              }
+            });
+      } else {
+        return Container();
+      }
     });
   }
 }

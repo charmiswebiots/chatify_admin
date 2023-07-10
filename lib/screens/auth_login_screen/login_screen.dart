@@ -19,11 +19,7 @@ class LoginScreen extends StatelessWidget {
                       linearGradient: backgroundLinearGradient(),
                       child: GlassMorphicLayout(
                           linearGradient: loginLinearGradient(),
-                          child: Column(children:  const [
-                            DarkLanguageLayout(),
-                            VSpace(Sizes.s80),
-                            LoginLayout()
-                          ]))));
+                          child:const LoginLayout())));
             }
           ),
         );

@@ -1,4 +1,6 @@
 import 'package:chatify_admin/config.dart';
+import 'package:chatify_admin/screens/report/report.dart';
+import 'package:chatify_admin/screens/wallpaper/wallpaper.dart';
 
 class IndexController extends GetxController {
 
@@ -6,7 +8,7 @@ class IndexController extends GetxController {
   GlobalKey<ScaffoldState>? scaffoldDrawerKey;
   GlobalKey<ScaffoldState>? scaffoldKey;
   int selectedIndex = 0;
-  String pageName = fonts.dashboard.tr;
+  String pageName = fonts.dashboard;
   bool isHover = false;
   int isSelectedHover = 0;
 
@@ -14,11 +16,12 @@ class IndexController extends GetxController {
 
   //list of bottommost page
   List<Widget> widgetOptions = <Widget>[
-    UserAppSettingsScreen(),
-    UsageControlScreen(),
     Dashboard(),
+    UsageControlScreen(),
+    UserAppSettingsScreen(),
     AdminStatusScreen(),
-    /*AddUserScreen(),*/
+    WallPaper(),
+    Report(),
     Container()
   ];
 

@@ -88,18 +88,26 @@ showAlert({title, context}) async {
 }
 
 //test user not allow dialog
-accessDenied(String content) {
+accessDenied(String content,
+    {GestureTapCallback? onTap, isModification = true, isDelete = false}) {
   Get.dialog(
     AlertDialog(
-      title: const Text("Alert!"),
+      title: Text(fonts.report.tr),
       content: Text(content.tr),
       actions: <Widget>[
         CommonButton(
-          title: "Close",
+          title: fonts.close.tr,
           width: Sizes.s80,
           style: AppCss.poppinsMedium16.textColor(appCtrl.appTheme.white),
           onTap: () => Get.back(),
-        )
+        ),
+        if (isDelete == true)
+          CommonButton(
+            title: fonts.delete.tr,
+            width: Sizes.s80,
+            style: AppCss.poppinsMedium16.textColor(appCtrl.appTheme.white),
+            onTap: onTap,
+          ),
       ],
     ),
     barrierDismissible: false,

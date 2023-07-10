@@ -23,22 +23,23 @@ class _IndexLayoutState extends State<IndexLayout> {
         debugShowCheckedModeBanner: false,
         home: Scaffold(
             key: widget.scaffoldKey,
+            backgroundColor: appCtrl.isTheme ?appCtrl.appTheme.whiteColor : appCtrl.appTheme.bg1,
             appBar: AppBar(
                 elevation: 0.0,
                 shadowColor: Colors.transparent,
                 centerTitle: false,
-                backgroundColor: appCtrl.appTheme.whiteColor,
+                backgroundColor: appCtrl.isTheme ?appCtrl.appTheme.whiteColor : appCtrl.appTheme.bg1,
                 leadingWidth: Responsive.isDesktop(context) ? Sizes.s392 : Sizes.s100,
                 title: !Responsive.isDesktop(context)
                     ? Text(indexCtrl.pageName.tr,style: AppCss.poppinsSemiBold16.textColor(appCtrl.appTheme.blackColor),)
                     : Container(),
                 leading:  LeadingRow(scaffoldKey: widget.scaffoldKey,scaffoldDrawerKey: widget.scaffoldDrawerKey),
-                actions: const [DarkLanguageLayout()]),
+                actions: const [DarkLanguageLayout( )]),
             drawerScrimColor: Colors.transparent,
-            drawer: const IndexDrawer(),
+            drawer:  IndexDrawer(scaffoldKey: widget.scaffoldKey,),
             body: SafeArea(
                 child: Scaffold(
-                    backgroundColor: appCtrl.appTheme.primary.withOpacity(0.1),
+ backgroundColor:  appCtrl.isTheme ?appCtrl.appTheme.whiteColor : appCtrl.appTheme.bg1,
 
                     key: widget.scaffoldDrawerKey,
                     body: Row(
@@ -53,7 +54,10 @@ class _IndexLayoutState extends State<IndexLayout> {
                                     height:
                                     MediaQuery.of(context).size.height,
                                     width: value ? Sizes.s240 : Sizes.s70,
-                                    color: appCtrl.appTheme.dark,
+                                   decoration: BoxDecoration(
+                                     boxShadow:  [BoxShadow(blurRadius: 20,color: appCtrl.appTheme.gray,spreadRadius: 4)],
+                                     color: appCtrl.appTheme.dark,
+                                   ),
                                     child: SingleChildScrollView(
                                         controller: ScrollController(),
                                         child: Column(
@@ -64,7 +68,7 @@ class _IndexLayoutState extends State<IndexLayout> {
                                             mainAxisAlignment:
                                             MainAxisAlignment.start,
                                             children: [
-                                              DrawerList(value: value)
+                                              DrawerList(value: value,scaffoldKey: widget.scaffoldKey,)
                                             ])))
                                     : const SizedBox.shrink();
                               }),

@@ -17,20 +17,20 @@ class DesktopSwitchCommon extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(title!.tr,
-                      style: AppCss.poppinsMedium18
-                          .textColor(appCtrl.appTheme.dark)),
-                  Switch(
-                      activeColor: appCtrl.appTheme.primary,
-                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      value: value!,
-                      onChanged: onChanged)
-                ]
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(title!.tr,
+                        style: AppCss.poppinsMedium16
+                            .textColor(appCtrl.isTheme ?appCtrl.appTheme.white : appCtrl.appTheme.dark)),
+                    Switch(
+                        activeColor: appCtrl.appTheme.primary,
+                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        value: value!,
+                        onChanged: onChanged)
+                  ]
               ),
               if(isDivider != true)
-              Divider(color: appCtrl.appTheme.primary.withOpacity(0.1)).paddingSymmetric(vertical: Insets.i10)
+                Divider(color: appCtrl.appTheme.primary.withOpacity(0.1))
             ]));
   }
 }

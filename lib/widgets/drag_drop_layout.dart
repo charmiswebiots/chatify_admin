@@ -10,6 +10,7 @@ class DragDropLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Builder(
         builder: (context) => DropzoneView(
+
             operation: DragOperation.copy,
             cursor: CursorType.grab,
             onCreated: onCreated,

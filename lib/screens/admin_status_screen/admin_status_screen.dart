@@ -35,7 +35,7 @@ class AdminStatusScreen extends StatelessWidget {
                                         onCreated: (ctrl) =>
                                         adminStatusCtrl.controller1 = ctrl,
                                         onDrop: (ev) async {
-                                          log('Zone 1 drop: ${ev.name}');
+
                                           adminStatusCtrl.imageName = ev.name;
                                           adminStatusCtrl.update();
                                           final bytes = await adminStatusCtrl
@@ -79,10 +79,18 @@ class AdminStatusScreen extends StatelessWidget {
                                                 context: context))
                                   ])
                               ),
+                              if (adminStatusCtrl.isAlert == true &&
+                                  adminStatusCtrl.pickImage == null)
+                                Text("Please Upload Image",
+                                    style: AppCss.poppinsSemiBold14
+                                        .textColor(appCtrl.appTheme.redColor)),
                               UpdateButton(title: fonts.addStatus,
                                   onPressed: adminStatusCtrl.imageFile != null
                                       ? () => adminStatusCtrl.uploadImage()
-                                      : () {}).paddingOnly(top: Insets.i15)
+                                      : () {
+                                    adminStatusCtrl.isAlert = true;
+                                    adminStatusCtrl.update();
+                                  }).paddingOnly(top: Insets.i15)
                             ])
                       ]).paddingAll(Insets.i10)).boxExtension(),
               if (adminStatusCtrl.isLoading)

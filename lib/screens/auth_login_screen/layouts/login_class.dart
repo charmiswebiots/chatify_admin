@@ -20,7 +20,7 @@ class LoginCommonClass {
 
   //logo layout
   Widget logoLayout({String? image}) => Image.asset(image!,
-      height: Sizes.s50, width: Sizes.s50, fit: BoxFit.fill);
+      height: Sizes.s50, fit: BoxFit.fill);
 
   //title layout
   Widget titleLayout({String? title}) => Text(title.toString().tr,

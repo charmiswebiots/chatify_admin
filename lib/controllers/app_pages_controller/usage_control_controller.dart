@@ -1,74 +1,94 @@
 import 'dart:developer';
 import 'package:chatify_admin/config.dart';
+import 'package:chatify_admin/models/usage_control_model.dart';
 
 class UsageControlController extends GetxController {
-     dynamic usageCtrl;
-     bool isLoading = false;
-     TextEditingController broadCastMemberLimit = TextEditingController();
-     TextEditingController groupMemberLimit = TextEditingController();
-     TextEditingController maxContactSelectForward = TextEditingController();
-     TextEditingController maxFileSize = TextEditingController();
-     TextEditingController maxFileMultiShare = TextEditingController();
-     TextEditingController statusDeleteTime = TextEditingController();
-     GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  UsageControlModel? usageCtrl;
+  bool isLoading = false;
+  String? id;
+  TextEditingController broadCastMemberLimit = TextEditingController();
+  TextEditingController groupMemberLimit = TextEditingController();
+  TextEditingController maxContactSelectForward = TextEditingController();
+  TextEditingController maxFileSize = TextEditingController();
+  TextEditingController maxFileMultiShare = TextEditingController();
+  TextEditingController statusDeleteTime = TextEditingController();
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-     //get data from firebase
-     getData() async {
-       final usageControls = await FirebaseFirestore.instance
-           .collection(collectionName.admin)
-           .doc(collectionName.usageControls)
-           .get();
-       log("get data: $usageControls");
-       usageCtrl = usageControls.data();
-       log("get data IN: $usageCtrl");
-       broadCastMemberLimit.text = usageCtrl["broad_cast_members_limit"].toString();
-       groupMemberLimit.text = usageCtrl["group_member_limit"].toString();
-       maxContactSelectForward.text = usageCtrl["max_contact_select_forward"].toString();
-       maxFileSize.text = usageCtrl["max_file_size"].toString();
-       maxFileMultiShare.text = usageCtrl["max_files_multi_share"].toString();
-       statusDeleteTime.text = usageCtrl["status_delete_time"];
-       update();
-     }
+  //get data from firebase
+  getData() async {
+    final usageControls = await FirebaseFirestore.instance
+        .collection(collectionName.config)
+        .doc(collectionName.usageControls)
+        .get();
+    if (usageControls.exists) {
+      id = usageControls.id;
+      usageCtrl = UsageControlModel.fromJson(usageControls.data()!);
+      log("get data IN: ${usageControls.data()!["allowCreatingGroup"]}");
+      broadCastMemberLimit.text = usageCtrl!.broadCastMembersLimit.toString();
+      groupMemberLimit.text = usageCtrl!.groupMembersLimit.toString();
+      maxContactSelectForward.text =
+          usageCtrl!.maxContactSelectForward.toString();
+      maxFileSize.text = usageCtrl!.maxFileSize.toString();
+      maxFileMultiShare.text = usageCtrl!.maxFilesMultiShare.toString();
+      statusDeleteTime.text = usageCtrl!.statusDeleteTime.toString();
+    }
+    update();
+  }
 
-     //update data
-     updateData() async {
-
-      if(formKey.currentState!.validate()) {
-        usageCtrl["broad_cast_members_limit"] = int.parse(broadCastMemberLimit.text);
-        usageCtrl["group_member_limit"] = int.parse(groupMemberLimit.text);
-        usageCtrl["max_contact_select_forward"] = int.parse(maxContactSelectForward.text);
-        usageCtrl["max_file_size"] = int.parse(maxFileSize.text);
-        usageCtrl["max_files_multi_share"] = int.parse(maxFileMultiShare.text);
-        usageCtrl["status_delete_time"] = statusDeleteTime.text;
+  //update data
+  updateData() async {
+    bool isLoginTest = appCtrl.storage.read(session.isLoginTest) ?? false;
+    if (isLoginTest) {
+      accessDenied(fonts.modification.tr);
+    } else {
+      if (formKey.currentState!.validate()) {
+        usageCtrl!.broadCastMembersLimit = int.parse(broadCastMemberLimit.text);
+        usageCtrl!.groupMembersLimit = int.parse(groupMemberLimit.text);
+        usageCtrl!.maxContactSelectForward =
+            int.parse(maxContactSelectForward.text);
+        usageCtrl!.maxFileSize = int.parse(maxFileSize.text);
+        usageCtrl!.maxFilesMultiShare = int.parse(maxFileMultiShare.text);
+        usageCtrl!.statusDeleteTime = statusDeleteTime.text;
 
         log("usage: $usageCtrl");
-        bool isLoginTest = appCtrl.storage.read(session.isLoginTest) ?? false;
-        if (isLoginTest) {
-          accessDenied(fonts.modification.tr);
-        }else {
-          isLoading = true;
-          log("usage2: $usageCtrl");
-          update();
-          await FirebaseFirestore.instance
-              .collection(collectionName.admin)
-              .doc(collectionName.usageControls)
-              .update(usageCtrl).then((value) {
-            log("collectionName: ${collectionName.admin}");
-            log("collectionNiAndar: ${collectionName.usageControls}");
-            log("usage3: $usageCtrl");
-            isLoading = false;
-            update();
-          });
-          update();
-          getData();
-        }
-      }
-     }
 
-     @override
+
+        isLoading = true;
+        log("usage2: $usageCtrl");
+        update();
+        await FirebaseFirestore.instance
+            .collection(collectionName.config)
+            .doc(collectionName.usageControls)
+            .update(usageCtrl!.toJson())
+            .then((value) {
+          isLoading = false;
+          update();
+        });
+        update();
+        getData();
+      }
+    }
+  }
+
+  //on change switcher
+  onChangeSwitcher(title, value) async {
+    bool isLoginTest = appCtrl.storage.read(session.isLoginTest);
+    if (isLoginTest) {
+      accessDenied(fonts.modification.tr);
+    } else {
+      await FirebaseFirestore.instance
+          .collection(collectionName.config)
+          .doc(collectionName.usageControls)
+          .update({title: value}).then((value) => getData());
+
+      update();
+    }
+  }
+
+  @override
   void onReady() {
-       getData();
-       update();
+    getData();
+    update();
     // TODO: implement onReady
     super.onReady();
   }

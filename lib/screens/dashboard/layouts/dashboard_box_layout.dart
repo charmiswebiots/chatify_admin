@@ -14,7 +14,7 @@ class DashboardBoxLayout extends StatelessWidget {
               height: Sizes.s177,
               decoration: BoxDecoration(
                   gradient: LinearGradient(
-                      begin: const Alignment(9, 8),
+                      begin: const Alignment(8, 9 ),
                       end: const Alignment(-9, -8),
                       colors: [
                         appCtrl.appTheme.primary.withOpacity(.1),
@@ -44,10 +44,10 @@ class DashboardBoxLayout extends StatelessWidget {
                                   .tr),
                           ClipRRect(
                               borderRadius:
-                                  BorderRadius.circular(AppRadius.r15),
+                                  BorderRadius.circular(AppRadius.r13),
                               child: SvgPicture.asset(
                                       dashboardCtrl.listItem[index!]["icon"])
-                                  .paddingAll(Insets.i14)
+
                                   .decorated(
                                       color: appCtrl.appTheme.primary,
                                       borderRadius: SmoothBorderRadius(
@@ -59,7 +59,7 @@ class DashboardBoxLayout extends StatelessWidget {
           .decorated(
               borderRadius: BorderRadius.circular(Insets.i18),
               boxShadow: [
-                BoxShadow(
+                const BoxShadow(
                     color: Color.fromRGBO(49, 100, 189, 0.07),
                     blurRadius: 20)
               ],

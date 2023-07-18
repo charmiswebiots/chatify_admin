@@ -7,7 +7,7 @@ extension ChatifyExtansion on Widget {
           color: appCtrl.isTheme
               ? appCtrl.appTheme.accentTxt
               : appCtrl.appTheme.white,
-          borderRadius: const BorderRadius.all(Radius.circular(AppRadius.r10)),
+          borderRadius: const BorderRadius.all(Radius.circular(AppRadius.r18)),
           boxShadow: [
             BoxShadow(
                 color: appCtrl.appTheme.primaryLight.withOpacity(0.1),

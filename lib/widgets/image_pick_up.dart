@@ -6,12 +6,20 @@ class ImagePickUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CommonDottedBorder(
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-           Icon(Icons.image,color: appCtrl.appTheme.blackColor),
-          const HSpace(Sizes.s10),
-          Text(fonts.addImage.tr,style: AppCss.poppinsBold14.textColor(appCtrl.appTheme.blackColor))
-        ]));
+        child: Column(mainAxisSize: MainAxisSize.max, mainAxisAlignment: MainAxisAlignment.center,children: [
+      Image.asset(imageAssets.gallery, height: Sizes.s120),
+      const VSpace(Sizes.s10),
+      RichText(
+          text: TextSpan(children: [
+        TextSpan(
+            text: fonts.clickToUpload,
+            style: AppCss.poppinsMedium20
+                .textColor(appCtrl.appTheme.primary)
+                .textDecoration(TextDecoration.underline)),
+        TextSpan(
+            text: fonts.orDragDrop,
+            style: AppCss.poppinsMedium20.textColor(appCtrl.appTheme.dark))
+      ]))
+    ]).width(MediaQuery.of(context).size.width));
   }
 }

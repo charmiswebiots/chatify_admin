@@ -101,7 +101,7 @@ class AppTheme {
           secondary: const Color(0xFF6EBAE7),
           accentTxt: const Color(0xFF001928),
           bg1: Colors.white,
-          bgColor: Colors.white,
+          bgColor: const Color(0XFFF6F8FC),
           surface: Colors.white,
           error: const Color(0xFFd32f2f),
           transparentColor: Colors.transparent,

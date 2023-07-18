@@ -25,11 +25,13 @@ class _IndexLayoutState extends State<IndexLayout> {
             key: widget.scaffoldKey,
             backgroundColor: appCtrl.isTheme ?appCtrl.appTheme.whiteColor : appCtrl.appTheme.bg1,
             appBar: AppBar(
+              toolbarHeight: Sizes.s70,
                 elevation: 0.0,
                 shadowColor: Colors.transparent,
                 centerTitle: false,
+
                 backgroundColor: appCtrl.isTheme ?appCtrl.appTheme.whiteColor : appCtrl.appTheme.bg1,
-                leadingWidth: Responsive.isDesktop(context) ? Sizes.s392 : Sizes.s100,
+                leadingWidth: Responsive.isDesktop(context) ? Sizes.s500 : Sizes.s100,
                 title: !Responsive.isDesktop(context)
                     ? Text(indexCtrl.pageName.tr,style: AppCss.poppinsSemiBold16.textColor(appCtrl.appTheme.blackColor),)
                     : Container(),
@@ -39,7 +41,7 @@ class _IndexLayoutState extends State<IndexLayout> {
             drawer:  IndexDrawer(scaffoldKey: widget.scaffoldKey,),
             body: SafeArea(
                 child: Scaffold(
- backgroundColor:  appCtrl.isTheme ?appCtrl.appTheme.whiteColor : appCtrl.appTheme.bg1,
+ backgroundColor:  appCtrl.isTheme ?appCtrl.appTheme.whiteColor : appCtrl.appTheme.bgColor,
 
                     key: widget.scaffoldDrawerKey,
                     body: Row(
@@ -68,6 +70,12 @@ class _IndexLayoutState extends State<IndexLayout> {
                                             mainAxisAlignment:
                                             MainAxisAlignment.start,
                                             children: [
+                                              Divider(
+                                                  thickness: 2,
+                                                  color: appCtrl.appTheme.primary.withOpacity(0.2),
+                                                  indent: 12,
+                                                  endIndent: 12),
+                                              const VSpace(Sizes.s10),
                                               DrawerList(value: value,scaffoldKey: widget.scaffoldKey,)
                                             ])))
                                     : const SizedBox.shrink();

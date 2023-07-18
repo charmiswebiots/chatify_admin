@@ -57,7 +57,7 @@ class ImageLayout extends StatelessWidget {
                 source: ImageSource.gallery,
                 context: context,
                 title: "image1"))
-      ]).height(bannerCtrl.isUploadSize ? Sizes.s150  : image!.isNotEmpty ?Sizes.s150 : Sizes.s50).width(Sizes.s200);
+      ]).height(bannerCtrl.isUploadSize ? Sizes.s150  : image!.isNotEmpty ? Sizes.s150 : Sizes.s50).width(Sizes.s200);
     });
   }
 }

@@ -30,7 +30,7 @@ class DrawerList extends StatelessWidget {
                               Responsive.isDesktop(context) && value == false
                                   ? 0
                                   : Insets.i15,
-                          vertical: Insets.i5),
+                          vertical: Insets.i10),
                       width: double.infinity,
                       child: Responsive.isDesktop(context) && value == false
                           ? SvgPicture.asset(e.value["icon"]!,color: indexCtrl

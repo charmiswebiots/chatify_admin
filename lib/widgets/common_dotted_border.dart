@@ -7,11 +7,10 @@ class CommonDottedBorder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DottedBorder(
-      padding: const EdgeInsets.symmetric(
-          horizontal: Sizes.s15, vertical: Insets.i10),
-      color: appCtrl.appTheme.gray.withOpacity(.5),
-      radius: const Radius.circular(AppRadius.r5),
-      dashPattern: const [8, 10],
+
+      color: appCtrl.appTheme.primary,
+      radius: const Radius.circular(AppRadius.r16),
+      dashPattern: const [6, 6],
       strokeWidth: 1.5,
       strokeCap: StrokeCap.round,
       borderType: BorderType.RRect,

@@ -46,6 +46,7 @@ class AppCss {
   static TextStyle get poppinsBold12 => poppins.bold.size(FontSizes.f12);
   static TextStyle get poppinsBold10 => poppins.bold.size(FontSizes.f10);
   static TextStyle get poppinsSemiBold24=> poppins.semiBold.size(FontSizes.f24);
+  static TextStyle get poppinsSemiBold22=> poppins.semiBold.size(FontSizes.f22);
   static TextStyle get poppinsSemiBold20=> poppins.semiBold.size(FontSizes.f20);
   static TextStyle get poppinsSemiBold18=> poppins.semiBold.size(FontSizes.f18);
   static TextStyle get poppinsSemiBold16=> poppins.semiBold.size(FontSizes.f16);

@@ -21,13 +21,11 @@ class LeadingRow extends StatelessWidget {
                       log("message");
                     },
                     child: Container(
-                      padding:const EdgeInsets.symmetric(vertical: Insets.i10),
                       color: appCtrl.appTheme.dark,
                       child: Image.asset(
-                        imageAssets.chatifyLogo2,
-                        width: Sizes.s240,
-
-                      ),
+                        imageAssets.chatifyLogo1,
+                        width: Sizes.s200
+                      ).paddingAll(Insets.i20)
                     ));
               }
               return InkWell(
@@ -41,7 +39,7 @@ class LeadingRow extends StatelessWidget {
                           padding: const EdgeInsets.all(Insets.i10),
                           color: appCtrl.appTheme.dark,
                           height: double.infinity,
-                          child: Image.asset(imageAssets.chatifyLogo2,
+                          child: Image.asset(imageAssets.logo,
                               fit: BoxFit.contain))
                       : Container());
             }),
@@ -62,7 +60,46 @@ class LeadingRow extends StatelessWidget {
                 indexCtrl.isOpen.value = !indexCtrl.isOpen.value;
               }
             },
-            child: Icon(Icons.menu, color: appCtrl.appTheme.blackColor))
+            child: Icon(Icons.menu, color: appCtrl.appTheme.blackColor)),
+        if(Responsive.isDesktop(context))
+        Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Column(
+                  crossAxisAlignment:
+                  CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(indexCtrl.pageName.tr,
+                        style: AppCss.poppinsBold16.textColor(
+                            appCtrl.appTheme.blackColor)),
+                    const VSpace(Sizes.s8),
+                    Row(children: [
+                      InkWell(
+                          mouseCursor:
+                          SystemMouseCursors.click,
+                          child: Text(fonts.admin.tr,
+                              style: AppCss.poppinsMedium12
+                                  .textColor(appCtrl
+                                  .appTheme.drawerTextColor))),
+                      Text('  /  ',
+                          style: AppCss.poppinsMedium12
+                              .textColor(appCtrl
+                              .appTheme.drawerTextColor)),
+                      Text(indexCtrl.pageName.tr,
+                          style: AppCss.poppinsMedium12
+                              .textColor(appCtrl
+                              .appTheme.drawerTextColor))
+                    ])
+                  ]),
+              GetBuilder<AppController>(builder: (context) {
+                return CustomSnackBar(
+                    isAlert: appCtrl.isAlert);
+              })
+            ]).paddingOnly(top: Insets.i18)
       ]);
     });
   }

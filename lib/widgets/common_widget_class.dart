@@ -22,13 +22,7 @@ class CommonWidgetClass {
                       height: Sizes.s50,
                       width: Sizes.s50,
                       decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              blurRadius: 5,
-                              spreadRadius: 2,
-                              color: Colors.black12.withOpacity(0.1),
-                            )
-                          ],
+
                           borderRadius: BorderRadius.circular(AppRadius.r10),
                           image: DecorationImage(
                               image: NetworkImage(value), fit: BoxFit.fill)),

@@ -33,7 +33,7 @@ class WallPaper extends StatelessWidget {
                           ? Sizes.s150
                           : wallpaperCtrl.imageUrl.isNotEmpty
                               ? Sizes.s150
-                              : Sizes.s50),
+                              : Sizes.s150),
                       const VSpace(Sizes.s20),
                       if (wallpaperCtrl.isAlert == true &&
                           wallpaperCtrl.pickImage == null)

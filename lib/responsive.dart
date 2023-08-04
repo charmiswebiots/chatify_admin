@@ -1,6 +1,6 @@
-import 'dart:ui';
 
-import 'package:flutter/material.dart';
+
+import 'package:chatify_admin/config.dart';
 
 class Responsive extends StatelessWidget {
   final Widget mobile;
@@ -40,8 +40,8 @@ class Responsive extends StatelessWidget {
     }
   }
 
-  static double get logicalWidth => (window.physicalSize / window.devicePixelRatio).width;
-  static double get logicalHeight => (window.physicalSize / window.devicePixelRatio).height;
+  static double get logicalWidth => (View.of(Get.context!).physicalSize / View.of(Get.context!).devicePixelRatio).width;
+  static double get logicalHeight => (View.of(Get.context!).physicalSize / View.of(Get.context!).devicePixelRatio).height;
 
   static bool get isSm => logicalWidth < 850;
   static bool get isMd => logicalWidth < 1100 && logicalWidth >= 850;

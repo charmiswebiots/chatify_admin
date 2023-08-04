@@ -4,8 +4,6 @@ import 'dart:math' as math;
 import 'dart:io' as io;
 
 import '../../config.dart';
-import '../../screens/wallpaper/layouts/add_wallpaper.dart';
-
 class WallpaperController extends GetxController {
   dynamic usageCtrl;
   bool isLoading = false;

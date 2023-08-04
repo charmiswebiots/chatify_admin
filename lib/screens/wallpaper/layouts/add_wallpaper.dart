@@ -1,9 +1,7 @@
 
-import 'package:chatify_admin/screens/wallpaper/layouts/dark_image_layout.dart';
 
 import '../../../config.dart';
 import '../../../controllers/app_pages_controller/wallpaper_controller.dart';
-import 'image_layout.dart';
 
 class AddWallpaper extends StatelessWidget {
   const AddWallpaper({Key? key}) : super(key: key);

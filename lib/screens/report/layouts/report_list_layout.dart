@@ -1,4 +1,4 @@
-import 'dart:developer';
+
 
 import 'package:chatify_admin/screens/report/layouts/user_list_widget_class.dart';
 import 'package:chatify_admin/widgets/common_widget_class.dart';
@@ -92,8 +92,7 @@ class UserListLayout extends StatelessWidget {
               CommonWidgetClass()
                   .commonValueText(DateFormat('HH:mm a').format(
                           DateTime.fromMillisecondsSinceEpoch(int.parse(
-                              e.value.data()['timestamp'].toString()))) ??
-                      "-")
+                              e.value.data()['timestamp'].toString()))) )
                   .marginSymmetric(vertical: Insets.i10),
               CommonWidgetClass().actionLayout(
                   onTap: () {

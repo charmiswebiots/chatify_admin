@@ -31,7 +31,7 @@ class _IndexLayoutState extends State<IndexLayout> {
                 centerTitle: false,
 
                 backgroundColor: appCtrl.isTheme ?appCtrl.appTheme.whiteColor : appCtrl.appTheme.bg1,
-                leadingWidth: Responsive.isDesktop(context) ? Sizes.s500 : Sizes.s100,
+                leadingWidth: Responsive.isDesktop(context) ? Sizes.s450 : Sizes.s100,
                 title: !Responsive.isDesktop(context)
                     ? Text(indexCtrl.pageName.tr,style: AppCss.poppinsSemiBold16.textColor(appCtrl.appTheme.blackColor),)
                     : Container(),
@@ -55,7 +55,7 @@ class _IndexLayoutState extends State<IndexLayout> {
                                     ? Container(
                                     height:
                                     MediaQuery.of(context).size.height,
-                                    width: value ? Sizes.s240 : Sizes.s70,
+                                    width: value ? Sizes.s220 : Sizes.s70,
                                    decoration: BoxDecoration(
                                      boxShadow:  [BoxShadow(blurRadius: 20,color: appCtrl.appTheme.gray,spreadRadius: 4)],
                                      color: appCtrl.appTheme.dark,

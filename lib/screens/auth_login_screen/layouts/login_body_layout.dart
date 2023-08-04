@@ -1,7 +1,6 @@
 import 'package:chatify_admin/widgets/common_widget_class.dart';
 import 'package:flutter/cupertino.dart';
 import '../../../../config.dart';
-import 'login_class.dart';
 
 class LoginBodyLayout extends StatelessWidget {
   const LoginBodyLayout({Key? key}) : super(key: key);

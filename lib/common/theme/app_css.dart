@@ -75,5 +75,7 @@ class AppCss {
 
 
   static TextStyle get poppinsLight16 => poppins.light.size(FontSizes.f16);
+  static TextStyle get poppinsLight14 => poppins.light.size(FontSizes.f14);
+  static TextStyle get poppinsLight12 => poppins.light.size(FontSizes.f12);
 
 }

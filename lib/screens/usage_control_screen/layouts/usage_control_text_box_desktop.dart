@@ -6,8 +6,23 @@ class UsageControlAllTextBoxDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<UsageControlController>(builder: (usageCtrl) {
-      return Stack(
+      return Column(
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                fonts.usageControl.tr,
+                style: AppCss.poppinsSemiBold18
+                    .textColor(appCtrl.appTheme.blackColor).letterSpace(.3),
+              ).paddingOnly(top: 6),
+              // Update button & Note
+              ButtonLayout(onTap: () => usageCtrl.updateData()),
+            ],
+          ).marginSymmetric(horizontal: Insets.i30),
+
+          Divider(color: appCtrl.appTheme.primary.withOpacity(0.1)),
           SizedBox(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,33 +68,26 @@ class UsageControlAllTextBoxDesktop extends StatelessWidget {
                           title: fonts.maxFileMultiShare,
                           controller: usageCtrl.maxFileMultiShare),
                       const VSpace(Sizes.s30),
-                          DesktopTextFieldCommon(
-                              width: Sizes.s236,
-                              validator: (number) =>
-                                  Validation().broadCastValidation(number),
-                              title: fonts.broadcastMemberLimit,
-                              controller: usageCtrl.broadCastMemberLimit),
+                      DesktopTextFieldCommon(
+                          width: Sizes.s236,
+                          validator: (number) =>
+                              Validation().broadCastValidation(number),
+                          title: fonts.broadcastMemberLimit,
+                          controller: usageCtrl.broadCastMemberLimit),
                       const VSpace(Sizes.s30),
-                          DesktopTextFieldCommon(
-                              width: Sizes.s236,
-                              isNote: true,
-                              validator: (number) =>
-                                  Validation().statusValidation(number),
-                              title: fonts.statusDeleteTime,
-                              controller: usageCtrl.statusDeleteTime),
-
+                      DesktopTextFieldCommon(
+                          width: Sizes.s236,
+                          isNote: true,
+                          validator: (number) =>
+                              Validation().statusValidation(number),
+                          title: fonts.statusDeleteTime,
+                          controller: usageCtrl.statusDeleteTime),
                     ]).marginOnly(top: Insets.i15)),
               ],
             ).paddingAll(Insets.i30),
-          ).boxExtension().marginOnly(top: Insets.i15),
-          CommonButton(
-            title: fonts.usageControl.tr,
-            style: AppCss.poppinsMedium12.textColor(appCtrl.appTheme.white),
-            width: Sizes.s250,
-            margin: Insets.i15,
           ),
         ],
-      );
+      ).boxExtension().marginOnly(top: Insets.i15);
     });
   }
 }

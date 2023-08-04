@@ -121,9 +121,10 @@ class Fonts{
   final deleteCharacterConfirmation = "deleteCharacterConfirmation";
   final gifApi = "gifApi";
   final firebaseServerToken = "firebaseServerToken";
-  final clickToUpload = "Click to upload";
-  final orDragDrop = " or drag and drop";
-  final uploadImage = "Upload Image";
+  final clickToUpload = "clickToUpload";
+  final orDragDrop = "orDragDrop";
+  final uploadImage = "uploadImage";
+  final usageOption = "usageOption";
 
 
 }

@@ -30,7 +30,7 @@ class DrawerList extends StatelessWidget {
                               Responsive.isDesktop(context) && value == false
                                   ? 0
                                   : Insets.i15,
-                          vertical: Insets.i10),
+                          vertical: Insets.i8),
                       width: double.infinity,
                       child: Responsive.isDesktop(context) && value == false
                           ? SvgPicture.asset(e.value["icon"]!,color: indexCtrl
@@ -43,7 +43,7 @@ class DrawerList extends StatelessWidget {
                               e.key
                           ? appCtrl.appTheme.white
                           : appCtrl
-                          .appTheme.white)
+                          .appTheme.white,height: Sizes.s18,)
                           : Row(children: [
                               SvgPicture.asset(e.value["icon"]!,color: indexCtrl
                                   .selectedIndex ==
@@ -55,7 +55,7 @@ class DrawerList extends StatelessWidget {
                                       e.key
                                   ? appCtrl.appTheme.white
                                   : appCtrl
-                                  .appTheme.white,),
+                                  .appTheme.white,height: Sizes.s18),
                               const HSpace(Sizes.s20),
                               Responsive.isDesktop(context) && value == false
                                   ? Container()
@@ -64,7 +64,7 @@ class DrawerList extends StatelessWidget {
                                           e.value["title"] != null
                                               ? e.value["title"].toString().tr
                                               : "",
-                                          style: AppCss.poppinsMedium14
+                                          style: AppCss.poppinsLight12
                                               .textColor(indexCtrl
                                                           .selectedIndex ==
                                                       e.key
@@ -75,7 +75,7 @@ class DrawerList extends StatelessWidget {
                                                               e.key
                                                       ? appCtrl.appTheme.white
                                                       : appCtrl
-                                                          .appTheme.white)),
+                                                          .appTheme.drawerTextColor).letterSpace(.4)),
                                     )
                             ]))
                   .inkWell(onTap: () {
@@ -124,7 +124,7 @@ class DrawerList extends StatelessWidget {
                                   ? appCtrl.appTheme.primary
                                   : appCtrl.appTheme.dark)
                   .paddingSymmetric(
-                      horizontal: Insets.i15, vertical: Insets.i10));
+                      horizontal: Insets.i15, vertical: Insets.i8));
         }).toList()
       ]);
     });

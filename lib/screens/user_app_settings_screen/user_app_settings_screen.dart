@@ -71,11 +71,9 @@ class UserAppSettingsScreen extends StatelessWidget {
                               onTap: () => userSettingCtrl.updateData())
                         ])
                         .paddingSymmetric(
-                            horizontal: Responsive.isDesktop(context)
-                                ? Insets.i100
-                                : Insets.i30,
+                            horizontal:  Insets.i30,
                             vertical: Insets.i25)
-                        .boxExtension()),
+                        ),
                 if (userSettingCtrl.isLoading)
                   Center(
                       child: CircularProgressIndicator(

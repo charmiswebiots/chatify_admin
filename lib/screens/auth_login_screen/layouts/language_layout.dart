@@ -20,11 +20,11 @@ class LanguageLayout extends StatelessWidget {
                   Visibility(
                       visible: (MediaQuery.of(context).size.width > Sizes.s768),
                       child: Text(fonts.selectLanguage.tr,
-                              style: AppCss.poppinsSemiBold14
+                              style: AppCss.poppinsMedium14
                                   .textColor(appCtrl.appTheme.blackColor))
                           .paddingSymmetric(horizontal: Insets.i16 * 0.5)),
                   Icon(CupertinoIcons.chevron_down,
-                      color: appCtrl.appTheme.blackColor)
+                      color: appCtrl.appTheme.blackColor,size: Sizes.s15,)
                 ]).paddingSymmetric(horizontal: Insets.i10)),
             itemBuilder: (context) {
               return [

@@ -10,27 +10,26 @@ class DesktopSwitchCommon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-        width: Sizes.s460,
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(title!.tr,
-                        style: AppCss.poppinsMedium16
-                            .textColor(appCtrl.isTheme ?appCtrl.appTheme.white : appCtrl.appTheme.dark)),
-                    Switch(
-                        activeColor: appCtrl.appTheme.primary,
-                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        value: value!,
-                        onChanged: onChanged)
-                  ]
-              ),
-              if(isDivider != true)
-                Divider(color: appCtrl.appTheme.primary.withOpacity(0.1))
-            ]));
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+
+          Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(title!.tr,
+                    style: AppCss.poppinsMedium16
+                        .textColor(appCtrl.isTheme ?appCtrl.appTheme.white : appCtrl.appTheme.dark)),
+                Switch(
+                    activeColor: appCtrl.appTheme.primary,
+                    materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    value: value!,
+                    onChanged: onChanged)
+              ]
+          ),
+          if(isDivider != true)
+            Divider(color: appCtrl.appTheme.primary.withOpacity(0.1))
+        ]).paddingSymmetric(horizontal: Insets.i30);
   }
 }

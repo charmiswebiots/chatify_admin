@@ -1,8 +1,7 @@
 import 'package:chatify_admin/screens/dashboard/layouts/dashboard_box_layout.dart';
-import 'package:percent_indicator/linear_percent_indicator.dart';
+
 
 import '../../config.dart';
-import 'layouts/dashboard_title_count.dart';
 
 class Dashboard extends StatelessWidget {
   final dashboardCtrl = Get.put(DashboardController());
@@ -20,21 +19,21 @@ class Dashboard extends StatelessWidget {
                       crossAxisCount: 1,
                       crossAxisSpacing: 20,
                       mainAxisSpacing: 20,
-                      mainAxisExtent: 205,
+                      mainAxisExtent: 180,
                     )
                   : MediaQuery.of(context).size.width < 1500
                       ? const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
                           crossAxisSpacing: 20,
                           mainAxisSpacing: 20,
-                          mainAxisExtent: 205,
+                          mainAxisExtent: 180,
                         )
                       : SliverGridDelegateWithMaxCrossAxisExtent(
                           maxCrossAxisExtent:
                               MediaQuery.of(context).size.width * 0.24,
                           crossAxisSpacing: 20,
                           mainAxisSpacing: 20,
-                          mainAxisExtent: 205,
+                          mainAxisExtent: 180,
                         ),
               itemCount: dashboardCtrl.listItem.length,
               shrinkWrap: true,

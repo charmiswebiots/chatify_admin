@@ -11,7 +11,7 @@ class DashboardBoxLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<DashboardController>(builder: (dashboardCtrl) {
       return Container(
-              height: Sizes.s177,
+              height: Sizes.s150,
               decoration: BoxDecoration(
                   gradient: LinearGradient(
                       begin: const Alignment(8, 9 ),

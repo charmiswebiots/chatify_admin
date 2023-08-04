@@ -1,8 +1,7 @@
-import 'dart:developer';
+
 
 import 'package:chatify_admin/models/usage_control_model.dart';
 import 'package:chatify_admin/screens/usage_control_screen/layouts/usage_control_text_box_desktop.dart';
-import 'package:chatify_admin/screens/user_app_settings_screen/layouts/all_text_box_desktop.dart';
 import 'package:chatify_admin/screens/usage_control_screen/layouts/usage_control_responsive.dart';
 
 import '../../config.dart';
@@ -26,30 +25,29 @@ class UsageControlScreen extends StatelessWidget {
 
                 usageCtrl.usageCtrl = UsageControlModel.fromJson(snapShot.data!.data()!);
                 return SingleChildScrollView(
-                    child: Stack(alignment: Alignment.center, children: [
-                  Form(
+                    child:      Form(
                       key: usageCtrl.formKey,
-                      child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                            UsageControlResponsive(configModel: usageCtrl.usageCtrl),
-                            const VSpace(Sizes.s20),
-                            if (Responsive.isDesktop(context))
-                              const UsageControlAllTextBoxDesktop(),
-                            // Update button & Note
-                            ButtonLayout(onTap: () => usageCtrl.updateData())
-                          ])
-                          .paddingSymmetric(
-                              horizontal: Responsive.isDesktop(context)
-                                  ? Insets.i100
-                                  : Insets.i30,
-                              vertical: Insets.i25)
-                          .boxExtension()),
+                      child: Column(children: [
+                  Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                          UsageControlResponsive(configModel: usageCtrl.usageCtrl),
+                          const VSpace(Sizes.s20),
+
+                        ])
+                        .paddingSymmetric(
+
+                            vertical: Insets.i25)
+                        .boxExtension(),
+                        if (Responsive.isDesktop(context))
+                          const UsageControlAllTextBoxDesktop(),
+
                   if (usageCtrl.isLoading)
-                    Center(
-                        child: CircularProgressIndicator(
-                            color: appCtrl.appTheme.primary))
-                ]));
+                      Center(
+                          child: CircularProgressIndicator(
+                              color: appCtrl.appTheme.primary))
+                ]).marginOnly(bottom: Insets.i40),
+                    ));
               } else {
                 return Container();
               }

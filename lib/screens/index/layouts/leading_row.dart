@@ -24,7 +24,7 @@ class LeadingRow extends StatelessWidget {
                       color: appCtrl.appTheme.dark,
                       child: Image.asset(
                         imageAssets.chatifyLogo1,
-                        width: Sizes.s200
+                        width: Sizes.s180
                       ).paddingAll(Insets.i20)
                     ));
               }

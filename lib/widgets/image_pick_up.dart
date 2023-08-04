@@ -12,12 +12,12 @@ class ImagePickUp extends StatelessWidget {
       RichText(
           text: TextSpan(children: [
         TextSpan(
-            text: fonts.clickToUpload,
+            text: fonts.clickToUpload.tr,
             style: AppCss.poppinsMedium20
                 .textColor(appCtrl.appTheme.primary)
                 .textDecoration(TextDecoration.underline)),
         TextSpan(
-            text: fonts.orDragDrop,
+            text: fonts.orDragDrop.tr,
             style: AppCss.poppinsMedium20.textColor(appCtrl.appTheme.dark))
       ]))
     ]).width(MediaQuery.of(context).size.width));

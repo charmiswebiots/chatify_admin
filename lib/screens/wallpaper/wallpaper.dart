@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:chatify_admin/controllers/app_pages_controller/wallpaper_controller.dart';
 
 import 'package:chatify_admin/screens/wallpaper/layouts/image_layout.dart';
@@ -5,6 +7,7 @@ import 'package:chatify_admin/screens/wallpaper/layouts/wallpaper_layout.dart';
 import 'package:chatify_admin/screens/wallpaper/layouts/wallpaper_table.dart';
 import 'package:chatify_admin/screens/wallpaper/layouts/wallpaper_widget_class.dart';
 import 'package:chatify_admin/widgets/common_widget_class.dart';
+import 'package:desktop_drop/desktop_drop.dart';
 
 import '../../config.dart';
 
@@ -33,8 +36,9 @@ class WallPaper extends StatelessWidget {
                           ? Sizes.s150
                           : wallpaperCtrl.imageUrl.isNotEmpty
                               ? Sizes.s150
-                              : Sizes.s50),
+                              : Sizes.s200),
                       const VSpace(Sizes.s20),
+
                       if (wallpaperCtrl.isAlert == true &&
                           wallpaperCtrl.pickImage == null)
                         Text("Please Upload Image",

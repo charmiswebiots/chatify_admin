@@ -26,6 +26,8 @@ class WallpaperController extends GetxController {
   Uint8List wallpaperUploadWebImage2 = Uint8List(8);
   io.File? pickImage, wallpaperPickImage2, wallpaperPickImage3;
   var random = math.Random();
+   List<XFile> list = [];
+
 
   String imageName = "",
       imageUrl = "",

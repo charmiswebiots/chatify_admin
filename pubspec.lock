@@ -117,10 +117,10 @@ packages:
     dependency: "direct main"
     description:
       name: desktop_drop
-      sha256: "4ca4d960f4b11c032e9adfd2a0a8ac615bc3fddb4cbe73dcf840dd8077582186"
+      sha256: d55a010fe46c8e8fcff4ea4b451a9ff84a162217bdb3b2a0aa1479776205e15d
       url: "https://pub.dev"
     source: hosted
-    version: "0.4.1"
+    version: "0.4.4"
   dotted_border:
     dependency: "direct main"
     description:
@@ -250,26 +250,26 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_dropzone
-      sha256: "3ae0e79a9a44ca75005d0be196e5ad04042c5c7a85855c306167a0c93ff17d6f"
+      sha256: "1f51bbbf56e27bead3196cf89963afa9e87d20af4d3a4267a598fcdc9ce4b02e"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.5"
+    version: "3.0.6"
   flutter_dropzone_platform_interface:
     dependency: transitive
     description:
       name: flutter_dropzone_platform_interface
-      sha256: "3d153344397dd5c9d5323472ff5bad20779f56206fa6f97fcce294bb1cea6987"
+      sha256: b4e2df75364bab2f4c3ca32b87193267d786b6e158c3f345c3a1daeb911d82b9
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.5"
+    version: "2.0.6"
   flutter_dropzone_web:
     dependency: transitive
     description:
       name: flutter_dropzone_web
-      sha256: "41c7350a9fbf38b5009a0f0d50069856184189430b1ed79ea4c1efb7ed2cd4ee"
+      sha256: "31f9bb515989163a584a8acd0299dafb67ab4470e0633b06106fcbbb16841c1a"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.8"
+    version: "3.0.12"
   flutter_lints:
     dependency: "direct dev"
     description:

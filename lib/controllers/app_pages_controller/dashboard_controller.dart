@@ -25,7 +25,7 @@ class DashboardController extends GetxController{
               .get().then((value) {
             totalCalls = totalCalls + value.docs.length;
             value.docs.asMap().forEach((key, value) {
-                if(value.data()["isVideoCall"]) {
+                if(value.data()["isVideoCall"] != null &&  value.data()["isVideoCall"] == true) {
                   videoCall++;
                 } else {
                   audioCall++;

@@ -1,3 +1,6 @@
+import 'package:google_fonts/google_fonts.dart';
+import 'package:smooth_corner/smooth_corner.dart';
+
 import '../../../config.dart';
 
 class UsageControlAllTextBoxDesktop extends StatelessWidget {
@@ -8,21 +11,29 @@ class UsageControlAllTextBoxDesktop extends StatelessWidget {
     return GetBuilder<UsageControlController>(builder: (usageCtrl) {
       return Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                fonts.usageControl.tr,
-                style: AppCss.poppinsSemiBold18
-                    .textColor(appCtrl.appTheme.blackColor).letterSpace(.3),
-              ).paddingOnly(top: 6),
-              // Update button & Note
-              ButtonLayout(onTap: () => usageCtrl.updateData()),
-            ],
-          ).marginSymmetric(horizontal: Insets.i30),
+          const VSpace(Sizes.s20),
+          SmoothContainer(
+            width: MediaQuery.of(context).size.width,
+            margin: const EdgeInsets.symmetric(horizontal: Insets.i20),
+            padding: const EdgeInsets.symmetric(vertical: Insets.i15,horizontal: Insets.i20),
+            color: appCtrl.appTheme.primary.withOpacity(.08),
+            smoothness: 1,
+            borderRadius: BorderRadius.circular(6),
+            child: Row(
+              children: [
+                Icon(Icons.circle,color: appCtrl.appTheme.primary,size: Sizes.s10,),
+                const HSpace(Sizes.s15),
+                Text(
+                  fonts.usageControl.tr,
+                  style: GoogleFonts.poppins(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w800,
+                      color: appCtrl.appTheme.primary),
+                ),
+              ],
+            ),
+          ),
 
-          Divider(color: appCtrl.appTheme.primary.withOpacity(0.1)),
           SizedBox(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,28 +72,28 @@ class UsageControlAllTextBoxDesktop extends StatelessWidget {
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                      DesktopTextFieldCommon(
-                          width: Sizes.s236,
-                          validator: (number) =>
-                              Validation().maxFileMultiValidation(number),
-                          title: fonts.maxFileMultiShare,
-                          controller: usageCtrl.maxFileMultiShare),
-                      const VSpace(Sizes.s30),
-                      DesktopTextFieldCommon(
-                          width: Sizes.s236,
-                          validator: (number) =>
-                              Validation().broadCastValidation(number),
-                          title: fonts.broadcastMemberLimit,
-                          controller: usageCtrl.broadCastMemberLimit),
-                      const VSpace(Sizes.s30),
-                      DesktopTextFieldCommon(
-                          width: Sizes.s236,
-                          isNote: true,
-                          validator: (number) =>
-                              Validation().statusValidation(number),
-                          title: fonts.statusDeleteTime,
-                          controller: usageCtrl.statusDeleteTime),
-                    ]).marginOnly(top: Insets.i15)),
+                          DesktopTextFieldCommon(
+                              width: Sizes.s236,
+                              validator: (number) =>
+                                  Validation().maxFileMultiValidation(number),
+                              title: fonts.maxFileMultiShare,
+                              controller: usageCtrl.maxFileMultiShare),
+                          const VSpace(Sizes.s30),
+                          DesktopTextFieldCommon(
+                              width: Sizes.s236,
+                              validator: (number) =>
+                                  Validation().broadCastValidation(number),
+                              title: fonts.broadcastMemberLimit,
+                              controller: usageCtrl.broadCastMemberLimit),
+                          const VSpace(Sizes.s30),
+                          DesktopTextFieldCommon(
+                              width: Sizes.s236,
+                              isNote: true,
+                              validator: (number) =>
+                                  Validation().statusValidation(number),
+                              title: fonts.statusDeleteTime,
+                              controller: usageCtrl.statusDeleteTime),
+                        ]).marginOnly(top: Insets.i15)),
               ],
             ).paddingAll(Insets.i30),
           ),

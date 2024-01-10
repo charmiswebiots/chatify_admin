@@ -25,28 +25,27 @@ class UsageControlScreen extends StatelessWidget {
 
                 usageCtrl.usageCtrl = UsageControlModel.fromJson(snapShot.data!.data()!);
                 return SingleChildScrollView(
-                    child:      Form(
+                    child: Form(
                       key: usageCtrl.formKey,
                       child: Column(children: [
-                  Column(
+                        Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                          UsageControlResponsive(configModel: usageCtrl.usageCtrl),
-                          const VSpace(Sizes.s20),
-
-                        ])
-                        .paddingSymmetric(
-
-                            vertical: Insets.i25)
-                        .boxExtension(),
+                              UsageControlResponsive(
+                                  configModel: usageCtrl.usageCtrl),
+                              const VSpace(Sizes.s20),
+                            ])
+                            .paddingSymmetric(vertical: Insets.i25)
+                            .boxExtension(),
                         if (Responsive.isDesktop(context))
                           const UsageControlAllTextBoxDesktop(),
-
-                  if (usageCtrl.isLoading)
-                      Center(
-                          child: CircularProgressIndicator(
-                              color: appCtrl.appTheme.primary))
-                ]).marginOnly(bottom: Insets.i40),
+                        // Update button & Note
+                        ButtonLayout(onTap: () => usageCtrl.updateData()),
+                        if (usageCtrl.isLoading)
+                          Center(
+                              child: CircularProgressIndicator(
+                                  color: appCtrl.appTheme.primary))
+                      ]).marginOnly(bottom: Insets.i40),
                     ));
               } else {
                 return Container();

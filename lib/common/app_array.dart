@@ -26,6 +26,7 @@ class AppArray{
     {'icon': svgAssets.status, 'title': "sponsor"},
     {'icon': svgAssets.gallery, 'title': "wallpaper"},
     {'icon': svgAssets.dislike, 'title': "report"},
+    {'icon': svgAssets.translate, 'title': "language"},
     {'icon': svgAssets.logout, 'title': "logout"},
   ];
 

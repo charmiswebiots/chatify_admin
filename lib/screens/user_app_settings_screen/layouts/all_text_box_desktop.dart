@@ -1,3 +1,6 @@
+import 'package:google_fonts/google_fonts.dart';
+import 'package:smooth_corner/smooth_corner.dart';
+
 import '../../../config.dart';
 
 class AllTextBoxDesktop extends StatelessWidget {
@@ -6,10 +9,31 @@ class AllTextBoxDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<UserAppSettingsController>(builder: (settingCtrl) {
-      return Stack(
-        children: [
-          SizedBox(
-            child: Row(
+      return SizedBox(
+        child: Column(
+          children: [
+            SmoothContainer(
+              width: MediaQuery.of(context).size.width,
+              //margin: const EdgeInsets.symmetric(horizontal: Insets.i20),
+              padding: const EdgeInsets.symmetric(vertical: Insets.i15,horizontal: Insets.i20),
+              color: appCtrl.appTheme.primary.withOpacity(.08),
+              smoothness: 1,
+              borderRadius: BorderRadius.circular(6),
+              child: Row(
+                children: [
+                  Icon(Icons.circle,color: appCtrl.appTheme.primary,size: Sizes.s10,),
+                  const HSpace(Sizes.s15),
+                  Text(
+                    fonts.credential.tr,
+                    style: GoogleFonts.poppins(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w800,
+                        color: appCtrl.appTheme.primary),
+                  ),
+                ],
+              ),
+            ),
+            Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -30,18 +54,7 @@ class AllTextBoxDesktop extends StatelessWidget {
                           title: fonts.rateAppIos,
                           controller: settingCtrl.txtRateAppIos),
                       const VSpace(Sizes.s30),
-                      DesktopTextFieldCommon(
-                          validator: (number) =>
-                              Validation().statusValidation(number),
-                          title: fonts.androidBannerId,
-                          controller: settingCtrl.txtAndroidBannerId),
-                      const VSpace(Sizes.s30),
-                      DesktopTextFieldCommon(
-                          validator: (number) =>
-                              Validation().statusValidation(number),
-                          title: fonts.facebookAndroidId,
-                          controller: settingCtrl.txtFBAndroidBannerId),
-                      const VSpace(Sizes.s30),
+
                       DesktopTextFieldCommon(
                           validator: (number) =>
                               Validation().statusValidation(number),
@@ -56,48 +69,31 @@ class AllTextBoxDesktop extends StatelessWidget {
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                      DesktopTextFieldCommon(
-                          validator: (number) =>
-                              Validation().broadCastValidation(number),
-                          title: fonts.approvalMessage,
-                          controller: settingCtrl.approvalMessage),
-                      const VSpace(Sizes.s30),
-                      DesktopTextFieldCommon(
-                          validator: (number) =>
-                              Validation().broadCastValidation(number),
-                          title: fonts.maintenanceMessage,
-                          controller: settingCtrl.maintenanceMessage),
-                      const VSpace(Sizes.s30),
-                      DesktopTextFieldCommon(
-                          validator: (number) =>
-                              Validation().broadCastValidation(number),
-                          title: fonts.iosBannerId,
-                          controller: settingCtrl.txtIOSBannerId),
-                      const VSpace(Sizes.s30),
-                      DesktopTextFieldCommon(
-                          validator: (number) =>
-                              Validation().statusValidation(number),
-                          title: fonts.facebookIosId,
-                          controller: settingCtrl.txtFBIOSBannerId),
-                      const VSpace(Sizes.s30),
+                          DesktopTextFieldCommon(
+                              validator: (number) =>
+                                  Validation().broadCastValidation(number),
+                              title: fonts.approvalMessage,
+                              controller: settingCtrl.approvalMessage),
+                          const VSpace(Sizes.s30),
+                          DesktopTextFieldCommon(
+                              validator: (number) =>
+                                  Validation().broadCastValidation(number),
+                              title: fonts.maintenanceMessage,
+                              controller: settingCtrl.maintenanceMessage),
+                          const VSpace(Sizes.s30),
+
                           DesktopTextFieldCommon(
                               validator: (number) =>
                                   Validation().statusValidation(number),
                               title: fonts.firebaseServerToken,
                               controller: settingCtrl.txtFirebaseToken),
                           const VSpace(Sizes.s30),
-                    ]).marginOnly(top: Insets.i15)),
+                        ]).marginOnly(top: Insets.i15)),
               ],
-            ).paddingAll(Insets.i30),
-          ).boxExtension().marginOnly(top: Insets.i15),
-          CommonButton(
-            title: fonts.credential.tr,
-            style: AppCss.poppinsMedium12.textColor(appCtrl.appTheme.white),
-            width: Sizes.s250,
-            margin: Insets.i15,
-          ),
-        ],
-      );
+            ),
+          ],
+        ).paddingAll(Insets.i30),
+      ).boxExtension().marginOnly(top: Insets.i15);
     });
   }
 }

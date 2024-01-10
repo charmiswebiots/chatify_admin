@@ -56,35 +56,7 @@ imagePickerOption(
 
 //alert
 showAlert({title, context}) async {
-  showFlash(
-      context: context,
-      duration: const Duration(seconds: 2),
-      persistent: false,
-      builder: (_, controller) {
-        return Flash(
-            controller: controller,
-            margin: EdgeInsets.only(
-                left:
-                    Responsive.isMobile(context) || Responsive.isTablet(context)
-                        ? MediaQuery.of(context).size.width / 1.8
-                        : MediaQuery.of(context).size.width / 1.2,
-                top: Insets.i50),
-            backgroundColor: appCtrl.appTheme.blackColor,
-            brightness: Brightness.light,
-            boxShadows: const [BoxShadow(blurRadius: 4)],
-            barrierBlur: 0.0,
-            barrierColor: Colors.transparent,
-            barrierDismissible: true,
-            behavior: FlashBehavior.floating,
-            borderWidth: 1,
-            position: FlashPosition.top,
-            child: FlashBar(
-                content: Text(title.toString().tr,
-                    textAlign: TextAlign.center,
-                    style: AppCss.poppinsMedium14
-                        .textColor(appCtrl.appTheme.whiteColor)),
-                showProgressIndicator: false));
-      });
+
 }
 
 //test user not allow dialog

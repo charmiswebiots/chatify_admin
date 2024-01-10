@@ -10,4 +10,11 @@ class ImageAssets{
   final String addUser = 'assets/images/addUser.png';
   final String moon = 'assets/images/moon.png';
   final String gallery = 'assets/images/gallery.png';
+  final String india = 'assets/images/india.png';
+  final String us = 'assets/images/us.png';
+  final String pakistan = 'assets/images/pakistan.png';
+  final String bangla = 'assets/images/bangla.png';
+  final String turkey = 'assets/images/turkey.png';
+  final String export = 'assets/images/export.png';
+  final String line = 'assets/images/line.png';
 }

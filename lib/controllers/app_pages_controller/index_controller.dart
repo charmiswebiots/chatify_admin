@@ -2,6 +2,8 @@ import 'package:chatify_admin/config.dart';
 import 'package:chatify_admin/screens/report/report.dart';
 import 'package:chatify_admin/screens/wallpaper/wallpaper.dart';
 
+import '../../screens/language_screen/language_screen.dart';
+
 class IndexController extends GetxController {
 
   ValueNotifier<bool> isOpen = ValueNotifier(true);
@@ -22,7 +24,8 @@ class IndexController extends GetxController {
     UserAppSettingsScreen(),
     AdminStatusScreen(),
     WallPaper(),
-    Report(),
+    Report(),LanguageScreen(),
+
     Container()
   ];
 

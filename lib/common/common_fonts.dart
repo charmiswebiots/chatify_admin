@@ -126,5 +126,23 @@ class Fonts{
   final uploadImage = "uploadImage";
   final usageOption = "usageOption";
 
+  final sendVerificationCode = "sendVerificationCode";
+  final sendSmsCode = "sendSmsCode";
+  final searchHere = "searchHere";
+  final joiningDate = "joiningDate";
+  final activeDeactive = "activeDeactive";
+  final top5Country = "top5Country";
+  final india = "india";
+  final us = "us";
+  final pakistan = "pakistan";
+  final bangladesh = "bangladesh";
+  final turkey = "turkey";
+  final type = "type";
+  final recentJoin = "recentJoin";
+  final save = "save";
+  final primaryLanguage = "primaryLanguage";
+  final languageSelection = "languageSelection";
+  final statusSeenBy = "statusSeenBy";
+
 
 }

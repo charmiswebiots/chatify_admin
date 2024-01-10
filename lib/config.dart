@@ -67,7 +67,20 @@ export 'package:chatify_admin/screens/user_app_settings_screen/user_app_settings
 export 'package:chatify_admin/screens/admin_status_screen/admin_status_screen.dart';
 export 'package:chatify_admin/screens/usage_control_screen/usage_control_screen.dart';
 export 'package:chatify_admin/screens/index/index.dart';
+import 'package:encrypt/encrypt.dart' as encrypt;
+
 
 var appCtrl = Get.isRegistered<AppController>()
     ? Get.find<AppController>()
     : Get.put(AppController());
+
+
+
+
+final encryptKey = encrypt.Key.fromUtf8('my 32 length key................');
+final iv = encrypt.IV.fromLength(16);
+final encrypter = encrypt.Encrypter(encrypt.AES(encryptKey));
+
+String decryptMessage(content) {
+  return encrypter.decrypt(encrypt.Encrypted.fromBase64(content), iv: iv);
+}

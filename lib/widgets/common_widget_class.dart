@@ -8,7 +8,9 @@ class CommonWidgetClass {
         children: [
           Text(
             title.toString().tr.toUpperCase(),
-            style: AppCss.poppinsMedium14.textColor(appCtrl.appTheme.white),
+            style: AppCss.poppinsMedium14.textColor( appCtrl.isTheme
+                ? appCtrl.appTheme.white
+                : appCtrl.appTheme.dark),
           ),
         ],
       ).paddingSymmetric(vertical: Insets.i20);
@@ -17,7 +19,7 @@ class CommonWidgetClass {
   Widget commonValueText(value, {isImage = false}) => Column(
         children: [
           isImage
-              ? value != null
+              ? value != null  && value != ""
                   ? Container(
                       height: Sizes.s50,
                       width: Sizes.s50,
@@ -28,7 +30,7 @@ class CommonWidgetClass {
                               image: NetworkImage(value), fit: BoxFit.fill)),
                     )
                   : ClipRRect(
-                      borderRadius: BorderRadius.circular(AppRadius.r50),
+                      borderRadius: BorderRadius.circular(AppRadius.r10),
                       child: Image.asset(imageAssets.addUser,
                           height: Sizes.s50,
                           width: Sizes.s50,
@@ -39,7 +41,7 @@ class CommonWidgetClass {
                       .textColor(appCtrl.appTheme.blackColor),
                 )
         ],
-      );
+      ).paddingSymmetric(vertical: Insets.i20);
 
   //credential copy
   Widget credentialCopy(title) => Row(

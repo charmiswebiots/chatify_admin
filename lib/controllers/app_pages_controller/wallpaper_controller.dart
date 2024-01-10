@@ -187,7 +187,7 @@ class WallpaperController extends GetxController {
       } else {
         isAlert = true;
         update();
-        await Future.delayed(Durations.s2);
+        await Future.delayed(DurationClass.s2);
         isAlert = false;
         update();
       }
@@ -212,7 +212,7 @@ class WallpaperController extends GetxController {
       } else {
         isAlert = true;
         update();
-        await Future.delayed(Durations.s2);
+        await Future.delayed(DurationClass.s2);
         isAlert = false;
         update();
       }
@@ -240,7 +240,7 @@ class WallpaperController extends GetxController {
       } else {
         isAlert = true;
         update();
-        await Future.delayed(Durations.s2);
+        await Future.delayed(DurationClass.s2);
         isAlert = false;
         update();
       }
@@ -267,7 +267,7 @@ class WallpaperController extends GetxController {
       } else {
         isAlert = true;
         update();
-        await Future.delayed(Durations.s2);
+        await Future.delayed(DurationClass.s2);
         isAlert = false;
         update();
       }
@@ -301,7 +301,7 @@ class WallpaperController extends GetxController {
             log("imageUrl : $imageUrl");
             update();
             addData();
-            await Future.delayed(Durations.s3);
+            await Future.delayed(DurationClass.s3);
           }, onError: (err) {
             update();
           });

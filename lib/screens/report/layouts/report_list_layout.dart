@@ -32,12 +32,20 @@ class UserListLayout extends StatelessWidget {
                       .doc(e.value.data()["reportFrom"])
                       .snapshots(),
                   builder: (context, snap) {
+
                     if (snap.hasData) {
-                      name = snap.data!.data()!["name"];
-                      return CommonWidgetClass()
-                          .commonValueText(snap.data!.data()!["name"])
-                          .marginSymmetric(
-                              vertical: Insets.i10, horizontal: Insets.i10);
+                      if (snap.data!.data() != null) {
+                        return CommonWidgetClass()
+                            .commonValueText(snap.data!["name"])
+                            .marginSymmetric(
+
+                            vertical: Insets.i10, horizontal: Insets.i10);
+                      }else {
+                        return CommonWidgetClass()
+                            .commonValueText("-")
+                            .marginSymmetric(
+                            vertical: Insets.i10, horizontal: Insets.i10);
+                      }
                     } else {
                       return CommonWidgetClass()
                           .commonValueText("")

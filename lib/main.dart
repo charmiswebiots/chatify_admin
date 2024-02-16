@@ -14,14 +14,13 @@ void main() async {
   Get.put(AppController());
   await Firebase.initializeApp(
     options: const FirebaseOptions(
-        apiKey: "AIzaSyAoc27X-TFvbjKbL5XGgq9zyQj3ZEE2LNs",
-        authDomain: "chatify-195b1.firebaseapp.com",
-        projectId: "chatify-195b1",
-        storageBucket: "chatify-195b1.appspot.com",
-        messagingSenderId: "432304404919",
-        appId: "1:432304404919:web:13d8d0c43bb63bc1045032",
-        measurementId: "G-591LHY9MBM"
-
+        apiKey: "AIzaSyAXx7b0-yny7--rcC7QOwQYVtyUods4-D0",
+        authDomain: "chatify-eee03.firebaseapp.com",
+        projectId: "chatify-eee03",
+        storageBucket: "chatify-eee03.appspot.com",
+        messagingSenderId: "746529411345",
+        appId: "1:746529411345:web:a8a495d35c09e00e617cb0",
+        measurementId: "G-6P9N1BDTFK"
        ),
 
   );

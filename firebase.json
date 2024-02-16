@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "chatifyadmin-933f7",
     "public": "build/web",
     "ignore": [
       "firebase.json",

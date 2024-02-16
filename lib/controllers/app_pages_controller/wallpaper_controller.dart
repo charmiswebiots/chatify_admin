@@ -144,23 +144,13 @@ class WallpaperController extends GetxController {
     context,
     uploadFile,
     title}) async {
-    if (title == "image1") {
-      wallpaper1Upload(
-          setState: setState,
-          source: source,
-          dropImage: dropImage,
-          title: title,
-          context: context,
-          uploadFile: uploadFile);
-    } else if (title == "image2") {
-      wallpaper2Upload(
-          setState: setState,
-          source: source,
-          dropImage: dropImage,
-          title: title,
-          context: context,
-          uploadFile: uploadFile);
-    }
+    wallpaper1Upload(
+        setState: setState,
+        source: source,
+        dropImage: dropImage,
+        title: title,
+        context: context,
+        uploadFile: uploadFile);
   }
 
   wallpaper1Upload({source,
